@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Pierre Famchon - Mes Certifications et Diplômes">
+    <title>Certifications - Portfolio</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style> 
+    </style>
+</head>
+<body>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <aside class="sidebar">
+        <div class="logo-container-cyber">
+            <a href="https://iut-bethune.univ-artois.fr/formation/but-reseaux-et-telecommunications/" target="_blank">
+                <img src="../static/assets/logo/logo_artois1.jpg" alt="Université d'Artois" class="sidebar-logo-cyber">
+            </a>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span> <span>Accueil</span></a>
+
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-btn" onclick="toggleDropdown()" style="width: 100%; border: none; background: transparent; cursor: pointer;">
+                    <span class="nav-icon">📂</span> <span>Compétences</span> <i class="fa fa-caret-down" style="margin-left: auto;"></i>
+                </button>
+                
+                <div class="dropdown-container" id="compMenu" style="display: block; background: rgba(0,0,0,0.2); padding-left: 20px;">
+                    <a href="administrer.html" class="nav-item"><span class="nav-icon">⚙️</span> <span>Administrer</span></a>
+                    <a href="connecter.html" class="nav-item"><span class="nav-icon">🌐</span> <span>Connecter</span></a>
+                    <a href="programmer.html" class="nav-item"><span class="nav-icon">💻</span> <span>Programmer</span></a>
+                    <a href="securiser.html" class="nav-item"><span class="nav-icon">🛡️</span> <span>Sécuriser</span></a>
+                    <a href="surveiller.html" class="nav-item"><span class="nav-icon">📊</span> <span>Surveiller</span></a>
+                </div>
+            </div>
+            
+            <a href="#" class="nav-item locked" onclick="verifierAcces('labs.html')">
+                <span class="nav-icon">🧪</span> <span>Labs</span>
+            </a>
+            <a href="#" class="nav-item locked" onclick="verifierAcces('projets.html')">
+                <span class="nav-icon">🚀</span> <span>Projets</span>
+            </a>
+            <a href="certification.html" class="nav-item active"><span class="nav-icon">🎓</span> <span>Certifications</span></a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <main class="content">
+            <header class="page-header">
+                <h1>Certifications & Diplômes</h1>
+                <p class="intro-text">Validation officielle de mes compétences techniques et linguistiques.</p>
+            </header>
+
+            <nav class="page-nav">
+                <a href="#cyber" class="page-nav-link"><i class="fa-solid fa-shield-halved"></i> Cybersécurité</a>
+                <a href="#network" class="page-nav-link"><i class="fa-solid fa-network-wired"></i> Réseaux</a>
+                <a href="#lang" class="page-nav-link"><i class="fa-solid fa-language"></i> Langues</a>
+            </nav>
+
+            <h2 id="cyber">🛡️ Cybersécurité</h2>
+            <div class="cert-grid">
+                
+                <div class="cert-card">
+                    <span class="status-badge status-pending">En préparation</span>
+                    <img src="../static/assets/img/certifs/logo_anssi.png" alt="Logo ANSSI" class="cert-logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2092/2092663.png'"> 
+                    <h3>SecNumAcadémie</h3>
+                    <div class="cert-issuer">ANSSI</div>
+                    <div class="cert-date">Objectif : Avril 2026</div>
+                    <p style="font-size: 0.9em; color: #ccc; margin-bottom: 20px;">Sensibilisation et validation des connaissances en hygiène informatique et cybersécurité.</p>
+                    
+                    <img src="../static/assets/img/certifs/preuve_anssi.jpg" class="project-img" alt="Attestation SecNumAcadémie" style="display:none;"> <button class="btn-verify" onclick="this.previousElementSibling.click()"><i class="fa-solid fa-eye"></i> Voir le certificat</button>
+                </div>
+
+                <div class="cert-card">
+                    <span class="status-badge status-pending">En préparation</span>
+                    <img src="../static/assets/img/certifs/logo_cisco.png" alt="Logo Cisco" class="cert-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cisco_logo.svg/2048px-Cisco_logo.svg.png'">
+                    <h3>Introduction to Cybersecurity</h3>
+                    <div class="cert-issuer">Cisco juillet-Aout</div>
+                    <div class="cert-date">Objectif : Novembre 2026</div>
+                    <p style="font-size: 0.9em; color: #ccc; margin-bottom: 20px;">Fondamentaux de la sécurité des réseaux et protection des données.</p>
+                    
+                    <a href="#" target="_blank" class="btn-verify"><i class="fa-solid fa-link"></i> Lien Credly</a>
+                </div>
+
+                <div class="cert-card">
+                    <span class="status-badge status-valid">Préparé</span>
+                    <img src="../static/assets/img/certifs/logo_pix.png" alt="Logo Pix" class="cert-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/fr/6/60/Logo_Pix.svg'">
+                    <h3>Certification Numérique</h3>
+                    <div class="cert-issuer">Gouvernement Français</div>
+                    <div class="cert-date">Programmer : Février 2026</div>
+                    <p style="font-size: 0.9em; color: #ccc; margin-bottom: 20px;">Compétences numériques transversales (Information, Communication, Création de contenu).</p>
+                    <button class="btn-verify"><i class="fa-solid fa-check"></i> Vérifier</button>
+                </div>
+
+            </div>
+
+            <h2 id="network">📡 Réseaux & Cloud</h2>
+            <div class="cert-grid">
+                
+                <div class="cert-card">
+                    <span class="status-badge status-pending">En préparation</span>
+                    <img src="../static/assets/img/certifs/logo_ccna.png" alt="Logo Cisco" class="cert-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cisco_logo.svg/2048px-Cisco_logo.svg.png'">
+                    <h3>CCNAv7: ITN</h3>
+                    <div class="cert-issuer">Cisco</div>
+                    <div class="cert-date">Ojectif : Avril-Mai 2026</div>
+                    <p style="font-size: 0.9em; color: #ccc; margin-bottom: 20px;">Architecture, modèles, protocoles Internet et adressage IP.</p>
+                    <img src="../static/assets/img/certifs/preuve_ccna1.jpg" class="project-img" alt="Badge CCNA 1" style="display:none;">
+                    <button class="btn-verify" onclick="this.previousElementSibling.click()"><i class="fa-solid fa-eye"></i> Voir le badge</button>
+                </div>
+
+                <div class="cert-card" style="border: 1px dashed rgba(255,255,255,0.3);">
+                    <span class="status-badge status-pending">En préparation</span>
+                    <div style="font-size: 3rem; color: #555; margin-bottom: 10px;"><i class="fa-brands fa-aws"></i></div>
+                    <h3>AWS Cloud Practitioner</h3>
+                    <div class="cert-issuer">Amazon Web Services</div>
+                    <div class="cert-date">Objectif : Fin 2026</div>
+                    <p style="font-size: 0.9em; color: #ccc; margin-bottom: 20px;">Fondamentaux du Cloud Computing et services AWS.</p>
+                    <span class="btn-verify" style="opacity: 0.5; cursor: not-allowed;"><i class="fa-solid fa-hourglass-half"></i> Bientôt</span>
+                </div>
+
+            </div>
+
+            <h2 id="lang" style="margin-top: 60px; scroll-margin-top: 100px;">🌍 Langues</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <span class="status-badge status-valid">Préparé</span>
+                    <img src="../static/assets/img/certifs/logo_toeic.png" alt="Logo TOEIC" class="cert-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/ETS_brand.svg/1200px-ETS_brand.svg.png'">
+                    <h3>TOEIC Listening & Reading</h3>
+                    <div class="cert-issuer">ETS Global</div>
+                    <div class="cert-date">Programmer : Janvier 2026</div>
+                    <p style="font-size: 0.9em; color: #ccc; margin-bottom: 20px;">Anglais professionnel et communication internationale.</p>
+                    <button class="btn-verify"><i class="fa-solid fa-file-pdf"></i> Résultats</button>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Pierre FAMCHON</h3>
+                    <p>Étudiant en BUT Réseaux & Télécommunications</p>
+                    <p>Passionné par la Cybersécurité et le Développement.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/ton-profil" target="_blank" rel="noopener noreferrer" class="social-btn linkedin">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/PierreFamchon" target="_blank" rel="noopener noreferrer" class="social-btn github">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <a href="mailto:pierre_famchon1@ens.univ-artois.fr" class="social-btn email">
+                        <i class="fa-solid fa-envelope"></i> Me contacter
+                    </a>
+                    <a href="../static/assets/Rapport/CV_Pierre_Famchon.pdf" download class="social-btn cv-btn">
+                        <i class="fa-solid fa-file-pdf"></i> Télécharger CV
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 - Portfolio Pierre Famchon. Tous droits réservés.</p>
+            </div>
+        </footer>
+    </div>
+
+    <button id="backToTop" title="Retour en haut">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Image agrandie">
+        <div id="lightbox-caption"></div>
+    </div>
+
+<script src="../static/js/main.js"></script>
+</body>
+</html>

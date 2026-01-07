@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Pierre Famchon - Projets et Réalisations (SAE)">
+    <title>Réalisations - Projets SAE</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Petits ajustements spécifiques si besoin, sinon tout est dans style.css */
+    </style>
+</head>
+<body>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <aside class="sidebar">
+        <div class="logo-container-cyber">
+            <a href="https://iut-bethune.univ-artois.fr/formation/but-reseaux-et-telecommunications/" target="_blank" rel="noopener noreferrer">
+                <img src="../static/assets/logo/logo_artois1.jpg" alt="Université d'Artois" class="sidebar-logo-cyber">
+            </a>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span> <span>Accueil</span></a>
+
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-btn" onclick="toggleDropdown()" style="width: 100%; border: none; background: transparent; cursor: pointer;">
+                    <span class="nav-icon">📂</span> <span>Compétences</span> <i class="fa fa-caret-down" style="margin-left: auto;"></i>
+                </button>
+                
+                <div class="dropdown-container" id="compMenu" style="display: none; background: rgba(0,0,0,0.2); padding-left: 20px;">
+                    <a href="administrer.html" class="nav-item"><span class="nav-icon">⚙️</span> <span>Administrer</span></a>
+                    <a href="connecter.html" class="nav-item"><span class="nav-icon">🌐</span> <span>Connecter</span></a>
+                    <a href="programmer.html" class="nav-item"><span class="nav-icon">💻</span> <span>Programmer</span></a>
+                    <a href="securiser.html" class="nav-item"><span class="nav-icon">🛡️</span> <span>Sécuriser</span></a>
+                    <a href="surveiller.html" class="nav-item"><span class="nav-icon">📊</span> <span>Surveiller</span></a>
+                </div>
+            </div>
+            
+            <a href="labs.html" class="nav-item" onclick="verifierAcces('labs.html')">
+                <span class="nav-icon">🧪</span> <span>Labs</span>
+            </a>
+            <a href="#" class="nav-item active">
+                <span class="nav-icon">🚀</span> <span>Projets</span>
+            </a>
+            <a href="certification.html" class="nav-item"><span class="nav-icon">🎓</span> <span>Certifications</span></a>
+        </nav>
+    </aside>
+    
+    <div class="main-wrapper">
+        
+        <main class="content">
+            <header class="page-header">
+                <h1>Projets & Réalisations (SAE)</h1>
+                <p class="intro-text">Panorama des projets menés durant le BUT R&T : du développement d'infrastructures à la réponse aux cyberattaques.</p>
+            </header>
+
+            <nav class="page-nav">
+                <a href="#rt3" class="page-nav-link"><i class="fas fa-shield-alt"></i> Expertise (RT3)</a>
+                <a href="#rt2" class="page-nav-link"><i class="fa-solid fa-network-wired"></i> Approfondissement (RT2)</a>
+                <a href="#rt1" class="page-nav-link"><i class="fa-solid fa-box-archive"></i> Fondamentaux (RT1)</a>
+                <a href="#archives" class="page-nav-link"><i class="fa-solid fa-file-pdf"></i> Archives</a>
+            </nav>
+
+            <section class="featured-section" id="rt3">
+                <h2>🎓 En cours : Troisième Année - Expertise Cyber & Cloud</h2>
+                <div class="featured-grid">
+                    
+                    <div class="featured-card">
+                        <div class="card-icon"><i class="fa-solid fa-virus-slash"></i></div>
+                        <span class="status-badge status-pending">En préparation</span>
+                        <h3>Réponse à Incident (S6)</h3>
+                        <p class="featured-desc">
+                            <strong>SAE 6.Cyber.01 :</strong> Simulation de crise cyber. Analyse de logs (SIEM), identification de l'attaque, confinement et remédiation post-incident.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag tag-security">SOC / SIEM</span>
+                            <span class="tag tag-security">Blue Team</span>
+                            <span class="tag tag-system">Forensics</span>
+                        </div>
+
+                        <div class="round-btn-container">
+                            <a href="TON_LIEN_RAPPORT" target="_blank" class="round-btn btn-report" aria-label="Rapport"><i class="fas fa-file-alt"></i></a>
+                            <a href="https://drive.google.com/drive/folders/1u-uleDXayjajleg-XCrz4BVvwCOZvJYQ?usp=sharing" target="_blank" class="round-btn btn-drive" aria-label="Accéder aux fichiers sur Google Drive"><i class="fab fa-google-drive"></i></a>
+                            <a href="VOTRE_LIEN_GITHUB_ICI" target="_blank" class="round-btn btn-github" aria-label="Voir le projet sur GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="featured-card">
+                        <div class="card-icon"><i class="fa-solid fa-lock"></i></div>
+                        <span class="status-badge status-pending">En préparation</span>
+                        <h3>Sécurisation Avancée (S5)</h3>
+                        <p class="featured-desc">
+                            <strong>SAE 5.Cyber.03 :</strong> Durcissement d'infrastructures critiques, mise en place de VPNs complexes et supervision de sécurité active.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag tag-security">VPN IPsec/SSL</span>
+                            <span class="tag tag-system">Hardening</span>
+                            <span class="tag tag-network">Firewalling</span>
+                        </div>
+                        <div class="round-btn-container">
+                            <a href="VOTRE_LIEN_RAPPORT" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                            <a href="https://drive.google.com/drive/folders/1hbU4XNV07eAORojcXTRxTWIuh8AhhzWw?usp=sharing" target="_blank" class="round-btn btn-drive" aria-label="Accéder aux fichiers sur Google Drive"><i class="fab fa-google-drive"></i></a>
+                            <a href="VOTRE_LIEN_GITHUB_ICI" target="_blank" class="round-btn btn-github" aria-label="Voir le projet sur GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="featured-card">
+                        <div class="card-icon"><i class="fa-solid fa-project-diagram"></i></div>
+                        <h3>Solution Technique (S5)</h3>
+                        <p class="featured-desc">
+                            <strong>SAE 5.01 :</strong> Conception complète d'une architecture répondant à un besoin client complexe, intégrant redondance et haute disponibilité.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag tag-network">Architecture</span>
+                            <span class="tag tag-system">Cloud</span>
+                            <span class="tag tag-network">Haute Dispo</span>
+                        </div>
+
+                        <div class="round-btn-container">
+                            <a href="../static/assets/Rapport/SAE 5.01(administrer).pdf" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                            <a href="https://drive.google.com/drive/folders/1sZetj7Ep1P3F8sAHbQOr67aY7aTWNkFa?usp=sharing" target="_blank" class="round-btn btn-drive" aria-label="Accéder aux fichiers sur Google Drive"><i class="fab fa-google-drive"></i></a>
+                            <a href="VOTRE_LIEN_GITHUB_ICI" target="_blank" class="round-btn btn-github" aria-label="Voir le projet sur GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <hr class="section-divider">
+
+            <section class="featured-section" id="rt2">
+                <h2>🚀 Deuxième Année - Réseaux & Pentest</h2>
+                <div class="featured-grid">
+                    
+                    <div class="featured-card">
+                        <div class="card-icon"><i class="fa-solid fa-key"></i></div>
+                        <h3>Sécuriser un SI (S4)</h3>
+                        <p class="featured-desc">
+                            <strong>SAE 4.Cyber.01 :</strong> Mise en œuvre de cryptographie (PKI, Certificats) et sécurisation des flux de données internes.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag tag-security">Crypto</span>
+                            <span class="tag tag-system">PKI</span>
+                            <span class="tag tag-network">TLS/SSL</span>
+                        </div>
+
+                        <div class="round-btn-container">
+                            <a href="../static/assets/Rapport/SAE 4.01(securiser).pdf" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                            <a href="https://drive.google.com/drive/folders/14dnl3YUhIJ5iiYPs_7zIFCroPPdnZ0Dm?usp=sharing" target="_blank" class="round-btn btn-drive" aria-label="Accéder aux fichiers sur Google Drive"><i class="fab fa-google-drive"></i></a>
+                            <a href="VOTRE_LIEN_GITHUB_ICI" target="_blank" class="round-btn btn-github" aria-label="Voir le projet sur GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="featured-card">
+                        <div class="card-icon"><i class="fa-solid fa-user-secret"></i></div>
+                        <h3>Pentesting (S3)</h3>
+                        <p class="featured-desc">
+                            <strong>SAE 3.Cyber.04 :</strong> Découverte du test d'intrusion. Scan de vulnérabilités, exploitation basique et rédaction de rapport d'audit.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag tag-security">Kali Linux</span>
+                            <span class="tag tag-security">Metasploit</span>
+                            <span class="tag tag-network">Nmap</span>
+                        </div>
+
+                        <div class="round-btn-container">
+                            <a href="https://drive.google.com/drive/folders/1jfGU7XGTm2swcNKwaog1fzkeA_m1CFbD?usp=drive_link" target="_blank" class="round-btn btn-drive" aria-label="Accéder aux fichiers sur Google Drive"><i class="fab fa-google-drive"></i></a>
+                            <a href="VOTRE_LIEN_GITHUB_ICI" target="_blank" class="round-btn btn-github" aria-label="Voir le projet sur GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="featured-card">
+                        <div class="card-icon"><i class="fa-solid fa-sitemap"></i></div>
+                        <h3>Réseau Multi-sites (S3)</h3>
+                        <p class="featured-desc">
+                            <strong>SAE 3.03 :</strong> Interconnexion de sites distants via protocoles de routage dynamique avancés.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag tag-network">OSPF / BGP</span>
+                            <span class="tag tag-network">Cisco</span>
+                            <span class="tag tag-network">GNS3/Packet Tracer</span>
+                        </div>
+
+                        <div class="round-btn-container">
+                            <a href="../static/assets/Rapport/SAE 3.03.pdf" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                            <a href="https://drive.google.com/drive/folders/1wIi-bwmP2y7ESFHEuHN5qtrPXcPDcXFc?usp=drive_link" target="_blank" class="round-btn btn-drive" aria-label="Accéder aux fichiers sur Google Drive"><i class="fab fa-google-drive"></i></a>
+                            <a href="VOTRE_LIEN_GITHUB_ICI" target="_blank" class="round-btn btn-github" aria-label="Voir le projet sur GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="featured-card">
+                        <div class="card-icon"><i class="fa-brands fa-python"></i></div>
+                        <h3>App Communicantes (S3)</h3>
+                        <p class="featured-desc">
+                            <strong>SAE 3.02 :</strong> Développement d'une application client/serveur (Chat, Transfert de fichier) utilisant les sockets.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag tag-system">Python</span>
+                            <span class="tag tag-network">Sockets TCP/UDP</span>
+                            <span class="tag tag-system">Dev</span>
+                        </div>
+
+                        <div class="round-btn-container">
+                            <a href="https://drive.google.com/drive/folders/19mrs3p7s3QDBfbf-MjbU47rhnOB1vm-d?usp=sharing" target="_blank" class="round-btn btn-drive" aria-label="Accéder aux fichiers sur Google Drive"><i class="fab fa-google-drive"></i></a>
+                            <a href="VOTRE_LIEN_GITHUB_ICI" target="_blank" class="round-btn btn-github" aria-label="Voir le projet sur GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="featured-section" id="rt1">
+                <h2>🚀 Première année - Fondamentaux & Intégration</h2>
+                <div class="featured-grid">
+                    
+                    <div class="featured-card">
+                        <div class="card-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <h3>Projet Intégratif (S2)</h3>
+                        <p class="featured-desc">
+                            <strong>SAE 2.01-.04 :</strong> Conception complète d'une infrastructure pour une pépinière d'entreprise. Intégration globale des compétences (Réseau, Système, Téléphonie).
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag tag-network">VLAN/Routage</span>
+                            <span class="tag tag-system">Services</span>
+                            <span class="tag tag-network">Téléphonie</span>
+                        </div>
+
+                        <div class="round-btn-container">
+                            <a href="../static/assets/Rapport/Pepiniere2.0(connecter).pdf" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                            <a href="https://drive.google.com/drive/folders/12GNYQ42GsK-cJk-Lu4R1sOLQeFlbUU94?usp=sharing" target="_blank" class="round-btn btn-drive" aria-label="Accéder aux fichiers sur Google Drive"><i class="fab fa-google-drive"></i></a>
+                            <a href="LIEN_GITHUB_SAE204" target="_blank" class="round-btn btn-github" aria-label="Voir le projet sur GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="featured-card">
+                        <div class="card-icon"><i class="fa-solid fa-server"></i></div>
+                        <h3>Solution d'Entreprise (S2)</h3>
+                        <p class="featured-desc">
+                            <strong>SAE 2.03 :</strong> Installation et configuration de services informatiques essentiels (DHCP, DNS, Web) sur environnements virtualisés.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag tag-system">Linux/Windows</span>
+                            <span class="tag tag-system">Virtualisation</span>
+                            <span class="tag tag-system">Services</span>
+                        </div>
+
+                        <div class="round-btn-container">
+                            <a href="https://drive.google.com/drive/folders/17XqEUj8EUGmKM9cAQqvYEgotHEja6UXf?usp=sharing" target="_blank" class="round-btn btn-drive" aria-label="Accéder aux fichiers sur Google Drive"><i class="fab fa-google-drive"></i></a>
+                            <a href="LIEN_GITHUB_SAE203" target="_blank" class="round-btn btn-github" aria-label="Voir le projet sur GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="featured-card">
+                        <div class="card-icon"><i class="fa-solid fa-ethernet"></i></div>
+                        <h3>Initiation Réseaux (S1)</h3>
+                        <p class="featured-desc">
+                            <strong>SAE 1.02 :</strong> Bases de l'architecture réseau. Maîtrise de l'adressage IPv4, du découpage en sous-réseaux et analyse de trafic via Wireshark.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag tag-network">IPv4 / Ethernet</span>
+                            <span class="tag tag-system">Wireshark</span>
+                            <span class="tag tag-network">Modèle OSI</span>
+                        </div>
+
+                        <div class="round-btn-container">
+                            <a href="../static/assets/Rapport/SAE 1.02.pdf" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                            <a href="https://drive.google.com/drive/folders/1PN2EddLRmZHcv4yp3K514lApnuXShB-X?usp=sharing" target="_blank" class="round-btn btn-drive" aria-label="Accéder aux fichiers sur Google Drive"><i class="fab fa-google-drive"></i></a>
+                            <a href="LIEN_GITHUB_SAE102" target="_blank" class="round-btn btn-github" aria-label="Voir le projet sur GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <hr class="section-divider">
+
+            <section class="archive-section" id="archives">
+                <h2 style="margin-bottom: 30px;">📂 Archives Projets (SAE)</h2>
+
+                <div class="year-block">
+                    <h3 class="year-title-small">Première Année (RT1)</h3>
+                    
+                    <div class="semester-accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="header-left">
+                                <span class="semester-name">Semestre 1</span>
+                                <div class="mini-tags">
+                                    <span class="badge badge-blue">Réseaux</span>
+                                    <span class="badge badge-green">Système & OS</span>
+                                    <span class="badge badge-orange">Web Statique</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">
+                                <p><strong>Projets SAE :</strong></p>
+                                <ul>
+                                    <li>SAE 1.01 - Se sensibiliser à l'hygiène informatique et à la cybersécurité</li>
+                                    <li>SAE 1.02 - S'initier aux réseaux informatiques</li>
+                                    <li>SAE 1.03 - Découvrir un dispositif de transmission</li>
+                                    <li>SAE 1.04 - Se présenter sur Internet (Portfolio)</li>
+                                    <li>SAE 1.05 - Traiter des données</li>
+                                </ul>
+                                <a href="https://drive.google.com/drive/folders/1nSD26iYcRsvjJgvFnZzhVbTECu_zAB7e?usp=drive_link" target="_blank" rel="noopener noreferrer" class="drive-btn full-width">📂 Accéder au dossier Drive S1</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="semester-accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="header-left">
+                                <span class="semester-name">Semestre 2</span>
+                                <div class="mini-tags">
+                                    <span class="badge badge-purple">Virtualisation</span>
+                                    <span class="badge badge-blue">Téléphonie</span>
+                                    <span class="badge badge-yellow">Données & Web</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">
+                                <p><strong>Projets SAE :</strong></p>
+                                <ul>
+                                    <li>SAE 2.01 - Construire un réseau informatique pour une petite structure</li>
+                                    <li>SAE 2.02 - Mesurer et caractériser un signal ou un système</li>
+                                    <li>SAE 2.03 - Mettre en place une solution informatique pour l'entreprise</li>
+                                    <li>SAE 2.04 - Projet intégratif</li>
+                                </ul>
+                                <a href="https://drive.google.com/drive/folders/10FVOFi5aUSWldXb-IXZVoEYycpd1-Jxg?usp=drive_link" target="_blank" rel="noopener noreferrer" class="drive-btn full-width">📂 Accéder au dossier Drive S2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="year-block">
+                    <h3 class="year-title-small">Deuxième Année (RT2)</h3>
+                    
+                    <div class="semester-accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="header-left">
+                                <span class="semester-name">Semestre 3</span>
+                                <div class="mini-tags">
+                                    <span class="badge badge-red">Pentesting</span>
+                                    <span class="badge badge-green">Annuaire AD</span>
+                                    <span class="badge badge-blue">Fibre Optique</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">
+                                <p><strong>Projets SAE :</strong></p>
+                                <ul>
+                                    <li>SAE 3.01 - Etude et mise en oeuvre d'un système de transmission</li>
+                                    <li>SAE 3.02 - Développer des applications communicantes</li>
+                                    <li>SAE 3.03 - Concevoir un réseau informatique multi-sites</li>
+                                    <li>SAE 3.Cyber.04 - Découverte du pentesting</li>
+                                </ul>
+                                <a href="https://drive.google.com/drive/folders/15z1KCtS2J2_NYwgYmTcdGzhbZYT0CLqI?usp=drive_link" target="_blank" rel="noopener noreferrer" class="drive-btn full-width">📂 Accéder au dossier Drive S3</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="semester-accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="header-left">
+                                <span class="semester-name">Semestre 4</span>
+                                <div class="mini-tags">
+                                    <span class="badge badge-purple">Réseaux Mobiles</span>
+                                    <span class="badge badge-red">Cryptographie</span>
+                                    <span class="badge badge-yellow">Automatisation</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">
+                                <p><strong>Projets SAE :</strong></p>
+                                <ul>
+                                    <li>SAE 4.01 - Stages et entreprises</li>
+                                    <li>SAE 4.Cyber.01 - Sécuriser un système d'information</li>
+                                </ul>
+                                <a href="https://drive.google.com/drive/folders/1HeQahNQxKTbwOaUBgp4BYHFKo1h22Wls?usp=drive_link" target="_blank" rel="noopener noreferrer" class="drive-btn full-width">📂 Accéder au dossier Drive S4</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="year-block">
+                    <h3 class="year-title-small">Troisième Année (RT3)</h3>
+                    
+                    <div class="semester-accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="header-left">
+                                <span class="semester-name">Semestre 5</span>
+                                <div class="mini-tags">
+                                    <span class="badge badge-red">Audit & Gouv</span>
+                                    <span class="badge badge-blue">Management</span>
+                                    <span class="badge badge-green">Cloud</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">
+                                <p><strong>Projets SAE :</strong></p>
+                                <ul>
+                                    <li>SAE 5.01 - Concevoir, réaliser et présenter une solution technique</li>
+                                    <li>SAE 5.02 - Piloter un projet informatique</li>
+                                    <li>SAE 5.Cyber.03 - Assurer la sécurisation et la supervision avancées d'un SI</li>
+                                </ul>
+                                <a href="https://drive.google.com/drive/folders/1UCUrl5ROof-RW-TEhQcKuK_HXvaZ4mOg?usp=drive_link" class="drive-btn full-width">📂 Accéder au dossier Drive S5</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="semester-accordion">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="header-left">
+                                <span class="semester-name">Semestre 6</span>
+                                <div class="mini-tags">
+                                    <span class="badge badge-purple">Stage Long</span>
+                                    <span class="badge badge-orange">Réponse Incident</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">
+                                <p><strong>Projets SAE :</strong></p>
+                                <ul>
+                                    <li>SAE 6 - Stages et entreprises</li>
+                                    <li>SAE 6.Cyber.01 - Réagir face à une cyber-attaque</li>
+                                </ul>
+                                <a href="https://drive.google.com/drive/folders/1AgDOv-nwZJn_6NHl1_PTLwGSex4-DVPI?usp=drive_link" class="drive-btn full-width">📂 Accéder au dossier Drive S6</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+        
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Pierre FAMCHON</h3>
+                    <p>Étudiant en BUT Réseaux & Télécommunications</p>
+                    <p>Passionné par la Cybersécurité et le Développement.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/ton-profil" target="_blank" rel="noopener noreferrer" class="social-btn linkedin">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/PierreFamchon" target="_blank" rel="noopener noreferrer" class="social-btn github">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <a href="mailto:pierre_famchon1@ens.univ-artois.fr" class="social-btn email">
+                        <i class="fa-solid fa-envelope"></i> Me contacter
+                    </a>
+                    <a href="../static/assets/Rapport/CV_Pierre_Famchon.pdf" download class="social-btn cv-btn">
+                        <i class="fa-solid fa-file-pdf"></i> Télécharger CV
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 - Portfolio Pierre Famchon. Tous droits réservés.</p>
+            </div>
+        </footer>
+
+    </div> 
+
+    <button id="backToTop" title="Retour en haut">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    
+    <script src="../static/js/main.js"></script>
+</body>
+</html>

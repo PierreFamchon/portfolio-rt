@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de compétences en Réseaux & Télécommunications - Pierre FAMCHON">
+    <title>Accueil - Portfolio Pierre Famchon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    <aside class="sidebar">
+        <div class="logo-container-cyber">
+            <a href="https://iut-bethune.univ-artois.fr/formation/but-reseaux-et-telecommunications/" target="_blank" rel="noopener noreferrer">
+                <img src="../static/assets/logo/logo_artois1.jpg" alt="Université d'Artois" class="sidebar-logo-cyber">
+            </a>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">🏠</span> <span>Accueil</span>
+            </a>
+
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-btn" onclick="toggleDropdown()" style="width: 100%; border: none; background: transparent; cursor: pointer;">
+                    <span class="nav-icon">📂</span> <span>Compétences</span> <i class="fa fa-caret-down" style="margin-left: auto;"></i>
+                </button>
+                <div class="dropdown-container" id="compMenu" style="display: none; background: rgba(0,0,0,0.2); padding-left: 20px;">
+                    <a href="administrer.html" class="nav-item"><span class="nav-icon">⚙️</span> <span>Administrer</span></a>
+                    <a href="connecter.html" class="nav-item"><span class="nav-icon">🌐</span> <span>Connecter</span></a>
+                    <a href="programmer.html" class="nav-item"><span class="nav-icon">💻</span> <span>Programmer</span></a>
+                    <a href="securiser.html" class="nav-item"><span class="nav-icon">🛡️</span> <span>Sécuriser</span></a>
+                    <a href="surveiller.html" class="nav-item"><span class="nav-icon">📊</span> <span>Surveiller</span></a>
+                </div>
+            </div>
+            
+            <a href="#" class="nav-item locked" onclick="verifierAcces('labs.html')">
+                <span class="nav-icon">🧪</span> <span>Labs</span>
+            </a>
+            <a href="#" class="nav-item locked" onclick="verifierAcces('projets.html')">
+                <span class="nav-icon">🚀</span> <span>Projets</span>
+            </a>
+            <a href="certification.html" class="nav-item">
+                <span class="nav-icon">🎓</span> <span>Certifications</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <main class="content">
+            
+            <header class="page-header">
+                <h1>Bienvenue</h1>
+                <p class="intro-text">Portfolio d'Ingénierie Réseaux, Systèmes & Cybersécurité</p>
+            </header>
+
+            <nav class="page-nav">
+                <a href="#acceuil" class="page-nav-link"><i class="fa-solid fa-house"></i> Accueil</a>
+                <a href="#competences" class="page-nav-link"><i class="fa-solid fa-screwdriver-wrench"></i> Compétences</a>
+                <a href="#cv" class="page-nav-link"><i class="fa-solid fa-file-pdf"></i> CV</a>
+            </nav>
+
+            <div class="project-card" id="acceuil">
+                <h2>Profil Professionnel</h2>
+                <p>Bienvenue sur mon portfolio de compétences. Actuellement étudiant en Réseaux & Télécommunications, ce portail centralise mes expertises techniques et mes réalisations majeures.</p>
+                <p>À travers ce parcours, vous découvrirez ma capacité à concevoir des infrastructures complexes, à sécuriser des systèmes d'information et à automatiser des processus d'administration.</p>
+            </div>
+
+            <h2 id="competences">Piliers de Compétences</h2>
+
+            <div class="cards-section">
+                <div class="cards-container">
+
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-server"></i></div>
+                        <h3>Administrer</h3>
+                        <p>Pilotage d'infrastructures et gestion des services d'annuaire.</p>
+                        <div class="tags">
+                            <span class="tag tag-blue">AD DS</span>
+                            <span class="tag tag-green">Linux/Unix</span>
+                        </div>
+                        <a href="administrer.html" class="card-btn">Explorer</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3>Connecter</h3>
+                        <p>Design de topologies LAN/WAN et ingénierie de routage.</p>
+                        <div class="tags">
+                            <span class="tag tag-blue">Cisco IOS</span>
+                            <span class="tag tag-blue">Architecture</span>
+                        </div>
+                        <a href="connecter.html" class="card-btn">Explorer</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>Programmer</h3>
+                        <p>Développement d'outils métier et DevOps.</p>
+                        <div class="tags">
+                            <span class="tag tag-red">Python</span>
+                            <span class="tag tag-green">Automation</span>
+                        </div>
+                        <a href="programmer.html" class="card-btn">Explorer</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Sécuriser</h3>
+                        <p>Audits de vulnérabilités et filtrage périmétrique.</p>
+                        <div class="tags">
+                            <span class="tag tag-red">Hardening</span>
+                            <span class="tag tag-green">VPN/IPsec</span>
+                        </div>
+                        <a href="securiser.html" class="card-btn">Explorer</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Surveiller</h3>
+                        <p>Disponibilité des services et analyse de métriques.</p>
+                        <div class="tags">
+                            <span class="tag tag-green">Observabilité</span>
+                            <span class="tag tag-blue">SNMP</span>
+                        </div>
+                        <a href="surveiller.html" class="card-btn">Explorer</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <h2 id="cv">CURRICULUM VITAE</h2>
+
+            <div class="project-card">
+                <h2>CV - Pierre Famchon - Réseaux & Télécommunications 3ème année</h2>
+                <p>Mon parcours académique et mes expériences en milieu professionnel détaillés dans un document de synthèse.</p>
+                <a href="../static/assets/Rapport/CV_Pierre_Famchon.pdf" target="_blank" class="btn-pdf">📄 Consulter le CV (PDF)</a>
+                <iframe src="../static/assets/Rapport/CV_Pierre_Famchon.pdf" class="pdf-frame" style="height: 800px;"></iframe>
+            </div>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Pierre FAMCHON</h3>
+                    <p>Futur Administrateur Systèmes & Réseaux</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/ton-profil" target="_blank" rel="noopener noreferrer" class="social-btn linkedin">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/PierreFamchon" target="_blank" rel="noopener noreferrer" class="social-btn github">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <a href="mailto:pierre_famchon1@ens.univ-artois.fr" class="social-btn email">
+                        <i class="fa-solid fa-envelope"></i> Email
+                    </a>
+                    <a href="../static/assets/Rapport/CV_Pierre_Famchon.pdf" download class="social-btn cv-btn">
+                        <i class="fa-solid fa-file-pdf"></i> CV
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 - Portfolio Pierre Famchon. Tous droits réservés.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../static/js/main.js"></script>
+</body>
+</html>
