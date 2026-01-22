@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Pierre Famchon - Compétence Sécuriser">
+    <title>Sécuriser - Portfolio Pierre Famchon</title>
+    
+    <link rel="icon" sizes="700x700" href="static/assets/logo/favicon.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <canvas id="network-canvas"></canvas>
+    <div id="cursor-crosshair"></div>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    <aside class="sidebar">
+        <div class="logo-container-cyber">
+            <div class="hex-frame">
+                <a href="https://iut-bethune.univ-artois.fr/formation/but-reseaux-et-telecommunications/" target="_blank" rel="noopener noreferrer">
+                    <img src="static/assets/logo/logo_artois1.jpg" alt="Université d'Artois" class="sidebar-logo-cyber">
+                </a>
+            </div>
+            <div class="user-id">ID: PIERRE_FAMCHON</div>
+        </div>
+    
+        <nav class="nav-menu">
+            <div class="nav-label">NAVIGATION</div>
+
+            <a href="index.html" class="nav-item">
+                <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-house"></i></span> 
+                <span class="nav-text">ACCUEIL</span>
+            </a>
+
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-btn active" onclick="toggleDropdown()">
+                    <span class="nav-indicator"></span>
+                    <span class="nav-icon"><i class="fa-solid fa-folder-tree"></i></span> 
+                    <span class="nav-text">COMPÉTENCES </span> 
+                    <i class="fa fa-caret-down dropdown-arrow"></i>
+                </button>
+            
+                <div class="dropdown-container" id="compMenu" style="display: block;">
+                    <div class="tree-line"></div> 
+                    <a href="administrer.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Administrer
+                    </a>
+                    <a href="connecter.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Connecter
+                    </a>
+                    <a href="programmer.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Programmer
+                    </a>
+                    <a href="securiser.html" class="nav-item sub-item active"> <span class="sub-arrow">L</span> Sécuriser
+                    </a>
+                    <a href="surveiller.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Surveiller
+                    </a>
+                </div>
+            </div>
+        
+            <a href="certification.html" class="nav-item">
+                <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-certificate"></i></span> 
+                <span class="nav-text">CERTIFICATIONS</span>
+            </a>
+
+            <div class="nav-label mt-4">SECURE_AREA</div>
+
+            <a href="#" class="nav-item locked-item" onclick="verifierAcces('labs.html')">
+                <span class="nav-icon"><i class="fa-solid fa-flask"></i></span> 
+                <span class="nav-text">LABS [LOCKED]</span>
+                <i class="fa-solid fa-lock lock-icon"></i>
+            </a>
+            <a href="#" class="nav-item locked-item" onclick="verifierAcces('projets.html')">
+                <span class="nav-icon"><i class="fa-solid fa-rocket"></i></span> 
+                <span class="nav-text">PROJETS [LOCKED]</span>
+                <i class="fa-solid fa-lock lock-icon"></i>
+            </a>
+        </nav>
+
+        <div class="sidebar-status">
+            <div class="status-row">
+                <span class="blink-dot"></span> SYSTEM READY
+            </div>
+            <div class="status-row small">
+                V.2.0.4
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-wrapper">
+        <main class="content">
+            
+            <header class="page-header">
+                <h1 id="typewriter-text" data-text="Sécuriser">Sécuriser</h1>
+                <p class="intro-text">Analyser les risques, auditer les vulnérabilités et mettre en œuvre des solutions de sécurité périmétrique et interne.</p>
+            </header>
+
+            <nav class="page-nav reveal-on-scroll">
+                <a href="#competences" class="page-nav-link"><i class="fa-solid fa-screwdriver-wrench"></i> Compétences</a>
+                <a href="#projet" class="page-nav-link"><i class="fa-solid fa-rocket"></i> Projet Phare</a>
+                <a href="#rapport" class="page-nav-link"><i class="fa-solid fa-file-pdf"></i> Rapport</a>
+            </nav>
+
+            <h2 id="competences" class="reveal-on-scroll">Apprentissages Critiques - Niveau 2 : <br>➥ Mettre en œuvre un système d'information sécurisé</h2>
+            
+            <div class="skills-container reveal-on-scroll">
+                <details>
+                    <summary><span class="numbert">AC34.01</span> | Participer activement à une analyse de risque pour définir une politique de sécurité</summary>
+                    <div class="skill-detail">
+                        <h3>Gouvernance et Conformité (Référentiel ANSSI)</h3>
+                        <p>Pour structurer la sécurité du Système d'Information (<code>SI</code>), j'ai adopté une approche formelle basée sur le <strong>Guide d'hygiène de l'ANSSI</strong>. J'ai réalisé un audit complet comparant l'architecture existante aux recommandations officielles :</p>
+                        <ul>
+                            <li><strong>Élaboration de la PSSI :</strong> Rédaction de la Politique de Sécurité des Systèmes d'Information définissant les règles de complexité des mots de passe, la gestion des comptes à privilèges et la journalisation des événements.</li>
+                            <li><strong>Classification des Actifs :</strong> Cartographie des ressources critiques (Serveur <span class="protocol">DNS</span>, Base de données utilisateurs) pour définir des zones de confiance distinctes (<code>Admin</code>, <code>Production</code>, <code>Service</code>).</li>
+                        </ul>
+
+                        <h3>Analyse des Menaces et Tests d'Intrusion (Pentest)</h3>
+                        <p>J'ai validé la robustesse de cette politique par une phase offensive (<strong>Red Teaming</strong>) visant à exploiter les vulnérabilités potentielles avant leur correction :</p>
+                        <ul>
+                            <li><strong>Scénarios d'Attaque :</strong> Simulation d'attaques <strong>Man-in-the-Middle</strong> et de <strong><span class="protocol">DNS</span> Spoofing</strong> via l'outil <span class="service">Bettercap</span> pour démontrer les risques d'interception de trafic non chiffré.</li>
+                            <li><strong>Scan de Vulnérabilités :</strong> Utilisation de <span class="service">Nmap</span> (<code>nmap -sS -p-</code>) pour auditer la surface d'attaque exposée et vérifier l'efficacité du filtrage des ports non essentiels.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC34.02</span> | Mettre en oeuvre des outils avancés de sécurisation d'une infrastructure du réseau</summary>
+                    <div class="skill-detail">
+                        <h3>Architecture de Sécurité Périmétrique (<span class="service">Cisco ASA</span>)</h3>
+                        <p>J'ai déployé une sécurité en profondeur reposant sur des pare-feux <span class="service">Cisco ASA</span> (Adaptive Security Appliance) pour contrôler hermétiquement les frontières du réseau :</p>
+                        <ul>
+                            <li><strong>Zoning et Security Levels :</strong> Implémentation d'une politique de sécurité basée sur des niveaux de confiance stricts : <code>Inside</code> (niveau <span class="numbert">100</span>) pour le LAN, <code>Outside</code> (niveau <span class="numbert">0</span>) pour le WAN, et <code>DMZ</code> (niveau <span class="numbert">50</span>) pour les serveurs exposés.</li>
+                            <li><strong>Inspection Dynamique (DPI) :</strong> Configuration de l'inspection protocolaire via le <strong>Modular Policy Framework</strong> (MPF). J'ai défini des <code>policy-map</code> pour analyser la conformité des flux applicatifs (<span class="protocol">HTTP</span>, <span class="protocol">DNS</span>, <span class="protocol">ICMP</span>) et rejeter les paquets malformés.</li>
+                        </ul>
+
+                        <h3>Segmentation et Filtrage Granulaire</h3>
+                        <p>Au sein du réseau local, j'ai renforcé l'isolation pour empêcher les mouvements latéraux en cas de compromission :</p>
+                        <ul>
+                            <li><strong>Listes de Contrôle d'Accès (<span class="protocol">ACL</span>) :</strong> Application du principe de moindre privilège avec des <span class="protocol">ACL étendues</span> (ex: <code>access-list VLAN20_30_BLOCK</code>). Cela interdit par défaut toute communication entre les <span class="protocol">VLANs</span> <code>Production</code> et <code>Service</code>, n'autorisant que les flux d'administration légitimes.</li>
+                            <li><strong>Haute Disponibilité :</strong> Mise en place du protocole <span class="protocol">HSRP</span> (Hot Standby Router Protocol) avec authentification et préemption (<code>standby priority 110</code>) pour assurer la redondance de la passerelle par défaut.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC34.03</span> | Sécuriser les systèmes d'exploitation et les services</summary>
+                    <div class="skill-detail">
+                        <h3>Durcissement des Services Web et Applicatifs (Hardening)</h3>
+                        <p>J'ai sécurisé la couche applicative en durcissant les configurations du serveur Web <span class="service">Nginx</span> et de l'application <span class="service">Python</span>/<span class="service">Flask</span> contre les attaques <strong>OWASP Top 10</strong> :</p>
+                        <ul>
+                            <li><strong>Sécurité <span class="protocol">HTTP</span> :</strong> Configuration de <span class="service">Nginx</span> en Reverse Proxy avec enforcement <span class="protocol">TLS 1.3</span> et ajout d'en-têtes de sécurité stricts : <strong>Strict-Transport-Security</strong> (<span class="protocol">HSTS</span>), <code>X-Content-Type-Options: nosniff</code> et <code>X-Frame-Options: SAMEORIGIN</code>.</li>
+                            <li><strong>Protection de l'Authentification :</strong> Développement de mécanismes défensifs incluant un CAPTCHA JavaScript, le hachage des mots de passe via <span class="protocol">PBKDF2</span> (bibliothèque <span class="service">Werkzeug</span>) et la protection contre le Brute-Force avec <span class="service">Fail2Ban</span>.</li>
+                        </ul>
+
+                        <h3>Intégrité de l'Infrastructure (<span class="protocol">DNSSEC</span>)</h3>
+                        <p>Pour contrer les attaques par empoisonnement de cache <span class="protocol">DNS</span>, j'ai déployé une chaîne de confiance cryptographique complète :</p>
+                        <ul>
+                            <li><strong>Signature de Zone :</strong> Signature de la zone <code>societe2.pepiniere.rt</code> sur <span class="service">Windows Server</span> (<span class="service">AD</span>) avec des clés asymétriques (<span class="protocol">KSK</span> <span class="numbert">2048</span> bits et <span class="protocol">ZSK</span> <span class="numbert">1024</span> bits).</li>
+                            <li><strong>Validation :</strong> Vérification de la propagation des enregistrements <code>DNSKEY</code> et <code>RRSIG</code> via <span class="service">PowerShell</span> (<code>Resolve-DnsName -DnssecOk</code>), garantissant l'authenticité des réponses <span class="protocol">DNS</span>.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC34.04</span> | Proposer une architecture sécurisée de système d'information</summary>
+                    <div class="skill-detail">
+                        <h3>Interconnexion de Sites Sécurisée (<span class="protocol">VPN IPsec</span>)</h3>
+                        <p>Pour relier le <strong>Siège</strong> et la <strong>Succursale</strong> via un réseau non sûr, j'ai conçu un tunnel chiffré garantissant la confidentialité et l'intégrité des données en transit :</p>
+                        <ul>
+                            <li><strong>Tunneling Site-à-Site :</strong> Configuration d'un <span class="protocol">VPN IPsec</span> sur l'interface <code>Tunnel0</code>. J'ai utilisé des paramètres cryptographiques robustes pour la phase <code>IKE</code> et le chiffrement des données.</li>
+                            <li><strong>Routage Sécurisé :</strong> Déploiement du protocole <span class="protocol">OSPF</span> (Zone <span class="numbert">0</span>) à travers le tunnel pour assurer une convergence dynamique du réseau sans exposer la topologie interne sur le <span class="protocol">WAN</span> public.</li>
+                        </ul>
+
+                        <h3>Durcissement des Équipements Réseau</h3>
+                        <p>La sécurité physique et logique des équipements d'infrastructure (Routeurs, Switchs) a été renforcée pour prévenir les accès non autorisés :</p>
+                        <ul>
+                            <li><strong>Administration Sécurisée (AAA) :</strong> Désactivation totale du protocole <span class="protocol">Telnet</span> (texte clair) au profit de <span class="protocol">SSHv2</span>. Chiffrement des mots de passe locaux (<code>service password-encryption</code>) et définition de privilèges administrateurs (niveau <span class="numbert">15</span>).</li>
+                            <li><strong>Sécurité de Niveau 2 :</strong> Activation de fonctionnalités de protection sur les commutateurs, telles que le <span class="protocol">Port Security</span> pour limiter les adresses MAC par port et le <span class="protocol">DHCP Snooping</span> pour empêcher l'injection de serveurs DHCP malveillants.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <div style="margin-top: 30px;" class="cyber-line reveal-on-scroll"></div>
+
+            <h2 id="projet" class="reveal-on-scroll">Projet de référence : SAE4.Cyber.01 - Sécuriser un système d’information</h2>
+
+            <div class="project-card reveal-on-scroll">
+                <div class="btn-container">
+                    <a href="https://drive.google.com/drive/folders/14dnl3YUhIJ5iiYPs_7zIFCroPPdnZ0Dm?usp=drive_link" target="_blank" class="custom-btn btn-drive"><i class="fab fa-google-drive"></i> Accéder aux fichiers</a>
+                    <a href="https://github.com/PierreFamchon/RT2-Projets/tree/main/BUT%20SEMESTRE%204%20_%20SAE%20/SAE4.Cyber.01%20-%20Sécuriser%20un%20système%20d’information" target="_blank" class="custom-btn btn-github"><i class="fab fa-github"></i> Voir le projet</a>
+                </div>
+
+                <h2>SAE <span class="numbert">4</span>.Cyber.<span class="numbert">01</span> - Architecture Multi-Sites Sécurisée</h2>
+                <p style="font-size: 1.15em;">Audit, conception et déploiement d'une infrastructure réseau et applicative résiliente face aux cybermenaces, basée sur les recommandations de l'ANSSI.</p>
+
+                <h3><span class="number">1.</span> Architecture et Topologie</h3>
+                <p>Le projet repose sur une topologie <strong>Siège/Succursale</strong> interconnectée par un tunnel <span class="protocol">VPN IPsec</span>. L'objectif était de transformer un réseau "plat" et vulnérable en une forteresse numérique.</p>
+                <ul>
+                    <li><strong>Matériel :</strong> <span class="numbert">3</span> Routeurs, <span class="numbert">2</span> Switchs de niveau 3, <span class="numbert">2</span> Firewalls <span class="service">Cisco ASA</span>.</li>
+                    <li><strong>Service Visé :</strong> Assurer la disponibilité des services Web et <span class="protocol">DNS</span> en <code>DMZ</code> tout en protégeant les postes de travail du LAN interne.</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/secu/securiser_infra.jpg" class="project-img" alt="Topologie Réseau Siège/Succursale avec DMZ et VPN" onclick="openLightbox(this)">
+                    <figcaption>Architecture réseau sécurisée : Topologie Siège/Succursale avec DMZ et Tunnel VPN</figcaption>
+                </figure>
+
+                <h3><span class="number">2.</span> Implémentation du Filtrage (<span class="service">Cisco ASA</span>)</h3>
+                <p>La sécurité périmétrique est assurée par deux pare-feux <strong><span class="service">Cisco ASA</span></strong> configurés avec une politique de zonage stricte :</p>
+                <ul>
+                    <li><strong>Segmentation par Niveaux de Sécurité :</strong> Définition des zones <em>Inside</em> (Level <span class="numbert">100</span>), <em>Outside</em> (Level <span class="numbert">0</span>) et <em>DMZ</em> (Level <span class="numbert">50</span>) pour cloisonner les flux.</li>
+                    <li><strong>Inspection Deep Packet (DPI) :</strong> Utilisation de <code>Modular Policy Framework (MPF)</code> pour inspecter dynamiquement les protocoles (<span class="protocol">HTTP</span>, <span class="protocol">DNS</span>, <span class="protocol">ICMP</span>) et prévenir les attaques applicatives.</li>
+                    <li><strong>Filtrage <span class="protocol">ACL</span> :</strong> Règles strictes interdisant le trafic initié depuis la <code>DMZ</code> vers le réseau interne (Inside) pour bloquer les mouvements latéraux.</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/secu/securiser_filtrage.jpg" class="project-img" alt="Schéma des règles de filtrage sur Cisco ASA" onclick="openLightbox(this)">
+                    <figcaption>Matrice de filtrage et segmentation des zones de sécurité (ASA)</figcaption>
+                </figure>
+
+                <h3><span class="number">3.</span> Sécurisation de l'Infrastructure <span class="protocol">DNS</span> (<span class="protocol">DNSSEC</span>)</h3>
+                <p>Le service <span class="protocol">DNS</span> (<span class="service">BIND</span>/<span class="service">Windows</span>), hébergé dans le VLAN Admin, est une cible critique pour les attaques de type <em>Cache Poisoning</em>. J'ai implémenté le protocole <span class="protocol">DNSSEC</span> pour garantir l'intégrité et l'origine des données.</p>
+                <ul>
+                    <li><strong>Signature de Zone :</strong> La zone <code>societe2.pepiniere.rt</code> a été signée numériquement en utilisant l'algorithme <strong><span class="protocol">RSA</span>/<span class="protocol">SHA-256</span></strong>.</li>
+                    <li><strong>Gestion des Clés (KSK/ZSK) :</strong> Déploiement d'une infrastructure à deux clés pour renforcer la sécurité :
+                        <ul class="tech-list">
+                            <li><strong>Key Signing Key (<span class="protocol">KSK</span>) :</strong> Clé longue de <span class="numbert">2048</span> bits pour signer les clés de zone.</li>
+                            <li><strong>Zone Signing Key (<span class="protocol">ZSK</span>) :</strong> Clé de <span class="numbert">1024</span> bits pour signer les enregistrements de ressources (RRsets).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Validation et Tests d'attaque :</strong>
+                        <ul class="tech-list">
+                            <li>Vérification via <span class="service">PowerShell</span> avec la commande <code>Resolve-DnsName ... -DnssecOk</code> qui confirme la présence des enregistrements <code>RRSIG</code> et <code>DNSKEY</code>.</li>
+                            <li>Test de résilience face à une attaque de <strong><span class="protocol">DNS</span> Spoofing</strong> lancée avec <em><span class="service">Bettercap</span></em>. L'attaque a échoué ("Echec temporaire dans la résolution"), prouvant que le client rejette les réponses falsifiées non signées.</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <figure>
+                    <img src="static/assets/img/secu/securiser_dns.jpg" class="project-img" alt="Capture d'écran de validation DNSSEC sur Windows Server" onclick="openLightbox(this)">
+                    <figcaption>Preuve de validation DNSSEC : Présence des enregistrements RRSIG</figcaption>
+                </figure>
+
+                <h3><span class="number">4.</span> Sécurisation Web Avancée (<span class="service">Nginx</span> & <span class="service">Flask</span>)</h3>
+                <p>La protection des services Web hébergés en <code>DMZ</code> a été traitée en profondeur, en sécurisant à la fois le serveur frontal et l'application backend :</p>
+                <ul>
+                    <li><strong>Reverse Proxy <span class="service">Nginx</span> Durci :</strong> 
+                        <ul class="tech-list">
+                            <li>Terminaison SSL/TLS avec certificats X.509 et restriction aux protocoles <code>TLSv1.2 / TLSv1.3</code>.</li>
+                            <li>Injection d'en-têtes de sécurité : <code>HSTS</code> (Max-Age 1 an), <code>X-Frame-Options: SAMEORIGIN</code> (Anti-Clickjacking) et <code>X-XSS-Protection</code>.</li>
+                            <li>Masquage des versions (<code>server_tokens off</code>) pour limiter la reconnaissance.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Protection Applicative (WAF & Code) :</strong>
+                        <ul class="tech-list">
+                            <li>Développement d'un <strong>Captcha dynamique</strong> en JavaScript pour bloquer les bots sur les formulaires d'authentification.</li>
+                            <li>Hachage sécurisé des mots de passe utilisateurs via la bibliothèque <code>Werkzeug.security</code> (<span class="protocol">SHA-256</span>).</li>
+                            <li>Mise en place de <strong><span class="service">Fail2Ban</span></strong> (Jail <code>[nginx-http-auth]</code>) pour bannir les IPs après <span class="numbert">3</span> échecs de connexion (Brute-Force).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/secu/securiser_websecu.jpg" class="project-img" alt="Redirection HTTPS forcée et cadenas de sécurité" onclick="openLightbox(this)">
+                    <figcaption>Durcissement Web : HTTPS forcé et certificat TLS valide</figcaption>
+                </figure>
+
+                <h3><span class="number">5.</span> Conformité ANSSI & Gouvernance</h3>
+                <p>La démarche de sécurisation s'est appuyée sur le <strong>Guide d'hygiène informatique de l'ANSSI</strong>. J'ai réalisé un audit de conformité complet :</p>
+                <ul>
+                    <li><strong>Matrice de Conformité :</strong> Création d'un tableur croisant les règles du guide ANSSI (gestion des accès, mises à jour, journalisation) avec les mesures appliquées sur le projet.</li>
+                    <li><strong>Définition de la PSSI :</strong> Élaboration des règles de la Politique de Sécurité des Systèmes d'Information, imposant notamment la séparation des tâches et la centralisation des logs.</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/secu/securiser_ANSSI.jpg" class="project-img" alt="Extrait de la matrice de conformité ANSSI" onclick="openLightbox(this)">
+                    <figcaption>Tableau de conformité vis-à-vis du guide d'hygiène de l'ANSSI</figcaption>
+                </figure>
+
+                <h3><span class="number">6.</span> Validation par Tests d'Intrusion (Pentest)</h3>
+                <p>Pour valider l'efficacité des mesures défensives, j'ai mené une campagne de tests offensifs (Red Teaming) :</p>
+                <ul>
+                    <li><strong>Attaque MITM & DNS Spoofing :</strong> Tentative d'empoisonnement <span class="protocol">DNS</span> avec l'outil <strong><span class="service">Bettercap</span></strong>. Résultat : Échec de l'attaque grâce à la validation <span class="protocol">DNSSEC</span>.</li>
+                    <li><strong>Reconnaissance :</strong> Scan de ports via <strong><span class="service">Nmap</span></strong> (<code>nmap -sS -p-</code>). Résultat : Seuls les ports <code>80</code>/<code>443</code> sont visibles, confirmant l'efficacité du filtrage ASA.</li>
+                    <li><strong>Injection SQL :</strong> Tests d'injection sur le formulaire de login <span class="service">Flask</span> (<code>OR 1=1--</code>). Résultat : Bloqués par l'utilisation de requêtes paramétrées (<code>cursor.execute</code>) dans le code <span class="service">Python</span>.</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/secu/securiser_pentest.jpg" class="project-img" alt="Terminal Kali Linux avec exécution de Bettercap et Nmap" onclick="openLightbox(this)">
+                    <figcaption>Phase de Pentest : Scan de ports et tentative d'attaque Man-in-the-Middle</figcaption>
+                </figure>
+                
+            </div>
+
+            <div style="margin-top: 30px;" class="cyber-line reveal-on-scroll"></div>
+
+            <h2 id="rapport" class="reveal-on-scroll">Rapport Détaillé du projet</h2>
+
+            <div class="project-card reveal-on-scroll" id="rapport-card">
+                <h2>Rapport : SAE <span class="numbert">4</span>.Cyber.<span class="numbert">01</span> - Architecture Multi-Sites Sécurisée</h2>
+                <div class="btn-container">
+                    <a href="static/assets/Rapport/SAE 4.01(securiser).pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-alt"></i> Consulter l'Audit et le Rapport Technique (PDF)</a>  
+                    <iframe src="static/assets/Rapport/SAE 4.01(securiser).pdf" class="pdf-frame" title="Rapport d'audit de sécurité" style="height: 800px;"></iframe>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="site-footer reveal-on-scroll">
+            <div class="cyber-line"></div>
+
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-identity">
+                        <span class="cmd-symbol">></span> Pierre_FAMCHON <span class="cursor-blink">_</span>
+                    </div>
+                    <p class="footer-role">Admin Sys & Réseaux</p>
+                </div>
+
+                <div class="footer-col social-col">
+                    <a href="https://www.linkedin.com/in/pierre-famchon-rt/" target="_blank" class="cyber-link" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/PierreFamchon" target="_blank" class="cyber-link" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="mailto:pierre_famchon1@ens.univ-artois.fr" class="cyber-link" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="static/assets/Rapport/CV_Pierre_Famchon.pdf" download class="cyber-link" aria-label="CV">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                </div>
+
+                <div class="footer-col right-col">
+                    <div class="system-status">
+                        <span class="status-dot"></span> ONLINE
+                    </div>
+                    <p class="copyright">&copy; 2025 All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <button id="backToTop" title="Retour en haut">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Image agrandie">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <script src="static/js/main.js"></script>
+
+    <div id="cyber-modal" class="modal-overlay">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="red-dot"></span>
+                <span class="yellow-dot"></span>
+                <span class="green-dot"></span>
+                <span class="terminal-title">ACCESS_CONTROL_V1.0</span>
+            </div>
+            <div class="terminal-body">
+                <div class="lock-icon"><i class="fa-solid fa-user-lock"></i></div>
+                <p class="status-text">> ZONE RESTREINTE DÉTECTÉE...</p>
+                <p class="status-text">> VEUILLEZ SAISIR LES IDENTIFIANTS :</p>
+            
+                <div class="input-container">
+                    <span class="prompt-char">$</span>
+                    <input type="password" id="cyber-pass" placeholder="_" autocomplete="off">
+                </div>
+
+                <div id="access-msg" class="message-log"></div>
+
+                <div class="terminal-footer">
+                    <button onclick="fermerModal()" class="cyber-btn cancel">ABORT</button>
+                    <button onclick="validerCode()" class="cyber-btn confirm">EXECUTE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

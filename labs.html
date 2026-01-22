@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Pierre Famchon - Labs techniques et archives académiques">
+    <title>Labs - Espace Technique Pierre Famchon</title>
+    
+    <link rel="icon" sizes="700x700" href="static/assets/logo/favicon.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <canvas id="network-canvas"></canvas>
+    <div id="cursor-crosshair"></div>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <aside class="sidebar">
+        <div class="logo-container-cyber">
+            <div class="hex-frame">
+                <a href="https://iut-bethune.univ-artois.fr/formation/but-reseaux-et-telecommunications/" target="_blank" rel="noopener noreferrer">
+                    <img src="static/assets/logo/logo_artois1.jpg" alt="Université d'Artois" class="sidebar-logo-cyber">
+                </a>
+            </div>
+            <div class="user-id">ID: PIERRE_FAMCHON</div>
+        </div>
+        
+        <nav class="nav-menu">
+            <div class="nav-label">NAVIGATION</div>
+
+            <a href="index.html" class="nav-item">
+                <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-house"></i></span> 
+                <span class="nav-text">ACCUEIL</span>
+            </a>
+
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-btn" onclick="toggleDropdown()">
+                    <span class="nav-indicator"></span>
+                    <span class="nav-icon"><i class="fa-solid fa-folder-tree"></i></span> 
+                    <span class="nav-text">COMPÉTENCES </span> 
+                    <i class="fa fa-caret-down dropdown-arrow"></i>
+                </button>
+                
+                <div class="dropdown-container" id="compMenu">
+                    <div class="tree-line"></div>
+                    <a href="administrer.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Administrer
+                    </a>
+                    <a href="connecter.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Connecter
+                    </a>
+                    <a href="programmer.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Programmer
+                    </a>
+                    <a href="securiser.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Sécuriser
+                    </a>
+                    <a href="surveiller.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Surveiller
+                    </a>
+                </div>
+            </div>
+            
+            <a href="certification.html" class="nav-item">
+                <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-certificate"></i></span> 
+                <span class="nav-text">CERTIFICATIONS</span>
+            </a>
+
+            <div class="nav-label mt-4">SECURE_AREA</div>
+
+            <a href="labs.html" class="nav-item active"> 
+                <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-flask"></i></span> 
+                <span class="nav-text">LABS [OPEN]</span>
+                <i class="fa-solid fa-lock-open lock-icon" style="color: var(--neon-green);"></i>
+            </a>
+            
+            <a href="#" class="nav-item locked-item" onclick="verifierAcces('projets.html')">
+                <span class="nav-icon"><i class="fa-solid fa-rocket"></i></span> 
+                <span class="nav-text">PROJETS [LOCKED]</span>
+                <i class="fa-solid fa-lock lock-icon"></i>
+            </a>
+        </nav>
+
+        <div class="sidebar-status">
+            <div class="status-row">
+                <span class="blink-dot"></span> SYSTEM READY
+            </div>
+            <div class="status-row small">
+                V.2.0.4
+            </div>
+        </div>
+    </aside>
+    
+    <div class="main-wrapper">
+        <main class="content">
+            
+            <header class="page-header">
+                <h1 id="typewriter-text" data-text="Labs & Expérimentations">Labs & Expérimentations</h1>
+                <p class="intro-text">Banque de ressources techniques, comptes-rendus d'ateliers et archives académiques.</p>
+            </header>
+
+            <nav class="page-nav reveal-on-scroll">
+                <a href="#competences" class="page-nav-link"><i class="fa-solid fa-list-check"></i> Ateliers Phares</a>
+                <a href="#projet" class="page-nav-link"><i class="fa-solid fa-diagram-project"></i> Labs de Références</a>
+                <a href="#archives" class="page-nav-link"><i class="fa-solid fa-file-pdf"></i> Archives</a>
+            </nav>
+
+            <section class="featured-section reveal-on-scroll" id="competences">
+                <h2>🏆 Ateliers Phares</h2>
+                <div class="featured-grid">
+                    
+                    <div class="card tilt-card reveal-on-scroll">
+                        <div class="card-icon"><i class="fa-solid fa-user-secret"></i></div>
+                        <h3>Audit & Pentesting</h3>
+                        <p class="featured-desc">
+                            Simulation d'un test d'intrusion (Black Box) visant à identifier et exploiter des vulnérabilités critiques (Injections, XSS) pour évaluer la robustesse du SI.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag tag-security">Kali Linux</span>
+                            <span class="tag tag-security">Metasploit</span>
+                            <span class="tag tag-network">Nmap</span>
+                        </div>
+
+                        <div class="round-btn-container">
+                            <a href="static/assets/Rapport/TP_Audit.pdf" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card tilt-card reveal-on-scroll">
+                        <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
+                        <h3>POC Sécurité Wi-Fi</h3>
+                        <p class="featured-desc">
+                            Mise en place d'une infrastructure Wi-Fi sécurisée (802.1x) couplée à un serveur RADIUS et analyse des vecteurs d'attaques sans-fil.
+                        </p>
+                        
+                        <div class="tech-tags">
+                            <span class="tag tag-system">FreeRADIUS</span>
+                            <span class="tag tag-network">WPA2 Enterprise</span>
+                            <span class="tag tag-system">Linux</span>
+                        </div>
+
+                        <div class="round-btn-container">
+                            <a href="static/assets/sujets/TP-POCWiFi.pdf" target="_blank" class="round-btn btn-drive" aria-label="Lire le Sujet de TP"><i class="fas fa-list-ol"></i></a>
+                            <a href="static/assets/Rapport/TP_POCWIFI.pdf" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card tilt-card reveal-on-scroll">
+                        <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Supervision Zabbix</h3>
+                        <p class="featured-desc">
+                            Déploiement d'une solution de monitoring complète pour surveiller l'état des serveurs et équipements réseaux (CPU, Bande passante) via le protocole SNMP.
+                        </p>
+                        
+                        <div class="tech-tags">
+                            <span class="tag tag-system">Zabbix</span>
+                            <span class="tag tag-network">SNMP</span>
+                            <span class="tag tag-system">Docker</span>
+                        </div>
+                        <div class="round-btn-container">
+                            <a href="static/assets/sujets/TP-Zabbix.pdf" target="_blank" class="round-btn btn-drive" aria-label="Lire le Sujet de TP"><i class="fas fa-list-ol"></i></a>
+                            <a href="#" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <div style="margin-top: 30px;" class="cyber-line reveal-on-scroll"></div>
+
+            <section class="featured-section reveal-on-scroll" id="projet">
+                <h2>⚡ Labs de Référence</h2>
+                <div class="featured-grid">
+                    
+                    <div class="card tilt-card reveal-on-scroll">
+                        <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3>Architecture OSPF</h3>
+                        <p class="featured-desc">Configuration complète d'un routage dynamique multi-area sous Cisco Packet Tracer.</p>
+                        <div class="tech-tags">
+                            <span class="tag tag-network">Cisco IOS</span>
+                            <span class="tag tag-network">OSPF</span>
+                        </div>
+                        <div class="round-btn-container">
+                            <a href="static/assets/sujets/TP-Reseau4.pdf" target="_blank" class="round-btn btn-drive" aria-label="Lire le Sujet de TP"><i class="fas fa-list-ol"></i></a>
+                            <a href="static/assets/Rapport/TP_Reseau4.pdf" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card tilt-card reveal-on-scroll">
+                        <div class="card-icon"><i class="fa-brands fa-linux"></i></div>
+                        <h3>Scripting Bash Auto</h3>
+                        <p class="featured-desc">Script d'automatisation de création d'utilisateurs et gestion des permissions.</p>
+                        <div class="tech-tags">
+                            <span class="tag tag-system">Bash</span>
+                            <span class="tag tag-system">Linux</span>
+                        </div>
+                        <div class="round-btn-container">
+                            <a href="#" target="_blank" class="round-btn btn-drive" aria-label="Lire le Sujet de TP"><i class="fas fa-list-ol"></i></a>
+                            <a href="#" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card tilt-card reveal-on-scroll">
+                        <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+                        <h3>Audit Wireshark</h3>
+                        <p class="featured-desc">Analyse de trames et décodage d'une communication VoIP non sécurisée.</p>
+                        <div class="tech-tags">
+                            <span class="tag tag-network"><i class="fa-solid fa-fish-fins"></i> Wireshark</span>
+                            <span class="tag tag-security">VoIP</span>
+                        </div>
+                        <div class="round-btn-container">
+                            <a href="static/assets/sujets/TP-Reseau6.pdf" target="_blank" class="round-btn btn-drive" aria-label="Lire le Sujet de TP"><i class="fas fa-list-ol"></i></a>
+                            <a href="static/assets/Rapport/TP_Reseau6.pdf" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card tilt-card reveal-on-scroll">
+                        <div class="card-icon"><i class="fa-solid fa-filter"></i></div>
+                        <h3>Filtrage ACL</h3>
+                        <p class="featured-desc">Mise en place de règles de filtrage (ACL standard et étendue) sur infrastructure Cisco.</p>
+                        <div class="tech-tags">
+                            <span class="tag tag-network">Cisco IOS</span>
+                            <span class="tag tag-security">Sécurité</span>
+                            <span class="tag tag-network">Routage</span>
+                        </div>
+                        <div class="round-btn-container">
+                            <a href="static/assets/sujets/TP-Reseau8.pdf" target="_blank" class="round-btn btn-drive" aria-label="Lire le Sujet de TP"><i class="fas fa-list-ol"></i></a>
+                            <a href="static/assets/Rapport/TP_Reseau8.pdf" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card tilt-card reveal-on-scroll">
+                        <div class="card-icon"><i class="fa-brands fa-python"></i></div>
+                        <h3>Flask Web App</h3>
+                        <p class="featured-desc">Développement d'un site web dynamique avec Python Flask, déploiement et configuration.</p>
+                        <div class="tech-tags">
+                            <span class="tag tag-system"><i class="fa-brands fa-python"></i> Python</span>
+                            <span class="tag tag-system">Flask</span>
+                            <span class="tag tag-network">Web</span>
+                        </div>
+                        <div class="round-btn-container">
+                            <a href="static/assets/sujets/TP-Flask.pdf" target="_blank" class="round-btn btn-drive" aria-label="Lire le Sujet de TP"><i class="fas fa-list-ol"></i></a>
+                            <a href="static/assets/Rapport/TP_Flask.pdf" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card tilt-card reveal-on-scroll">
+                        <div class="card-icon"><i class="fa-solid fa-server"></i></div>
+                        <h3>Hardening Nginx</h3>
+                        <p class="featured-desc">Sécurisation serveur web : Certificats SSL/TLS, En-têtes HTTP (HSTS, X-Frame) et DNS.</p>
+                        <div class="tech-tags">
+                            <span class="tag tag-system">Nginx</span>
+                            <span class="tag tag-security"><i class="fa-solid fa-lock"></i> SSL/TLS</span>
+                            <span class="tag tag-system">Linux</span>
+                        </div>
+                        <div class="round-btn-container">
+                            <a href="static/assets/sujets/TP-HTTP.pdf" target="_blank" class="round-btn btn-drive" aria-label="Lire le Sujet de TP"><i class="fas fa-list-ol"></i></a>
+                            <a href="static/assets/Rapport/TP_HTTP.pdf" target="_blank" class="round-btn btn-report" aria-label="Lire le Rapport détaillé"><i class="fas fa-file-alt"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <div style="margin-top: 30px;" class="cyber-line reveal-on-scroll"></div>
+
+            <section class="archive-section" id="archives">
+                <h2 style="margin-bottom: 30px;" class="reveal-on-scroll">📂 Archives Académiques</h2>
+
+                <div class="year-block">
+                    <h3 class="year-title-small reveal-on-scroll">Première Année (RT1)</h3>
+                    
+                    <div class="semester-accordion reveal-on-scroll">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="header-left">
+                                <span class="semester-name">Semestre 1</span>
+                                <div class="mini-tags">
+                                    <span class="badge badge-blue">Réseaux</span>
+                                    <span class="badge badge-green">Système & OS</span>
+                                    <span class="badge badge-orange">Web Statique</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">
+                                <p><strong>Modules :</strong></p>
+                                <ul>
+                                    <li>R1.01 - Initiation aux réseaux informatiques</li>
+                                    <li>R1.02 - Principes et architecture des réseaux</li>
+                                    <li>R1.03 - Réseaux locaux et équipements actifs</li>
+                                    <li>R1.04 - Fondamentaux des systèmes électroniques</li>
+                                    <li>R1.05 - Supports de transmission pour les réseaux</li>
+                                    <li>R1.06 - Architecture des systèmes numériques et informatiques</li>
+                                    <li>R1.07 - Fondamentaux de la programmation</li>
+                                    <li>R1.08 - Base des systèmes d'exploitation</li>
+                                    <li>R1.09 - Introduction aux technologies Web</li>
+                                    <li>R1.10 - Anglais technique</li>
+                                    <li>R1.11 - Communication</li>
+                                    <li>R1.12 - PPP : Connaitre son champ d'activité</li>
+                                    <li>R1.13 - Mathématique du signal</li>
+                                    <li>R1.14 - Mathématique des transmissions</li>
+                                    <li>R1.15 - Gestion de projet</li>
+                                </ul>
+                                <a href="https://drive.google.com/drive/folders/1OjnZKqr4eQpcNALvt9TIDPvQnEJZ7krN?usp=drive_link" target="_blank" rel="noopener noreferrer" class="drive-btn full-width">📂 Accéder au dossier Drive S1</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="semester-accordion reveal-on-scroll">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="header-left">
+                                <span class="semester-name">Semestre 2</span>
+                                <div class="mini-tags">
+                                    <span class="badge badge-purple">Virtualisation</span>
+                                    <span class="badge badge-blue">Téléphonie</span>
+                                    <span class="badge badge-yellow">Données & Web</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">
+                                <p><strong>Modules :</strong></p>
+                                <ul>
+                                    <li>R2.01 - Technologie de l'Internet</li>
+                                    <li>R2.02 - Administration système et fondamentaux de la virtualisation</li>
+                                    <li>R2.03 - Base des services réseaux</li>
+                                    <li>R2.04 - Initialisation à la téléphonie d'entreprise</li>
+                                    <li>R2.05 - Signaux et systèmes pour les transmissions</li>
+                                    <li>R2.06 - Numérisation de l'information</li>
+                                    <li>R2.07 - Source de données</li>
+                                    <li>R2.08 - Analyse et traitement de données structurées</li>
+                                    <li>R2.09 - Initialisation au développement Web</li>
+                                    <li>R2.10 - Anglais technique</li>
+                                    <li>R2.13 - Mathématiques des systèmes numériques</li>
+                                    <li>R2.14 - Mathématiques des transmissions</li>
+                                </ul>
+                                <a href="https://drive.google.com/drive/folders/1algwmPqMIQG-xjaNI_sBNeXtkVod6YXu?usp=drive_link" target="_blank" rel="noopener noreferrer" class="drive-btn full-width">📂 Accéder au dossier Drive S2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="year-block">
+                    <h3 class="year-title-small reveal-on-scroll">Deuxième Année (RT2)</h3>
+                    
+                    <div class="semester-accordion reveal-on-scroll">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="header-left">
+                                <span class="semester-name">Semestre 3</span>
+                                <div class="mini-tags">
+                                    <span class="badge badge-red">Pentesting</span>
+                                    <span class="badge badge-green">Annuaire AD</span>
+                                    <span class="badge badge-blue">Fibre Optique</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">
+                                <p><strong>Modules :</strong></p>
+                                <ul>
+                                    <li>R3.01 - Réseaux de Campus</li>
+                                    <li>R3.02 - Réseau opérateurs</li>
+                                    <li>R3.03 - Services réseaux avancés</li>
+                                    <li>R3.04 - Services d'annuaires</li>
+                                    <li>R3.05 - Chaines de transmissions numériques</li>
+                                    <li>R3.06 - Fibres optiques et propagation</li>
+                                    <li>R3.07 - Réseaux d'accès</li>
+                                    <li>R3.08 - Consolidation de la programmation</li>
+                                    <li>R3.09 - Programmation événementielle</li>
+                                    <li>R3.10 - Gestion de la base de données</li>
+                                    <li>R3.12 - Expression culture communication professionnel</li>
+                                    <li>R3.13 - Analyse de Fourier</li>
+                                    <li>R3.15 - Gestion de projet</li>
+                                    <li>R3.Cyber.16 - Méthodologie du pentesting</li>
+                                </ul>
+                                <a href="https://drive.google.com/drive/folders/1UpDPjEKtic8BEklPJgWbJbusEUxyNI-T?usp=drive_link" target="_blank" rel="noopener noreferrer" class="drive-btn full-width">📂 Accéder au dossier Drive S3</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="semester-accordion reveal-on-scroll">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="header-left">
+                                <span class="semester-name">Semestre 4</span>
+                                <div class="mini-tags">
+                                    <span class="badge badge-purple">Réseaux Mobiles</span>
+                                    <span class="badge badge-red">Cryptographie</span>
+                                    <span class="badge badge-yellow">Automatisation</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">
+                                <p><strong>Modules :</strong></p>
+                                <ul>
+                                    <li>R4.01 - Infrastructure de sécurité</li>
+                                    <li>R4.02 - Transmissions avancées</li>
+                                    <li>R4.04 - Réseaux cellulaires</li>
+                                    <li>R4.05 - Automatisation des taches d'administration</li>
+                                    <li>R4.07 - Communication</li>
+                                    <li>R4.Cyber.09 - Sécurité des réseaux LAN</li>
+                                    <li>R4.Cyber.10 - Cryptographie</li>
+                                    <li>R4.Cyber.11 - Sécurisation de services réseaux</li>
+                                </ul>
+                                <a href="https://drive.google.com/drive/folders/1j6VErByRonLkv7mLrR1NAgdyoMFsA_9_?usp=drive_link" target="_blank" rel="noopener noreferrer" class="drive-btn full-width">📂 Accéder au dossier Drive S4</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="year-block">
+                    <h3 class="year-title-small reveal-on-scroll">Troisième Année (RT3)</h3>
+                    
+                    <div class="semester-accordion reveal-on-scroll">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="header-left">
+                                <span class="semester-name">Semestre 5</span>
+                                <div class="mini-tags">
+                                    <span class="badge badge-red">Audit & Gouv</span>
+                                    <span class="badge badge-blue">Management</span>
+                                    <span class="badge badge-green">Cloud</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">
+                                <p><strong>Modules :</strong></p>
+                                <ul>
+                                    <li>R5.01 - WIFI Avancé</li>
+                                    <li>R5.02 - Supervision des réseaux</li>
+                                    <li>R5.03 - Ingénierie de systèmes télécoms</li>
+                                    <li>R5.04 - Cycle de vie d'un projet informatique</li>
+                                    <li>R5.07 - Projet personnel et professionnel</li>
+                                    <li>R5.08 - Gestion de projet</li>
+                                    <li>R5.Cyber.09 - Architectures sécurisées</li>
+                                    <li>R5.Cyber.10 - Audits de sécurité</li>
+                                    <li>R5.Cyber.11 - Supervision de la sécurité</li>
+                                    <li>R5.Cyber.12 - Normes, standards et analyse de risques</li>
+                                </ul>
+                                <a href="https://drive.google.com/drive/folders/1hAB67Zb9pYLof5mua_CMqCGPlUKymgkk?usp=drive_link" class="drive-btn full-width">📂 Accéder au dossier Drive S5</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="semester-accordion reveal-on-scroll">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="header-left">
+                                <span class="semester-name">Semestre 6</span>
+                                <div class="mini-tags">
+                                    <span class="badge badge-purple">Stage Long</span>
+                                    <span class="badge badge-orange">Réponse Incident</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="content-inner">
+                                <p><strong>Modules :</strong></p>
+                                <ul>
+                                    <li>R6.03 - Connaissance de l'entreprise (GE)</li>
+                                    <li>R6.Cyber.04 - Réponse à incident</li>
+                                    <li>Stage en entreprise (22 à 26 semaines)</li>
+                                </ul>
+                                <a href="https://drive.google.com/drive/folders/1_z4P0OyIz0hLc9Qky6hF7xjAe2781OAt?usp=drive_link" class="drive-btn full-width">📂 Accéder au dossier Drive S6</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+        
+        <footer class="site-footer reveal-on-scroll">
+            <div class="cyber-line"></div>
+
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-identity">
+                        <span class="cmd-symbol">></span> Pierre_FAMCHON <span class="cursor-blink">_</span>
+                    </div>
+                    <p class="footer-role">Admin Sys & Réseaux</p>
+                </div>
+
+                <div class="footer-col social-col">
+                    <a href="https://www.linkedin.com/in/pierre-famchon-rt/" target="_blank" class="cyber-link" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/PierreFamchon" target="_blank" class="cyber-link" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="mailto:pierre_famchon1@ens.univ-artois.fr" class="cyber-link" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="static/assets/Rapport/CV_Pierre_Famchon.pdf" download class="cyber-link" aria-label="CV">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                </div>
+
+                <div class="footer-col right-col">
+                    <div class="system-status">
+                        <span class="status-dot"></span> ONLINE
+                    </div>
+                    <p class="copyright">&copy; 2025 All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div> 
+
+    <button id="backToTop" title="Retour en haut">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Image agrandie">
+        <div id="lightbox-caption"></div>
+    </div>
+    
+    <script src="static/js/main.js"></script>
+
+    <div id="cyber-modal" class="modal-overlay">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="red-dot"></span>
+                <span class="yellow-dot"></span>
+                <span class="green-dot"></span>
+                <span class="terminal-title">ACCESS_CONTROL_V1.0</span>
+            </div>
+            <div class="terminal-body">
+                <div class="lock-icon"><i class="fa-solid fa-user-lock"></i></div>
+                <p class="status-text">> ZONE RESTREINTE DÉTECTÉE...</p>
+                <p class="status-text">> VEUILLEZ SAISIR LES IDENTIFIANTS :</p>
+            
+                <div class="input-container">
+                    <span class="prompt-char">$</span>
+                    <input type="password" id="cyber-pass" placeholder="_" autocomplete="off">
+                </div>
+
+                <div id="access-msg" class="message-log"></div>
+
+                <div class="terminal-footer">
+                    <button onclick="fermerModal()" class="cyber-btn cancel">ABORT</button>
+                    <button onclick="validerCode()" class="cyber-btn confirm">EXECUTE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

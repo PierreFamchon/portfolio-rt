@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Pierre Famchon - Compétence Administrer : Systèmes et Réseaux">
+    <title>Administrer - Portfolio Pierre Famchon</title>
+    
+    <link rel="icon" sizes="700x700" href="static/assets/logo/favicon.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <canvas id="network-canvas"></canvas>
+    <div id="cursor-crosshair"></div>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    <aside class="sidebar">
+        <div class="logo-container-cyber">
+            <div class="hex-frame">
+                <a href="https://iut-bethune.univ-artois.fr/formation/but-reseaux-et-telecommunications/" target="_blank" rel="noopener noreferrer">
+                    <img src="static/assets/logo/logo_artois1.jpg" alt="Université d'Artois" class="sidebar-logo-cyber">
+                </a>
+            </div>
+            <div class="user-id">ID: PIERRE_FAMCHON</div>
+        </div>
+    
+        <nav class="nav-menu">
+            <div class="nav-label">NAVIGATION</div>
+
+            <a href="index.html" class="nav-item">
+                <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-house"></i></span> 
+                <span class="nav-text">ACCUEIL</span>
+            </a>
+
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-btn active" onclick="toggleDropdown()">
+                    <span class="nav-indicator"></span>
+                    <span class="nav-icon"><i class="fa-solid fa-folder-tree"></i></span> 
+                    <span class="nav-text">COMPÉTENCES </span> 
+                    <i class="fa fa-caret-down dropdown-arrow"></i>
+                </button>
+            
+                <div class="dropdown-container" id="compMenu" style="display: block;"> <div class="tree-line"></div> 
+                    <a href="administrer.html" class="nav-item sub-item active"> <span class="sub-arrow">L</span> Administrer
+                    </a>
+                    <a href="connecter.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Connecter
+                    </a>
+                    <a href="programmer.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Programmer
+                    </a>
+                    <a href="securiser.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Sécuriser
+                    </a>
+                    <a href="surveiller.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Surveiller
+                    </a>
+                </div>
+            </div>
+        
+            <a href="certification.html" class="nav-item">
+                <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-certificate"></i></span> 
+                <span class="nav-text">CERTIFICATIONS</span>
+            </a>
+
+            <div class="nav-label mt-4">SECURE_AREA</div>
+
+            <a href="#" class="nav-item locked-item" onclick="verifierAcces('labs.html')">
+                <span class="nav-icon"><i class="fa-solid fa-flask"></i></span> 
+                <span class="nav-text">LABS [LOCKED]</span>
+                <i class="fa-solid fa-lock lock-icon"></i>
+            </a>
+            <a href="#" class="nav-item locked-item" onclick="verifierAcces('projets.html')">
+                <span class="nav-icon"><i class="fa-solid fa-rocket"></i></span> 
+                <span class="nav-text">PROJETS [LOCKED]</span>
+                <i class="fa-solid fa-lock lock-icon"></i>
+            </a>
+        </nav>
+
+        <div class="sidebar-status">
+            <div class="status-row">
+                <span class="blink-dot"></span> SYSTEM READY
+            </div>
+            <div class="status-row small">
+                V.2.0.4
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-wrapper">
+        <main class="content">
+            
+            <header class="page-header">
+                <h1 id="typewriter-text" data-text="Administrer">Administrer</h1>
+                <p class="intro-text">Concevoir, déployer et administrer des infrastructures réseaux et systèmes complexes.</p>
+            </header>
+
+            <nav class="page-nav reveal-on-scroll">
+                <a href="#competences" class="page-nav-link"><i class="fa-solid fa-screwdriver-wrench"></i> Compétences</a>
+                <a href="#projet" class="page-nav-link"><i class="fa-solid fa-rocket"></i> Projet Phare</a>
+                <a href="#rapport" class="page-nav-link"><i class="fa-solid fa-file-pdf"></i> Rapport</a>
+            </nav>
+
+            <h2 id="competences" class="reveal-on-scroll">Apprentissages Critiques - Niveau 3 : <br>➥ Concevoir un réseau</h2>
+            
+            <div class="skills-container reveal-on-scroll">
+                <details>
+                    <summary><span class="numbert">AC31.01</span> | Concevoir un projet de réseau informatique d’une entreprise en intégrant les problématique de haute disponibilité, de QoS, de sécurité et de supervision</summary>
+                    <div class="skill-detail">
+                        <h3>Vision Stratégique et Architecture <span class="service">VDI</span></h3>
+                        <p>Dans le cadre de la SAE <span class="numbert">5.01</span>, j'ai conçu une infrastructure de virtualisation (<span class="service">VDI</span>) complète pour répondre aux besoins de flexibilité des TP étudiants. L'architecture repose sur une segmentation stricte des zones :</p>
+                        <ul>
+                            <li><strong>Zone WAN (IUT) :</strong> Interface d'accès public connectée au réseau universitaire.</li>
+                            <li><strong>Zone LAN Privée (<code>192.168.1.0/24</code>) :</strong> Réseau totalement isolé hébergeant les machines virtuelles et les services critiques (<span class="service">AD</span>, <span class="service">DNS</span>).</li>
+                        </ul>
+
+                        <h3>Sécurité et Filtrage Avancé</h3>
+                        <p>J'ai implémenté cette isolation au niveau de l'hyperviseur <span class="service">Proxmox</span> en configurant un pont Linux spécifique (<code>vmbr1</code>) agissant comme un switch virtuel interne, sans lien physique direct. La sécurité périmétrique est assurée par un routeur virtuel <span class="service">pfSense</span>, agissant comme point d'entrée unique. J'y ai configuré des règles de pare-feu strictes :</p>
+                        <ul>
+                            <li><strong>Blocage par défaut</strong> du trafic entrant sur le <span class="protocol">WAN</span>.</li>
+                            <li><strong>Règles d'administration :</strong> Restriction de l'accès <span class="protocol">SSH</span>/<span class="protocol">HTTPS</span> à l'hyperviseur (<code>192.168.1.251</code>) uniquement depuis le poste d'administration (<code>192.168.1.10</code>).</li>
+                            <li><strong>Port Forwarding :</strong> Redirection unique du port <span class="numbert">8080</span> vers le serveur <span class="service">Guacamole</span> (<code>172.31.19.58</code>) pour l'accès utilisateur, masquant ainsi l'infrastructure interne.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC31.02</span> | Réaliser la documentation technique de ce projet</summary>
+                    <div class="skill-detail">
+                        <h3>Dossier d'Ingénierie et Reproductibilité</h3>
+                        <p>J'ai produit un rapport technique complet garantissant la reproductibilité de l'infrastructure. Ce dossier documente chaque étape critique :</p>
+                        <ul>
+                            <li><strong>Configuration Réseau Système :</strong> Documentation explicite des fichiers de configuration, notamment <code>/etc/network/interfaces</code> sur <span class="service">Proxmox</span> pour la définition des ponts <code>vmbr0</code> (<span class="protocol">WAN</span>) et <code>vmbr1</code> (<span class="protocol">LAN</span>) .</li>
+                            <li><strong>Gestion des Contraintes Proxy :</strong> Documentation précise des adaptations nécessaires pour le réseau de l'université, incluant la configuration d'<span class="service">APT</span> (<code>/etc/apt/apt.conf.d/70proxy</code>) et des variables d'environnement <code>.bashrc</code> pour <code>wget</code>/<code>curl</code> .</li>
+                            <li><strong>Services d'Annuaire (<span class="service">DNS</span>/<span class="service">AD</span>) :</strong> Détail de la création des zones <span class="service">DNS</span> directes et inversées (zone <code>16.31.172.in-addr.arpa</code>) essentielles pour la résolution interne.</li>
+                        </ul>
+                        <h3>Suivi de Projet</h3>
+                        <p>Le dossier inclut également un tableau de planification détaillé répartissant les tâches (Installation Hyperviseur, Configuration <span class="service">pfSense</span>, Automatisation) et identifiant les responsables pour chaque phase, assurant une traçabilité des actions.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC31.03</span> | Réaliser une maquette de démonstration du projet</summary>
+                    <div class="skill-detail">
+                        <h3>Déploiement Opérationnel et "Golden Images"</h3>
+                        <p>Pour valider la faisabilité technique, j'ai déployé une maquette fonctionnelle sur un serveur physique <span class="service">Proxmox VE</span> <span class="numbert">8.0</span>. J'ai administré la création de "<strong>Golden Images</strong>" (Templates <span class="service">Windows 10</span> et <span class="service">Ubuntu Desktop</span>) préparées avec l'agent <span class="service">qemu-guest-agent</span> et des scripts d'intégration (<code>join-ad.sh</code>) pour une jonction automatique au domaine <span class="service">Active Directory</span> au démarrage (<strong>Zero Touch</strong>) .</p>
+
+                        <h3>Automatisation via <span class="service">Python</span>/<span class="service">Flask</span></h3>
+                        <p>La maquette intègre une couche d'orchestration développée en <span class="service">Python</span> (<span class="service">Flask</span>). Ce portail web interagit avec les <span class="protocol">API REST</span> de l'infrastructure pour automatiser le cycle de vie des VMs :</p>
+                        <ul>
+                            <li><strong>Interaction API <span class="service">Proxmox</span> :</strong> Clonage et démarrage des VMs via des requêtes authentifiées par Token API (<code>root@pam!guacamole</code>).</li>
+                            <li><strong>Innovation <span class="service">DNS</span> (Gain de performance) :</strong> Plutôt que d'attendre la remontée d'IP par l'agent <span class="service">QEMU</span> (lent), j'ai développé une logique de prédiction <span class="service">DNS</span> (<code>nom_vm.dom-famchon.rt.lan</code>) permettant de configurer la connexion <span class="service">Guacamole</span> instantanément après la création de la VM .</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC31.04</span> | Défendre/argumenter un projet</summary>
+                    <div class="skill-detail">
+                        <h3>Justification des Choix Technologiques</h3>
+                        <p>J'ai défendu l'architecture retenue en mettant en avant plusieurs axes stratégiques :</p>
+                        <ul>
+                            <li><strong>Interopérabilité et Open Source :</strong> Choix de <span class="service">Proxmox VE</span> pour sa licence libre et son <span class="protocol">API REST</span> native facilitant l'automatisation, contrairement aux solutions propriétaires. Choix d'<span class="service">Apache Guacamole</span> pour offrir un accès "<strong>Clientless</strong>" (<span class="protocol">HTML5</span>) supportant <span class="protocol">RDP</span>/<span class="protocol">SSH</span> sans installation sur le poste client.</li>
+                            <li><strong>Sécurité Centralisée :</strong> Argumentation sur l'utilisation de <span class="service">pfSense</span> (base <span class="service">FreeBSD</span>) pour centraliser les services critiques (<span class="protocol">DHCP</span>, <span class="protocol">NAT</span>, <span class="service">DNS Resolver</span>) et filtrer les flux entre la zone étudiante et le cœur de réseau.</li>
+                            <li><strong>Green IT et Sobriété Numérique :</strong> Démonstration de l'impact écologique du projet. La mutualisation des ressources sur un serveur unique remplace <span class="numbert">30</span> unités centrales physiques. De plus, le script d'automatisation lutte contre le "<strong>VM Sprawl</strong>" (machines zombies) en facilitant la suppression des environnements après usage, optimisant ainsi l'espace de stockage et la consommation énergétique .</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC31.05</span> | Communiquer avec les acteurs du projet</summary>
+                    <div class="skill-detail">
+                        <h3>Coordination et Résolution de Problèmes</h3>
+                        <p>La réussite du projet a reposé sur une communication technique précise entre les membres de l'équipe (répartition des phases <span class="numbert">1</span> à <span class="numbert">7</span>). J'ai notamment dû gérer des obstacles techniques majeurs nécessitant une analyse fine :</p>
+                        <ul>
+                            <li><strong>Problème de l'Authentification Hybride :</strong> Identification de l'absence native de l'extension <span class="protocol">LDAP</span> dans le paquet <span class="service">Guacamole</span>. J'ai documenté et communiqué la procédure de téléchargement manuel du <code>.jar</code> et la configuration du <code>guacamole.properties</code> pour lier l'<span class="service">AD</span> (<code>172.31.19.59</code>) .</li>
+                            <li><strong>Gestion du Proxy Universitaire :</strong> Le script <span class="service">Python</span>, bien que local, échouait à contacter l'<span class="service">API Proxmox</span> à cause du proxy de l'établissement. J'ai diagnostiqué le problème et implémenté une solution de contournement (<strong>Bypass Proxy</strong>) en injectant un dictionnaire <code>NO_PROXY</code> dans les requêtes <span class="service">Python</span>, assurant la communication entre le backend et l'hyperviseur.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC31.06</span> | Gérer le projet et les différentes étapes de sa mise en œuvre en respectant les délais</summary>
+                    <div class="skill-detail">
+                        <h3>Pilotage et Planification par Phases</h3>
+                        <p>J'ai structuré le projet selon une méthodologie rigoureuse découpée en phases distinctes pour respecter les délais et livrer une solution "clé en main". Le suivi a été assuré via un tableau de bord :</p>
+                        <ul>
+                            <li><strong>Infrastructure (Phases <span class="numbert">1</span> & <span class="numbert">2</code>) :</strong> Déploiement du socle (<span class="service">Proxmox</span>) et sécurisation réseau (<span class="service">pfSense</span>).</li>
+                            <li><strong>Services (Phases <code>3</code> & <code>4</code>) :</strong> Mise en place de l'<span class="service">Active Directory</span> (<span class="service">AD</span>) et de la passerelle <span class="service">Guacamole</span>.</li>
+                            <li><strong>Automatisation (Phases <code>5</code> & <code>6</code>) :</strong> Développement du portail <span class="service">Flask</span> et préparation des templates "<strong>Zero Touch</strong>". Cette gestion séquentielle a permis de valider chaque brique technologique (<span class="protocol">LDAP</span>, <span class="protocol">API</span>, Routage) avant de passer à l'intégration finale, garantissant une plateforme opérationnelle et résiliente en fin de projet.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <div style="margin-top: 30px;" class="cyber-line reveal-on-scroll"></div>
+
+            <h2 id="projet" class="reveal-on-scroll">Projet de référence : SAE5.01 - Concevoir, réaliser et présenter une solution technique</h2>
+
+            <div class="project-card reveal-on-scroll">
+                <div class="btn-container">
+                    <a href="https://drive.google.com/drive/folders/1sZetj7Ep1P3F8sAHbQOr67aY7aTWNkFa?usp=sharing" target="_blank" class="custom-btn btn-drive"><i class="fab fa-google-drive"></i> Accéder aux fichiers</a>
+                    <a href="https://github.com/PierreFamchon/RT3-Projets/tree/main/BUT%20SEMESTRE%20S5%20_%20SAE/SAE5.01%20-%20Concevoir%2C%20r%C3%A9aliser%20et%20pr%C3%A9senter%20une%20solution%20technique" target="_blank" class="custom-btn btn-github"><i class="fab fa-github"></i> Voir le projet</a>
+                </div>
+
+                <h2>SAE <span class="numbert">5.01</span> - Infrastructure <span class="service">VDI</span></h2>
+                <p style="font-size: 1.15em;">Conception, déploiement et automatisation d'une infrastructure de virtualisation de postes de travail (<span class="service">VDI</span>) sécurisée et scalable.</p>
+
+                <figure>
+                    <img src="static/assets/img/adm/administrer_architec.jpg" class="project-img" alt="Schéma d'infrastructure" onclick="openLightbox(this)">
+                    <figcaption>Schéma synoptique de l'infrastructure VDI déployée</figcaption>
+                </figure>
+
+                <h3><span class="number">1.</span> Architecture et Dimensionnement (Green IT)</h3>
+                <p>L'objectif principal était de rationaliser les ressources informatiques de l'IUT. J'ai conçu une architecture permettant de consolider <strong><span class="numbert">30</span> postes physiques obsolètes</strong> sur un unique serveur hyperviseur performant (Dell PowerEdge R720), réduisant ainsi l'empreinte carbone et la consommation électrique du parc.</p>
+                <ul>
+                    <li><strong>Hyperviseur :</strong> Installation "Bare Metal" de <strong><span class="service">Proxmox VE</span></strong> <span class="numbert">8.0</span> sur un volume <span class="protocol">RAID</span> matériel pour la redondance.</li>
+                    <li><strong>Stockage :</strong> Configuration de volumes <strong><span class="service">LVM-Thin</span></strong> pour permettre le "Thin Provisioning" et optimiser l'espace disque réel utilisé par les VMs étudiantes.</li>
+                    <li><strong>Réseau SDN :</strong> Création d'un commutateur virtuel <code>vmbr1</code> isolé (Bridge Linux), sans lien physique montant, pour créer une "bulle" réseau étanche (<code>192.168.1.0/24</code>) accessible uniquement via la passerelle de sécurité.</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/adm/administrer_proxmox.jpg" class="project-img" alt="Interface Proxmox" onclick="openLightbox(this)">
+                    <figcaption>Interface de gestion de l'hyperviseur Proxmox VE</figcaption>
+                </figure>
+
+                <h3><span class="number">2.</span> Services Critiques et Sécurité (<span class="service">pfSense</span> & <span class="service">AD</span>)</h3>
+                <p>La sécurité et la disponibilité des services ont été assurées par la mise en place de deux briques centrales :</p>
+                <ul>
+                    <li><strong>Passerelle de Sécurité (<span class="service">pfSense</span>) :</strong>
+                        <ul>
+                            <li>Interface <span class="protocol">WAN</span> connectée au réseau IUT (via <code>vmbr0</code>) et Interface LAN (<code>192.168.1.254</code>) servant de passerelle par défaut pour tout le <span class="service">VDI</span>.</li>
+                            <li>Configuration du <strong><span class="protocol">NAT</span> Outbound</strong> pour permettre l'accès Internet aux VMs privées.</li>
+                            <li>Mise en place de règles de <strong>Port Forwarding</strong> sur le port <span class="numbert">8080</span> pour rediriger les flux <span class="protocol">HTTP</span> entrants vers le portail web interne.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <figure>
+                    <img src="../static/assets/img/adm/administrer_pfsense.jpg" class="project-img" alt="Règles pfSense" onclick="openLightbox(this)">
+                    <figcaption>Configuration des règles de filtrage sur pfSense</figcaption>
+                </figure>
+                    
+                <ul>
+                    <li><strong>Annuaire <span class="service">Active Directory</span> :</strong>
+                        <ul>
+                            <li>Déploiement d'un contrôleur de domaine <span class="service">Windows Server</span> <span class="numbert">2022</span> (<code>SRV-AD</code> - <code>192.168.1.200</code>).</li>
+                            <li>Gestion des <span class="service">DNS</span> avec redirection conditionnelle pour résoudre les domaines externes tout en servant la zone locale <code>dom-famchon.rt.lan</code>.</li>
+                            <li>Création de <span class="service">GPO</span> pour le montage automatique des lecteurs réseau et la configuration des paramètres proxy des clients.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/adm/administrer_ad.jpg" class="project-img" alt="Active Directory" onclick="openLightbox(this)">
+                    <figcaption>Gestion des utilisateurs et GPO sur Windows Server 2022</figcaption>
+                </figure>
+
+                <h3><span class="number">3.</span> Automatisation et Orchestration (<span class="service">Python</span> & <span class="protocol">API</span>)</h3>
+                <p>Pour répondre à l'exigence de "Livraison à la demande", j'ai développé une couche logicielle d'orchestration complète :</p>
+                <ul>
+                    <li><strong>Backend <span class="service">Python</span>/<span class="service">Flask</span> :</strong> Développement d'une application web agissant comme un panneau de contrôle pour les enseignants et étudiants.</li>
+                    <li><strong>Interaction <span class="protocol">API REST</span> :</strong> Utilisation de la bibliothèque <code>requests</code> et <code>proxmoxer</code> pour piloter l'hyperviseur : clonage de VM depuis un Template (Golden Image), démarrage, arrêt et suppression.</li>
+                    <li><strong>Gestion du Proxy :</strong> Résolution d'un défi technique majeur lié au proxy universitaire en implémentant un contexte d'exécution spécifique (<code>NO_PROXY</code>) dans le code <span class="service">Python</span>, permettant au serveur web de communiquer directement avec l'<span class="protocol">API</span> <span class="service">Proxmox</span> locale sans latence ni blocage.</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/adm/administrer_apipython.jpg" class="project-img" alt="Code Python" onclick="openLightbox(this)">
+                    <figcaption>Extrait du code Python d'automatisation (API Proxmox)</figcaption>
+                </figure>
+
+                <h3><span class="number">4.</span> Accès Distant et Expérience Utilisateur</h3>
+                <p>L'accès final aux machines virtuelles est assuré par une passerelle <strong><span class="service">Apache Guacamole</span></strong>, permettant aux utilisateurs d'accéder à leur environnement de travail (<span class="service">Windows</span> ou <span class="service">Linux</span>) directement depuis un navigateur web (<span class="protocol">HTML5</span>), sans installation de client lourd (<span class="protocol">RDP</span>/<span class="protocol">VNC</span>) sur leur poste personnel.</p>
+
+                <figure>
+                    <img src="static/assets/img/adm/administrer_portailwebcreavm.png" class="project-img" alt="Portail Web" onclick="openLightbox(this)">
+                    <figcaption>Portail Web : Interface de déploiement pour l'étudiant</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="static/assets/img/adm/administrer_portailwebvmcreer.png" class="project-img" alt="Session Guacamole" onclick="openLightbox(this)">
+                    <figcaption>Accès distant HTML5 via Apache Guacamole sur une VM active</figcaption>
+                </figure>
+            </div>
+
+            <div style="margin-top: 30px;" class="cyber-line reveal-on-scroll"></div>
+
+            <h2 id="rapport" class="reveal-on-scroll">Rapport Détaillé du projet</h2>
+
+            <div class="project-card reveal-on-scroll" id="rapport-card">
+                <h2>Rapport : SAE <span class="numbert">5.01</span> - Infrastructure <span class="service">VDI</span></h2>    
+                <div class="btn-container">
+                    <a href="static/assets/Rapport/SAE 5.01(administrer).pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-alt"></i> Consulter le Rapport Technique (PDF)</a>    
+                    <iframe src="static/assets/Rapport/SAE 5.01(administrer).pdf" class="pdf-frame" style="height: 800px;"></iframe>
+                </div>            
+            </div>
+        </main>
+
+        <footer class="site-footer reveal-on-scroll">
+            <div class="cyber-line"></div>
+
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-identity">
+                        <span class="cmd-symbol">></span> Pierre_FAMCHON <span class="cursor-blink">_</span>
+                    </div>
+                    <p class="footer-role">Admin Sys & Réseaux</p>
+                </div>
+
+                <div class="footer-col social-col">
+                    <a href="https://www.linkedin.com/in/pierre-famchon-rt/" target="_blank" class="cyber-link" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/PierreFamchon" target="_blank" class="cyber-link" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="mailto:pierre_famchon1@ens.univ-artois.fr" class="cyber-link" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="static/assets/Rapport/CV_Pierre_Famchon.pdf" download class="cyber-link" aria-label="CV">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                </div>
+
+                <div class="footer-col right-col">
+                    <div class="system-status">
+                        <span class="status-dot"></span> ONLINE
+                    </div>
+                    <p class="copyright">&copy; 2025 All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <button id="backToTop" title="Retour en haut">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Image agrandie">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <script src="static/js/main.js"></script>
+
+    <div id="cyber-modal" class="modal-overlay">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="red-dot"></span>
+                <span class="yellow-dot"></span>
+                <span class="green-dot"></span>
+                <span class="terminal-title">ACCESS_CONTROL_V1.0</span>
+            </div>
+            <div class="terminal-body">
+                <div class="lock-icon"><i class="fa-solid fa-user-lock"></i></div>
+                <p class="status-text">> ZONE RESTREINTE DÉTECTÉE...</p>
+                <p class="status-text">> VEUILLEZ SAISIR LES IDENTIFIANTS :</p>
+                
+                <div class="input-container">
+                    <span class="prompt-char">$</span>
+                    <input type="password" id="cyber-pass" placeholder="_" autocomplete="off">
+                </div>
+
+                <div id="access-msg" class="message-log"></div>
+
+                <div class="terminal-footer">
+                    <button onclick="fermerModal()" class="cyber-btn cancel">ABORT</button>
+                    <button onclick="validerCode()" class="cyber-btn confirm">EXECUTE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

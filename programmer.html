@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Pierre Famchon - Compétence Programmer : Développement Application ASAE23">
+    <title>Programmer - Portfolio Pierre Famchon</title>
+    
+    <link rel="icon" sizes="700x700" href="static/assets/logo/favicon.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <canvas id="network-canvas"></canvas>
+    <div id="cursor-crosshair"></div>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    <aside class="sidebar">
+        <div class="logo-container-cyber">
+            <div class="hex-frame">
+                <a href="https://iut-bethune.univ-artois.fr/formation/but-reseaux-et-telecommunications/" target="_blank" rel="noopener noreferrer">
+                    <img src="static/assets/logo/logo_artois1.jpg" alt="Université d'Artois" class="sidebar-logo-cyber">
+                </a>
+            </div>
+            <div class="user-id">ID: PIERRE_FAMCHON</div>
+        </div>
+    
+        <nav class="nav-menu">
+            <div class="nav-label">NAVIGATION</div>
+
+            <a href="index.html" class="nav-item">
+                <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-house"></i></span> 
+                <span class="nav-text">ACCUEIL</span>
+            </a>
+
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-btn active" onclick="toggleDropdown()">
+                    <span class="nav-indicator"></span>
+                    <span class="nav-icon"><i class="fa-solid fa-folder-tree"></i></span> 
+                    <span class="nav-text">COMPÉTENCES </span> 
+                    <i class="fa fa-caret-down dropdown-arrow"></i>
+                </button>
+            
+                <div class="dropdown-container" id="compMenu" style="display: block;">
+                    <div class="tree-line"></div> 
+                    <a href="administrer.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Administrer
+                    </a>
+                    <a href="connecter.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Connecter
+                    </a>
+                    <a href="programmer.html" class="nav-item sub-item active"> <span class="sub-arrow">L</span> Programmer
+                    </a>
+                    <a href="securiser.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Sécuriser
+                    </a>
+                    <a href="surveiller.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Surveiller
+                    </a>
+                </div>
+            </div>
+        
+            <a href="certification.html" class="nav-item">
+                <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-certificate"></i></span> 
+                <span class="nav-text">CERTIFICATIONS</span>
+            </a>
+
+            <div class="nav-label mt-4">SECURE_AREA</div>
+
+            <a href="#" class="nav-item locked-item" onclick="verifierAcces('labs.html')">
+                <span class="nav-icon"><i class="fa-solid fa-flask"></i></span> 
+                <span class="nav-text">LABS [LOCKED]</span>
+                <i class="fa-solid fa-lock lock-icon"></i>
+            </a>
+            <a href="#" class="nav-item locked-item" onclick="verifierAcces('projets.html')">
+                <span class="nav-icon"><i class="fa-solid fa-rocket"></i></span> 
+                <span class="nav-text">PROJETS [LOCKED]</span>
+                <i class="fa-solid fa-lock lock-icon"></i>
+            </a>
+        </nav>
+
+        <div class="sidebar-status">
+            <div class="status-row">
+                <span class="blink-dot"></span> SYSTEM READY
+            </div>
+            <div class="status-row small">
+                V.2.0.4
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-wrapper">
+        <main class="content">
+            
+            <header class="page-header">
+                <h1 id="typewriter-text" data-text="Programmer">Programmer</h1>
+                <p class="intro-text">Piloter un projet de développement d’une application R&T (Niveau 3).</p>
+            </header>
+
+            <nav class="page-nav reveal-on-scroll">
+                <a href="#competences" class="page-nav-link"><i class="fa-solid fa-list-check"></i> Compétences</a>
+                <a href="#projet" class="page-nav-link"><i class="fa-solid fa-code"></i> Projet Phare</a>
+                <a href="#rapport" class="page-nav-link"><i class="fa-solid fa-file-pdf"></i> Rapport</a>
+            </nav>
+
+            <h2 id="competences" class="reveal-on-scroll">Apprentissages Critiques - Niveau 3 : <br>➥ Piloter un projet de développement</h2>
+            
+            <div class="skills-container reveal-on-scroll">
+                <details>
+                    <summary><span class="numbert">AC33.01</span> | Élaborer les spécifications techniques et le cahier des charges d'une application informatique</summary>
+                    <div class="skill-detail">
+                        <h3>Analyse Structurelle et Modélisation de Données</h3>
+                        <p>Le développement de l'application ASAE23 a débuté par une phase d'analyse approfondie pour traduire les besoins métier en spécifications techniques précises. J'ai opté pour une architecture MVC (Modèle-Vue-Contrôleur) web classique, séparant la logique de traitement (Python/Flask) de l'interface utilisateur (HTML/Jinja2).</p>
+                        <p>La modélisation de la base de données a été cruciale. J'ai conçu un schéma relationnel normalisé (3NF) comprenant plusieurs tables interconnectées pour gérer la complexité des compétences : une table <code>BlocsCompetences</code> pour la catégorisation, une table <code>Competences</code> liée par clé étrangère, et une table de jointure <code>CompetencesNiveaux</code> faisant le lien avec <code>NiveauxAcquisition</code>. Cette structure permet une évolutivité des données sans redondance.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC33.02</span> | Mettre en place un environnement de travail collaboratif</summary>
+                    <div class="skill-detail">
+                        <h3>Standardisation de l'Environnement de Développement</h3>
+                        <p>Pour assurer la cohérence du code au sein de l'équipe et éviter les problèmes de type "ça marche sur ma machine", j'ai mis en place un environnement de développement conteneurisé strict. L'utilisation de Docker et Docker Compose a permis de définir l'infrastructure sous forme de code (IaC).</p>
+                        <p>Le fichier <code>docker-compose.yml</code> orchestre deux services distincts : un service <code>web</code> pour l'application Flask et un service <code>db</code> pour la base de données MySQL 8.0. Cette approche garantit que chaque développeur dispose exactement des mêmes versions de langages et de bases de données, facilitant ainsi l'intégration continue et le travail collaboratif via Git.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC33.03</span> | Participer à la formation des utilisateurs</summary>
+                    <div class="skill-detail">
+                        <h3>Conception Centrée Utilisateur (UX)</h3>
+                        <p>L'ergonomie de l'application a été pensée pour minimiser la courbe d'apprentissage des utilisateurs finaux. J'ai développé des interfaces intuitives utilisant le moteur de template Jinja2 pour générer dynamiquement le contenu HTML.</p>
+                        <p>Pour prévenir les erreurs de saisie lors de l'ajout ou de la modification de compétences, j'ai remplacé les champs texte libres par des menus déroulants (<code>&lt;select&gt;</code>) qui récupèrent automatiquement les données valides (Blocs, Niveaux) depuis la base de données. Cette approche guide l'utilisateur pas à pas, rendant la formation technique quasi superflue grâce à une interface auto-explicative.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC33.04</span> | Déployer et maintenir une solution informatique</summary>
+                    <div class="skill-detail">
+                        <h3>Orchestration et Maintenance Préventive</h3>
+                        <p>Le déploiement de la solution repose sur une configuration Docker Compose robuste (version 3.7). J'ai configuré le mappage des ports (<code>5001:5000</code>) pour exposer l'application Flask tout en isolant la base de données dans un réseau interne virtuel, inaccessible directement depuis l'extérieur pour des raisons de sécurité.</p>
+                        <p>Pour faciliter la maintenance et le débogage, j'ai mis en place des volumes Docker (<code>.:/web</code>) permettant la persistance des données et le rechargement à chaud du code (Hot-Reloading) via la variable d'environnement <code>FLASK_ENV=development</code>. Cela permet d'appliquer des correctifs en temps réel sans interrompre le service de base de données.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC33.05</span> | S'informer sur les évolutions et les nouveautés technologiques</summary>
+                    <div class="skill-detail">
+                        <h3>Veille Technologique et Choix Stratégiques</h3>
+                        <p>Face à l'évolution rapide des frameworks web, j'ai effectué une veille active pour sélectionner la stack technique la plus pérenne. J'ai choisi Flask pour sa légèreté et sa flexibilité par rapport à Django, mieux adapté à notre architecture micro-services.</p>
+                        <p>Concernant la base de données, j'ai dû adapter la configuration de MySQL 8.0 en forçant le plugin d'authentification <code>mysql_native_password</code> dans le fichier Docker Compose. Cette décision technique a été prise suite à l'analyse des incompatibilités récentes avec certains connecteurs Python, démontrant ma capacité à adapter l'infrastructure aux contraintes logicielles modernes.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC33.06</span> | Sécuriser l'environnement numérique d'une application</summary>
+                    <div class="skill-detail">
+                        <h3>Implémentation de la Sécurité Back-End</h3>
+                        <p>La sécurité a été une priorité absolue, intégrée directement dans le code source (Security by Design). J'ai implémenté plusieurs couches de protection critiques :</p>
+                        <ul>
+                            <li><strong>Hachage des Mots de Passe :</strong> Refusant de stocker les mots de passe en clair, j'ai utilisé la bibliothèque <code>bcrypt</code>. Chaque mot de passe est salé et haché via <code>bcrypt.hashpw</code> avant insertion en base.</li>
+                            <li><strong>Prévention des Injections SQL :</strong> Pour sécuriser les interactions avec la base de données, j'ai banni la concaténation de chaînes. Toutes les requêtes utilisent des requêtes préparées paramétrées (ex: <code>cursor.execute(query, (username,))</code>), neutralisant toute tentative d'injection de code malveillant.</li>
+                            <li><strong>Gestion de Session Sécurisée :</strong> L'accès aux fonctionnalités administratives est protégé par une vérification de session stricte (<code>session['utilisateur_authentifie']</code>).</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+            
+            <div style="margin-top: 30px;" class="cyber-line reveal-on-scroll"></div>
+
+            <h2 id="projet" class="reveal-on-scroll">Projet de référence : SAE2.03 - Mettre en place une solution informatique pour l'entreprise</h2>
+
+            <div class="project-card reveal-on-scroll">
+                <div class="btn-container">
+                    <a href="https://drive.google.com/drive/folders/17XqEUj8EUGmKM9cAQqvYEgotHEja6UXf?usp=drive_link" target="_blank" class="custom-btn btn-drive"><i class="fab fa-google-drive"></i> Accéder aux fichiers</a>
+                    <a href="https://github.com/PierreFamchon/RT1-Projets/tree/main/BUT%20SEMESTRE%202%20_%20SAE/SAE2.03%20-%20Mettre%20en%20place%20une%20solution%20informatique%20pour%20l_entreprise" target="_blank" class="custom-btn btn-github"><i class="fab fa-github"></i> Voir le projet</a>
+                </div>
+
+                <h2>SAE <span class="numbert">2.03</span> - Application Web Fullstack de Suivi de Compétences</h2>
+                <p style="font-size: 1.15em;">Conception et développement d'une plateforme centralisée pour la gestion dynamique des blocs de compétences et niveaux d'acquisition, avec une architecture sécurisée par conteneurs.</p>
+
+                <figure>
+                    <img src="static/assets/img/dev/asae23_dashboard_full.jpg" class="project-img" alt="Tableau de bord principal de l'application" onclick="openLightbox(this)">
+                    <figcaption>Vue d'ensemble : Tableau de bord dynamique agrégant les compétences par blocs via Jinja2</figcaption>
+                </figure>
+
+                <h3><span class="number">1.</span> Architecture Backend et Logique Métier</h3>
+                <p>Le cœur de l'application repose sur une API robuste développée en <strong>Python avec le framework Flask</strong>. J'ai structuré l'application autour de routes RESTful claires pour gérer les différentes interactions utilisateurs (GET pour l'affichage, POST pour le traitement). La logique métier intègre une gestion d'erreurs systématique : chaque interaction avec la base de données est encapsulée dans des blocs <code>try...except mysql.connector.Error</code> pour capturer les échecs de connexion ou les erreurs SQL et éviter le crash du serveur.</p>
+                <p>Le backend assure également la persistance et l'intégrité des données grâce à une gestion rigoureuse des transactions SQL. Pour chaque opération d'écriture (INSERT, UPDATE, DELETE), j'utilise explicitement <code>conn.commit()</code> pour valider les changements uniquement si aucune erreur ne survient, garantissant l'atomicité des transactions. La configuration de l'application utilise une clé secrète indispensable pour signer les cookies de session de manière cryptographique.</p>
+
+                <h3><span class="number">2.</span> Sécurisation Avancée et Authentification</h3>
+                <p>La sécurité a été placée au centre du développement, respectant les principes de l'OWASP pour protéger les données sensibles et les accès :</p>
+                <ul>
+                    <li><strong>Cryptographie des Mots de Passe :</strong> J'ai proscrit le stockage en clair. À l'inscription, chaque mot de passe est converti en octets (UTF-8) puis haché avec l'algorithme <strong>Bcrypt</strong> et un sel unique généré par <code>bcrypt.gensalt()</code>. Lors de la connexion, <code>bcrypt.checkpw()</code> vérifie la correspondance sans jamais décrypter le mot de passe original.</li>
+                    <li><strong>Protection contre les Injections SQL :</strong> Toutes les données issues des formulaires HTML (<code>request.form</code>) sont considérées comme non fiables. J'ai systématiquement utilisé des <strong>requêtes préparées</strong> (ex: <code>cursor.execute(query, (param1, param2))</code>) où les paramètres sont passés séparément de la requête SQL, empêchant tout attaquant d'injecter du code SQL malveillant.</li>
+                    <li><strong>Gestion de Session et Isolation :</strong> L'accès aux pages internes est verrouillé par une variable de session <code>session['utilisateur_authentifie']</code>. De plus, les identifiants de base de données (User/Pass) sont isolés dans des variables d'environnement via Docker Compose.</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/dev/asae23_login_security.jpg" class="project-img" alt="Interface de connexion sécurisée" onclick="openLightbox(this)">
+                    <figcaption>Module d'authentification sécurisé interfacé avec Bcrypt</figcaption>
+                </figure>
+                
+                <div class="code-block">
+                    <pre><code class="language-python"># Hashage avec sel unique à l'inscription (Exemple théorique basé sur l'import)
+hashed_password = bcrypt.hashpw(mot_de_passe, bcrypt.gensalt())
+
+# Requête préparée paramétrée (Anti-Injection SQL) - [Extrait app.py]
+query = "INSERT INTO user (nom, mot_de_passe) VALUES (%s, %s)"
+cursor.execute(query, (nom, hashed_password))</code></pre>
+                </div>
+
+                <h3><span class="number">3.</span> Fonctionnalités CRUD et Interface Dynamique</h3>
+                <p>L'application offre une interface complète (CRUD - Create, Read, Update, Delete) permettant une administration totale des compétences sans passer par des requêtes manuelles :</p>
+                <ul>
+                    <li><strong>Lecture et Agrégation :</strong> La vue principale n'est pas une simple liste. Le backend exécute des requêtes SQL pour structurer les données hiérarchiquement. Les données sont regroupées permettant à Jinja2 de générer un affichage organisé et lisible par Blocs.</li>
+                    <li><strong>Mise à jour Intelligente :</strong> Le formulaire de modification (<code>/modifier_competence</code>) utilise une logique en deux temps : il recherche d'abord l'ID du nouveau niveau sélectionné, puis met à jour la table de liaison <code>CompetencesNiveaux</code> via une requête UPDATE ciblée. Cela garantit l'intégrité référentielle de la base.</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/dev/asae23_crud_interface.jpg" class="project-img" alt="Interface de gestion CRUD" onclick="openLightbox(this)">
+                    <figcaption>Formulaire de modification avec sélection dynamique des niveaux</figcaption>
+                </figure>
+
+                <h3><span class="number">4.</span> Infrastructure Docker et Déploiement</h3>
+                <p>L'intégralité de l'architecture est "Dockerisée" pour assurer la portabilité du projet sur n'importe quel système hôte. Le fichier <code>docker-compose.yml</code> définit une stack technique cohérente :</p>
+                <ul>
+                    <li><strong>Service Base de Données :</strong> Utilisation d'une image <code>mysql:8.0</code> configurée spécifiquement avec l'option <code>--default-authentication-plugin=mysql_native_password</code> pour assurer la compatibilité avec le connecteur Python.</li>
+                    <li><strong>Service Web :</strong> Le conteneur Python monte le code source via un volume (<code>.:/web</code>), permettant le développement en temps réel (Hot-Reloading). Le port 5000 du conteneur est mappé sur le port 5001 de l'hôte pour éviter les conflits.</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/dev/asae23_docker_term.jpg" class="project-img" alt="Terminal Docker" onclick="openLightbox(this)">
+                    <figcaption>Orchestration des conteneurs Web et DB via Docker Compose</figcaption>
+                </figure>
+
+                <h3><span class="number">5.</span> Modélisation des Données et Requêtes Complexes</h3>
+                <p>La performance de l'application repose sur une modélisation de données relationnelle optimisée (forme normale 3NF). Plutôt que de stocker toutes les informations dans une table unique, j'ai conçu un schéma éclaté : <code>BlocsCompetences</code>, <code>Competences</code>, et <code>NiveauxAcquisition</code> sont liés par la table d'association <code>CompetencesNiveaux</code>.</p>
+                <p>Cette structure nécessite des requêtes SQL avancées pour reconstruire l'information. L'architecture permet de lier dynamiquement les tables via des jointures (<code>JOIN</code>) implicites ou explicites dans la logique Python :</p>
+                
+                <div class="code-block">
+                    <pre><code class="language-sql">-- Exemple de structure logique de la requête d'agrégation
+SELECT BC.nom, C.nom, NA.nom 
+FROM BlocsCompetences BC
+JOIN Competences C ON C.bloc_id = BC.id
+JOIN CompetencesNiveaux CN ON CN.competence_id = C.id
+JOIN NiveauxAcquisition NA ON NA.id = CN.niveau_id
+ORDER BY BC.nom ASC;</code></pre>
+                </div>
+                <p>Cette approche structurelle permet de manipuler des données complexes tout en conservant une base de données légère et sans redondance.</p>
+            </div>
+
+            <div style="margin-top: 30px;" class="cyber-line reveal-on-scroll"></div>
+
+            <h2 id="rapport" class="reveal-on-scroll">Documents du projet</h2>
+
+            <div class="project-card reveal-on-scroll" id="rapport-card">
+                <h2>Code Source & Documentation</h2>                
+                <div class="btn-container">
+                    <a href="static/assets/Rapport/Rapport_Dev_ASAE23.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-alt"></i> Consulter le Rapport Technique (PDF)</a> 
+                    <iframe src="static/assets/Rapport/Rapport_Dev_ASAE23.pdf" class="pdf-frame" title="Rapport ASAE23" style="height: 800px;"></iframe>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer reveal-on-scroll">
+            <div class="cyber-line"></div>
+
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-identity">
+                        <span class="cmd-symbol">></span> Pierre_FAMCHON <span class="cursor-blink">_</span>
+                    </div>
+                    <p class="footer-role">Admin Sys & Réseaux</p>
+                </div>
+
+                <div class="footer-col social-col">
+                    <a href="https://www.linkedin.com/in/pierre-famchon-rt/" target="_blank" class="cyber-link" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/PierreFamchon" target="_blank" class="cyber-link" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="mailto:pierre_famchon1@ens.univ-artois.fr" class="cyber-link" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="static/assets/Rapport/CV_Pierre_Famchon.pdf" download class="cyber-link" aria-label="CV">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                </div>
+
+                <div class="footer-col right-col">
+                    <div class="system-status">
+                        <span class="status-dot"></span> ONLINE
+                    </div>
+                    <p class="copyright">&copy; 2025 All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <button id="backToTop" title="Retour en haut">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Image agrandie">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-sql.min.js"></script>
+    <script src="static/js/main.js"></script>
+
+    <div id="cyber-modal" class="modal-overlay">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="red-dot"></span>
+                <span class="yellow-dot"></span>
+                <span class="green-dot"></span>
+                <span class="terminal-title">ACCESS_CONTROL_V1.0</span>
+            </div>
+            <div class="terminal-body">
+                <div class="lock-icon"><i class="fa-solid fa-user-lock"></i></div>
+                <p class="status-text">> ZONE RESTREINTE DÉTECTÉE...</p>
+                <p class="status-text">> VEUILLEZ SAISIR LES IDENTIFIANTS :</p>
+                
+                <div class="input-container">
+                    <span class="prompt-char">$</span>
+                    <input type="password" id="cyber-pass" placeholder="_" autocomplete="off">
+                </div>
+
+                <div id="access-msg" class="message-log"></div>
+
+                <div class="terminal-footer">
+                    <button onclick="fermerModal()" class="cyber-btn cancel">ABORT</button>
+                    <button onclick="validerCode()" class="cyber-btn confirm">EXECUTE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Pierre Famchon - Compétence Connecter : Réseaux et Télécoms">
+    <title>Connecter - Portfolio Pierre Famchon</title>
+    
+    <link rel="icon" sizes="700x700" href="static/assets/logo/favicon.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <canvas id="network-canvas"></canvas>
+    <div id="cursor-crosshair"></div>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    <aside class="sidebar">
+        <div class="logo-container-cyber">
+            <div class="hex-frame">
+                <a href="https://iut-bethune.univ-artois.fr/formation/but-reseaux-et-telecommunications/" target="_blank" rel="noopener noreferrer">
+                    <img src="static/assets/logo/logo_artois1.jpg" alt="Université d'Artois" class="sidebar-logo-cyber">
+                </a>
+            </div>
+            <div class="user-id">ID: PIERRE_FAMCHON</div>
+        </div>
+    
+        <nav class="nav-menu">
+            <div class="nav-label">NAVIGATION</div>
+
+            <a href="index.html" class="nav-item">
+                <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-house"></i></span> 
+                <span class="nav-text">ACCUEIL</span>
+            </a>
+
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-btn active" onclick="toggleDropdown()">
+                    <span class="nav-indicator"></span>
+                    <span class="nav-icon"><i class="fa-solid fa-folder-tree"></i></span> 
+                    <span class="nav-text">COMPÉTENCES </span> 
+                    <i class="fa fa-caret-down dropdown-arrow"></i>
+                </button>
+            
+                <div class="dropdown-container" id="compMenu" style="display: block;">
+                    <div class="tree-line"></div> 
+                    <a href="administrer.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Administrer
+                    </a>
+                    <a href="connecter.html" class="nav-item sub-item active"> <span class="sub-arrow">L</span> Connecter
+                    </a>
+                    <a href="programmer.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Programmer
+                    </a>
+                    <a href="securiser.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Sécuriser
+                    </a>
+                    <a href="surveiller.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Surveiller
+                    </a>
+                </div>
+            </div>
+        
+            <a href="certification.html" class="nav-item">
+                <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-certificate"></i></span> 
+                <span class="nav-text">CERTIFICATIONS</span>
+            </a>
+
+            <div class="nav-label mt-4">SECURE_AREA</div>
+
+            <a href="#" class="nav-item locked-item" onclick="verifierAcces('labs.html')">
+                <span class="nav-icon"><i class="fa-solid fa-flask"></i></span> 
+                <span class="nav-text">LABS [LOCKED]</span>
+                <i class="fa-solid fa-lock lock-icon"></i>
+            </a>
+            <a href="#" class="nav-item locked-item" onclick="verifierAcces('projets.html')">
+                <span class="nav-icon"><i class="fa-solid fa-rocket"></i></span> 
+                <span class="nav-text">PROJETS [LOCKED]</span>
+                <i class="fa-solid fa-lock lock-icon"></i>
+            </a>
+        </nav>
+
+        <div class="sidebar-status">
+            <div class="status-row">
+                <span class="blink-dot"></span> SYSTEM READY
+            </div>
+            <div class="status-row small">
+                V.2.0.4
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-wrapper">
+        <main class="content">
+            
+            <header class="page-header">
+                <h1 id="typewriter-text" data-text="Connecter">Connecter</h1>
+                <p class="intro-text">Maîtriser les supports de transmission, dimensionner les liens et valider la qualité de service des technologies d'accès.</p>
+            </header>
+
+            <nav class="page-nav reveal-on-scroll">
+                <a href="#competences" class="page-nav-link"><i class="fa-solid fa-screwdriver-wrench"></i> Compétences</a>
+                <a href="#projet" class="page-nav-link"><i class="fa-solid fa-rocket"></i> Projet Phare</a>
+                <a href="#rapport" class="page-nav-link"><i class="fa-solid fa-file-pdf"></i> Rapport</a>
+            </nav>
+
+            <h2 id="competences" class="reveal-on-scroll">Apprentissages Critiques - Niveau 3 : <br>➥ Déployer une solution complexe</h2>
+            
+            <div class="skills-container reveal-on-scroll">
+
+                <details>
+                    <summary><span class="numbert">AC32.01</span> | Déployer un système de communication d'entreprise</summary>
+                    <div class="skill-detail">
+                        <h3>Architecture et Segmentation <span class="protocol">VLAN</span></h3>
+                        <p>Dans le cadre du projet "Pépinière <span class="numbert">2.0</span>" (Société <span class="numbert">5</span>), j'ai conçu une architecture réseau segmentée pour garantir la fluidité et la sécurité des échanges. J'ai déployé des switchs <span class="service">Cisco Catalyst</span> en configurant des <span class="protocol">VLANs</span> par service :</p>
+                        
+                        <ul>
+                            <li><strong><span class="protocol">VLAN</span> <span class="numbert">10</span> (Administration) :</strong> <code>192.168.10.0/24</code> pour la gestion des équipements actifs.</li>
+                            <li><strong><span class="protocol">VLAN</span> <span class="numbert">20</span> (IT/Technique) :</strong> <code>192.168.20.0/24</code> hébergeant les serveurs critiques et les postes administrateurs.</li>
+                            <li><strong><span class="protocol">VLAN</span> <span class="numbert">30</span> (Production) :</strong> <code>192.168.30.0/24</code> pour les employés et les opérations courantes.</li>
+                        </ul>
+
+                        <h3>Configuration de la Commutation</h3>
+                        <p>J'ai configuré les ports des commutateurs en mode <code>access</code> pour les terminaux finaux et mis en place un lien d'agrégation <strong><span class="protocol">trunk</span></strong> (encapsulation <strong><span class="protocol">dot1q</span></strong>) sur l'interface de liaison (ex: <code>Fa0/12</code>) pour transporter les flux tagués vers le routeur. J'ai également normalisé le plan d'adressage et documenté le câblage physique pour faciliter la maintenance future.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC32.02</span> | Déployer un réseau d'accès sans fil sécurisé</summary>
+                    <div class="skill-detail">
+                        <h3>Déploiement <span class="protocol">Wi-Fi</span> et SSID</h3>
+                        <p>J'ai configuré une borne <span class="service">Cisco Aironet</span> pour diffuser le SSID <code>entreprise5</code>, utilisant le chiffrement standard <strong><span class="protocol">WPA2-AES</span></strong> (clé : <code>1315051D...</code>) pour sécuriser l'accès des employés. La borne a été paramétrée en mode <code>station-role root</code> avec une gestion fine des interfaces radio (Dot11Radio0) pour optimiser la couverture dans le bâtiment.</p>
+                        
+                        <h3>Gestion du Réseau Invité</h3>
+                        <p>Pour les visiteurs, j'ai activé le <code>guest-mode</code> associé à un <span class="protocol">VLAN</span> isolé, garantissant qu'aucun invité ne puisse accéder aux ressources internes. L'authentification utilise un compte générique. J'ai également appliqué des restrictions de bande passante avec la commande <code>rate-limit</code> pour éviter que le trafic invité ne sature le lien <span class="protocol">WAN</span> de l'entreprise.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC32.03</span> | Déployer un réseau d'accès fixe et services opérateurs</summary>
+                    <div class="skill-detail">
+                        <h3>Services Infrastructure (<span class="protocol">DHCP</span>, <span class="protocol">DNS</span>, <span class="protocol">TFTP</span>)</h3>
+                        <p>Sur l'équipement de routage, j'ai configuré les pools <span class="protocol">DHCP</span> (<code>ip dhcp pool vlanXX</code>) pour chaque sous-réseau, en prenant soin d'exclure les plages d'adresses statiques des serveurs (<code>ip dhcp excluded-address</code>). J'ai mis en place un serveur <strong><span class="service">Windows Server</span> <span class="numbert">2022</span></strong> agissant comme contrôleur de domaine (<span class="service">AD DS</span>) et serveur <span class="protocol">DNS</span> principal (<code>societe5.pepiniere.rt</code>), assurant la résolution de noms pour tout le parc.</p>
+                        
+                        <h3>Téléphonie sur IP (<span class="protocol">VoIP</span>) et <span class="protocol">QoS</span></h3>
+                        <p>J'ai déployé un serveur <strong><span class="service">Asterisk</span></strong> sur une machine virtuelle et configuré les fichiers <code>sip.conf</code> et <code>extensions.conf</code> pour gérer les appels internes et sortants. Pour garantir la qualité des appels face aux téléchargements, j'ai implémenté une politique de <strong><span class="protocol">QoS</span></strong> (Quality of Service) stricte sur les routeurs :</p>
+                        <ul>
+                            <li>Classification du trafic voix (<span class="protocol">RTP</span>/<span class="protocol">SIP</span>) avec le marquage <code>dscp ef</code> (Expedited Forwarding).</li>
+                            <li>Réservation prioritaire de bande passante via une <code>policy-map</code> appliquée sur les interfaces <span class="protocol">WAN</span>.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC32.04</span> | Connecter de manière sécurisée au système d'information</summary>
+                    <div class="skill-detail">
+                        <h3>Routage Inter-VLAN et <span class="protocol">NAT</span></h3>
+                        <p>Le routage entre les différents services a été activé sur le routeur de bordure selon la méthode "Router-on-a-stick" (sous-interfaces <code>G0/0.10</code>, <code>G0/0.20</code>, etc.). Pour l'accès Internet, j'ai configuré le <strong><span class="protocol">NAT</span> Overload</strong> (<span class="protocol">PAT</span>) avec la commande <code>ip nat inside source list NAT_VLANXX interface G0/4 overload</code>, permettant à tous les postes privés de partager l'unique adresse IP publique <code>10.5.1.1</code>.</p>
+                        
+                        <h3>Filtrage par <span class="protocol">ACL</span> (Access Control Lists)</h3>
+                        <p>J'ai sécurisé les flux inter-services à l'aide d'<span class="protocol">ACLs</span> étendues appliquées en entrée des interfaces :</p>
+                        <ul>
+                            <li><strong>Isolation stricte :</strong> Les <span class="protocol">VLANs</span> <span class="numbert">10</span> (Admin) et <span class="numbert">30</span> (Prod) ne peuvent pas communiquer entre eux (<code>deny ip ...</code>).</li>
+                            <li><strong>Accès privilégié :</strong> Le <span class="protocol">VLAN</span> <span class="numbert">20</span> (IT) dispose d'un accès complet à l'infrastructure pour l'administration <span class="protocol">SSH</span>/<span class="protocol">HTTP</span>.</li>
+                            <li><strong>Services Web :</strong> Autorisation explicite des flux <span class="protocol">HTTP</span>/<span class="protocol">HTTPS</span> vers le serveur Web Intranet pour tous les utilisateurs.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC32.05</span> | Collaborer en mode projet (Français/Anglais)</summary>
+                    <div class="skill-detail">
+                        <h3>Gestion de Projet (Gantt & RACI)</h3>
+                        <p>Pour mener à bien ce projet de groupe, nous avons structuré notre travail avec une <strong>Matrice RACI</strong> définissant clairement les responsabilités (ex: Nicolas sur le Câblage physique, Pierre sur l'Infrastructure logique). Un <strong>Diagramme de Gantt</strong> a permis de piloter les jalons critiques : validation du plan d'adressage, configuration des switchs, déploiement des services <span class="service">Docker</span>, et rédaction du rapport final.</p>
+                        
+                        <h3>Programmation Scientifique (<span class="service">Python</span>/<span class="service">Scapy</span>)</h3>
+                        <p>J'ai développé un script d'analyse réseau en <strong><span class="service">Python</span></strong> utilisant la librairie <code>scapy</code>. Ce programme est capable de parser un fichier de capture <code>.pcap</code>, d'extraire les payloads <strong><span class="protocol">RTP</span></strong> d'une conversation <span class="protocol">VoIP</span> spécifique, et d'appliquer des algorithmes de conversion (Loi-A vers Linéaire) pour reconstituer un fichier audio <code>.wav</code> audible, validant la maîtrise des protocoles de transport.</p>
+                    </div>
+                </details>
+            </div>
+
+            <div style="margin-top: 30px;" class="cyber-line reveal-on-scroll"></div>
+
+            <h2 id="projet" class="reveal-on-scroll">Projet de référence : SAE2.04 - Projet intégratif</h2>
+
+            <div class="project-card reveal-on-scroll">
+                <div class="btn-container">
+                    <a href="https://drive.google.com/drive/folders/12GNYQ42GsK-cJk-Lu4R1sOLQeFlbUU94?usp=drive_link" target="_blank" class="custom-btn btn-drive"><i class="fab fa-google-drive"></i> Accéder aux fichiers</a>
+                    <a href="https://github.com/PierreFamchon/RT1-Projets/tree/main/BUT%20SEMESTRE%202%20_%20SAE/SAE2.01%20-%2004%20-%20Construire%20un%20réseau%20informatique%20-%20Projet%20intégratif" target="_blank" class="custom-btn btn-github"><i class="fab fa-github"></i> Voir le projet</a>
+                </div>
+
+                <h2>SAE <span class="numbert">2.04</span> - Pépinière d'Entreprise : "Société <span class="numbert">5</span>"</h2>
+                <p style="font-size: 1.15em;">Ingénierie complète, déploiement physique et configuration logicielle de l'infrastructure réseau multiservices d'une PME (Data, Voix, Vidéo).</p>
+
+                <h3><span class="number">1.</span> Infrastructure Physique et Câblage Structuré</h3>
+                <p>La base du projet a reposé sur la construction physique du réseau (Couche <span class="numbert">1</span> <span class="protocol">OSI</span>). J'ai pris en charge l'organisation complète de la baie informatique pour assurer une connectivité fiable, pérenne et évolutive.</p>
+                <ul>
+                    <li><strong>Brassage et Sertissage :</strong> Raccordement manuel des câbles à paires torsadées (<span class="protocol">RJ45</span> Cat <span class="numbert">6</span>) depuis les prises murales vers les panneaux de brassage (Patch Panels), en respectant scrupuleusement la norme <strong><span class="protocol">TIA/EIA-568-B</span></strong> pour limiter la diaphonie (NEXT).</li>
+                    <li><strong>Cable Management :</strong> Utilisation de guides-câbles horizontaux et de colliers velcro pour organiser les jarretières. Cela optimise non seulement l'esthétique, mais surtout le flux d'air pour le refroidissement des équipements actifs.</li>
+                    <li><strong>Étiquetage Normalisé :</strong> Mise en place d'un plan de nommage alphanumérique strict sur les câbles et les ports pour faciliter la maintenance et réduire le temps d'intervention (MTTR).</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/connec/connecter_baie.png" class="project-img" alt="Cablage Baie" onclick="openLightbox(this)">
+                    <figcaption>Organisation et câblage structuré de la baie informatique</figcaption>
+                </figure>
+
+                <h3><span class="number">2.</span> Architecture Réseau <span class="service">Cisco</span>, <span class="protocol">Wi-Fi</span> et Sécurité</h3>
+                <p>Sur le plan logique, j'ai conçu une topologie résiliente basée sur du matériel <span class="service">Cisco</span> (Switchs <span class="numbert">2960</span>, Routeurs <span class="numbert">2900</span>). L'architecture intègre des réseaux filaires et sans-fil sécurisés.</p>
+                <ul>
+                    <li><strong>Segmentation <span class="protocol">VLAN</span> & <span class="protocol">STP</span> :</strong> Isolation des flux via <span class="protocol">VLANs</span> (<span class="numbert">10</span> Admin, <span class="numbert">20</span> IT, <span class="numbert">30</span> Prod, <span class="numbert">99</span> Management). Configuration du <strong><span class="protocol">Spanning Tree Protocol</span> (<span class="protocol">PVST+</span>)</strong> pour éviter les boucles de commutation.</li>
+                    <li><strong><span class="protocol">Wi-Fi</span> (<span class="protocol">WLAN</span>) :</strong> Déploiement de bornes d'accès légères. Configuration de SSIDs distincts (Staff vs Guest) avec chiffrement <span class="protocol">WPA2-Enterprise</span> pour les employés.</li>
+                    <li><strong>Routage & <span class="protocol">NAT</span> :</strong> Configuration du "Router-on-a-Stick" (encapsulation <span class="protocol">dot1q</span>) pour le routage inter-VLAN et du <span class="protocol">NAT</span>/<span class="protocol">PAT</span> pour permettre l'accès Internet partagé via une seule IP publique.</li>
+                </ul>
+                
+                <figure>
+                    <img src="static/assets/img/connec/connecter_infra.jpg" class="project-img" alt="Topologie Réseau Cisco" onclick="openLightbox(this)">
+                    <figcaption>Topologie logique du réseau (Switchs, Routeurs, AP)</figcaption>
+                </figure>
+                
+                <ul>
+                     <li><strong>Sécurité d'Accès (L2/L3) :</strong> 
+                        <ul>
+                            <li>Activation du <strong><span class="protocol">Port Security</span></strong> (Sticky MAC) sur les switchs pour empêcher les branchements sauvages.</li>
+                            <li>Implémentation d'<strong><span class="protocol">ACLs</span> étendues</strong> pour filtrer le trafic sensible (ex: bloquer <span class="protocol">SSH</span> depuis le <span class="protocol">Wi-Fi</span> Invité).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/connec/connecter_acl.png" class="project-img" alt="Schéma ACL étendu" onclick="openLightbox(this)">
+                    <figcaption>Schéma de principe des ACLs étendues appliquées</figcaption>
+                </figure>
+
+                <h3><span class="number">3.</span> Services Systèmes Hybrides (<span class="service">Windows</span> & <span class="service">Docker</span>)</h3>
+                <p>L'infrastructure serveur mixe la robustesse de Microsoft pour la gestion des utilisateurs et l'agilité de la conteneurisation <span class="service">Linux</span> pour les services web.</p>
+                <ul>
+                    <li><strong><span class="service">Windows Server</span> <span class="numbert">2022</span> :</strong>
+                        <ul>
+                            <li><strong><span class="service">AD DS</span> :</strong> Contrôleur de domaine pour l'authentification centralisée.</li>
+                            <li><strong><span class="protocol">DHCP</span> & <span class="protocol">DNS</span> :</strong> Création d'étendues (scopes) par <span class="protocol">VLAN</span> et gestion de la résolution de noms locale.</li>
+                            <li><strong><span class="service">GPO</span> :</strong> Déploiement de stratégies de groupe (montage automatique de lecteurs réseau, restrictions panneau de configuration).</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <figure>
+                    <img src="static/assets/img/connec/connecter_ad.jpg" class="project-img" alt="AD GPO DNS" onclick="openLightbox(this)">
+                    <figcaption>Console d'administration Active Directory et GPO</figcaption>
+                </figure>
+
+                <ul>
+                    <li><strong>Stack <span class="service">Docker</span> (Micro-services) :</strong>
+                        <ul>
+                            <li>Conteneur <strong><span class="service">Web Apache</span></strong> pour héberger l'Intranet collaboratif.</li>
+                            <li>Conteneur <strong><span class="protocol">TFTP</span></strong> pour l'automatisation des sauvegardes des fichiers de configuration (<code>running-config</code>) des équipements <span class="service">Cisco</span>.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/connec/connecter_docker.png" class="project-img" alt="Web apache et TFTP" onclick="openLightbox(this)">
+                    <figcaption>Stack Docker hébergeant les services Web et TFTP</figcaption>
+                </figure>
+
+                <h3><span class="number">4.</span> Téléphonie sur IP (<span class="protocol">ToIP</span>) et Qualité de Service (<span class="protocol">QoS</span>)</h3>
+                <p>Mise en place d'une solution complète de téléphonie permettant la communication interne et externe via le protocole <span class="protocol">SIP</span>.</p>
+                <ul>
+                    <li><strong>Serveur IPBX :</strong> Installation et paramétrage d'un standard téléphonique (type <span class="service">Asterisk</span>/<span class="service">XiVO</span>) gérant les extensions et la messagerie vocale.</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/connec/connecter_telephonie.jpg" class="project-img" alt="Interface Linphone" onclick="openLightbox(this)">
+                    <figcaption>Client Softphone Linphone connecté au serveur Asterisk</figcaption>
+                </figure>
+
+                <ul>
+                    <li><strong>Softphone <span class="service">Linphone</span> :</strong> Configuration du client <strong><span class="service">Linphone</span></strong> sur les postes de travail. Validation des appels audio et vidéo entre les différents <span class="protocol">VLANs</span>.</li>
+                    <li><strong><span class="protocol">QoS</span> (Quality of Service) :</strong> Configuration critique sur les switchs (<code>mls qos</code>) pour prioriser le trafic Voix. Marquage des paquets <span class="protocol">RTP</span> avec une valeur <strong><span class="protocol">DSCP</span> <span class="numbert">46</span> (EF)</strong> pour garantir une latence minimale et éviter la gigue (jitter) lors des appels.</li>
+                </ul>
+                
+                <figure>
+                    <img src="static/assets/img/connec/connecter_qos.png" class="project-img" alt="configuration QoS" onclick="openLightbox(this)">
+                    <figcaption>Configuration de la QoS pour la priorisation de la voix</figcaption>
+                </figure>
+
+                <h3><span class="number">5.</span> Vidéosurveillance et Mobilité (IoT)</h3>
+                <p>Intégration d'équipements connectés pour la sécurité physique des locaux.</p>
+                <ul>
+                    <li><strong>Caméra <span class="protocol">IP</span> :</strong> Raccordement d'une caméra de surveillance sur un <span class="protocol">VLAN</span> dédié, isolée du réseau de données principal pour des raisons de sécurité.</li>
+                    <li><strong>Accès Rapide (QR Code) :</strong> Génération et impression de <strong>QR Codes</strong> permettant :
+                        <ul>
+                            <li>Aux visiteurs de se connecter instantanément au <span class="protocol">Wi-Fi</span> "Guest".</li>
+                            <li>Aux agents de sécurité d'accéder directement au flux vidéo de la caméra via une URL sécurisée sur tablette.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/connec/connecter_camqrcode.jpg" class="project-img" alt="Vue caméra IP et QR Code d'accès" onclick="openLightbox(this)">
+                    <figcaption>Visualisation du flux caméra et QR Code d'accès Guest</figcaption>
+                </figure>
+
+                <h3><span class="number">6.</span> Audit et Ingénierie des Protocoles (<span class="service">Python</span> & <span class="service">Scapy</span>)</h3>
+                <p>Pour valider techniquement la qualité du réseau, j'ai développé un outil d'audit en <strong><span class="service">Python</span></strong> capable d'analyser les flux en profondeur.</p>
+                <ul>
+                    <li><strong>Analyse PCAP :</strong> Utilisation de la librairie <code>scapy</code> pour parser les paquets réseaux capturés via <span class="service">Wireshark</span>.</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/connec/connecter_capwireshark.png" class="project-img" alt="Script Python Scapy et analyse Wireshark" onclick="openLightbox(this)">
+                    <figcaption>Analyse de trames Wireshark et script d'audit</figcaption>
+                </figure>
+
+                <ul>
+                    <li><strong>Reconstitution Audio :</strong> Implémentation d'un algorithme pour extraire les payloads <span class="protocol">RTP</span>, décoder le flux (Codec <span class="protocol">G.711</span>) et le reconstruire en fichier <code>.wav</code> écoutable, prouvant l'intégrité des données traversant le réseau.</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/connec/connecter_scriptcap.png" class="project-img" alt="Script Python Scapy et analyse Wireshark" onclick="openLightbox(this)">
+                    <figcaption>Code source Python pour la reconstruction audio RTP</figcaption>
+                </figure>
+            </div>
+
+            <div style="margin-top: 30px;" class="cyber-line reveal-on-scroll"></div>
+
+            <h2 id="rapport" class="reveal-on-scroll">Rapport Détaillé du projet</h2>
+
+            <div class="project-card reveal-on-scroll" id="rapport-card">              
+                <h2>Rapport : SAE <span class="numbert">2.04</span> - Projet intégratif</h2> 
+                <div class="btn-container">
+                    <a href="static/assets/Rapport/Pepiniere2.0(connecter).pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-alt"></i> Consulter le Rapport Technique (PDF)</a>          
+                    <iframe src="static/assets/Rapport/Pepiniere2.0(connecter).pdf" class="pdf-frame" title="Rapport Pépinière 2.0" style="height: 800px;"></iframe>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer reveal-on-scroll">
+            <div class="cyber-line"></div>
+
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-identity">
+                        <span class="cmd-symbol">></span> Pierre_FAMCHON <span class="cursor-blink">_</span>
+                    </div>
+                    <p class="footer-role">Admin Sys & Réseaux</p>
+                </div>
+
+                <div class="footer-col social-col">
+                    <a href="https://www.linkedin.com/in/pierre-famchon-rt/" target="_blank" class="cyber-link" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/PierreFamchon" target="_blank" class="cyber-link" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="mailto:pierre_famchon1@ens.univ-artois.fr" class="cyber-link" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="static/assets/Rapport/CV_Pierre_Famchon.pdf" download class="cyber-link" aria-label="CV">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                </div>
+
+                <div class="footer-col right-col">
+                    <div class="system-status">
+                        <span class="status-dot"></span> ONLINE
+                    </div>
+                    <p class="copyright">&copy; 2025 All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <button id="backToTop" title="Retour en haut">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Image agrandie">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <script src="static/js/main.js"></script>
+
+    <div id="cyber-modal" class="modal-overlay">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="red-dot"></span>
+                <span class="yellow-dot"></span>
+                <span class="green-dot"></span>
+                <span class="terminal-title">ACCESS_CONTROL_V1.0</span>
+            </div>
+            <div class="terminal-body">
+                <div class="lock-icon"><i class="fa-solid fa-user-lock"></i></div>
+                <p class="status-text">> ZONE RESTREINTE DÉTECTÉE...</p>
+                <p class="status-text">> VEUILLEZ SAISIR LES IDENTIFIANTS :</p>
+            
+                <div class="input-container">
+                    <span class="prompt-char">$</span>
+                    <input type="password" id="cyber-pass" placeholder="_" autocomplete="off">
+                </div>
+
+                <div id="access-msg" class="message-log"></div>
+
+                <div class="terminal-footer">
+                    <button onclick="fermerModal()" class="cyber-btn cancel">ABORT</button>
+                    <button onclick="validerCode()" class="cyber-btn confirm">EXECUTE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

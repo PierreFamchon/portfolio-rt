@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Pierre Famchon - Mes Certifications et Diplômes">
+    <title>Certifications - Portfolio Pierre Famchon</title>
+    
+    <link rel="icon" sizes="700x700" href="static/assets/logo/favicon.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <canvas id="network-canvas"></canvas>
+    <div id="cursor-crosshair"></div>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <aside class="sidebar">
+        <div class="logo-container-cyber">
+            <div class="hex-frame">
+                <a href="https://iut-bethune.univ-artois.fr/formation/but-reseaux-et-telecommunications/" target="_blank" rel="noopener noreferrer">
+                    <img src="static/assets/logo/logo_artois1.jpg" alt="Université d'Artois" class="sidebar-logo-cyber">
+                </a>
+            </div>
+            <div class="user-id">ID: PIERRE_FAMCHON</div>
+        </div>
+        
+        <nav class="nav-menu">
+            <div class="nav-label">NAVIGATION</div>
+
+            <a href="index.html" class="nav-item">
+                <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-house"></i></span> 
+                <span class="nav-text">ACCUEIL</span>
+            </a>
+
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-btn" onclick="toggleDropdown()">
+                    <span class="nav-indicator"></span>
+                    <span class="nav-icon"><i class="fa-solid fa-folder-tree"></i></span> 
+                    <span class="nav-text">COMPÉTENCES </span> 
+                    <i class="fa fa-caret-down dropdown-arrow"></i>
+                </button>
+                
+                <div class="dropdown-container" id="compMenu">
+                    <div class="tree-line"></div>
+                    <a href="administrer.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Administrer
+                    </a>
+                    <a href="connecter.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Connecter
+                    </a>
+                    <a href="programmer.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Programmer
+                    </a>
+                    <a href="securiser.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Sécuriser
+                    </a>
+                    <a href="surveiller.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Surveiller
+                    </a>
+                </div>
+            </div>
+            
+            <a href="certification.html" class="nav-item active"> <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-certificate"></i></span> 
+                <span class="nav-text">CERTIFICATIONS</span>
+            </a>
+
+            <div class="nav-label mt-4">SECURE_AREA</div>
+            
+            <a href="#" class="nav-item locked-item" onclick="verifierAcces('labs.html')">
+                <span class="nav-icon"><i class="fa-solid fa-flask"></i></span> 
+                <span class="nav-text">LABS [LOCKED]</span>
+                <i class="fa-solid fa-lock lock-icon"></i>
+            </a>
+            <a href="#" class="nav-item locked-item" onclick="verifierAcces('projets.html')">
+                <span class="nav-icon"><i class="fa-solid fa-rocket"></i></span> 
+                <span class="nav-text">PROJETS [LOCKED]</span>
+                <i class="fa-solid fa-lock lock-icon"></i>
+            </a>
+        </nav>
+
+        <div class="sidebar-status">
+            <div class="status-row">
+                <span class="blink-dot"></span> SYSTEM READY
+            </div>
+            <div class="status-row small">
+                V.2.0.4
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-wrapper">
+        <main class="content">
+            
+            <header class="page-header">
+                <h1 id="typewriter-text" data-text="Certifications">Certifications</h1>
+                <p class="intro-text">Validation officielle de mes compétences techniques et linguistiques.</p>
+            </header>
+
+            <nav class="page-nav reveal-on-scroll">
+                <a href="#cyber" class="page-nav-link"><i class="fa-solid fa-shield-halved"></i> Cybersécurité</a>
+                <a href="#network" class="page-nav-link"><i class="fa-solid fa-network-wired"></i> Réseaux</a>
+                <a href="#lang" class="page-nav-link"><i class="fa-solid fa-language"></i> Langues</a>
+            </nav>
+
+            <h2 id="cyber" class="reveal-on-scroll">🛡️ Cybersécurité</h2>
+            
+            <div class="skills-container reveal-on-scroll">
+                <div class="cert-grid">
+                    
+                    <div class="card tilt-card reveal-on-scroll">
+                        <span class="status-badge status-valid">Validé</span>
+                        <img src="static/assets/img/certifs/logo_anssi.png" alt="Logo ANSSI" class="cert-logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2092/2092663.png'"> 
+                        <h3>SecNumAcadémie</h3>
+                        <div class="cert-issuer">ANSSI</div>
+                        <div class="cert-date">Obtenue : Décembre 2022</div>
+                        <p style="font-size: 0.9em; color: #ccc; margin-bottom: 20px;">Sensibilisation et validation des connaissances en hygiène informatique et cybersécurité.</p>
+                        
+                        <img src="static/assets/img/certifs/preuve_anssi.jpg" class="project-img" alt="Attestation SecNumAcadémie" style="display:none;" onclick="openLightbox(this)"> 
+                        <button class="btn-verify" onclick="this.previousElementSibling.click()"><i class="fa-solid fa-eye"></i> Voir le certificat</button>
+                    </div>
+
+                    <div class="card tilt-card reveal-on-scroll">
+                        <span class="status-badge status-pending">En préparation</span>
+                        <img src="static/assets/img/certifs/logo_cisco.png" alt="Logo Cisco" class="cert-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cisco_logo.svg/2048px-Cisco_logo.svg.png'">
+                        <h3>Introduction to Cybersecurity</h3>
+                        <div class="cert-issuer">Cisco</div>
+                        <div class="cert-date">Objectif : Janvier 2026</div>
+                        <p style="font-size: 0.9em; color: #ccc; margin-bottom: 20px;">Fondamentaux de la sécurité des réseaux et protection des données.</p>
+                        
+                        <a href="#" target="_blank" class="btn-verify"><i class="fa-solid fa-link"></i> Lien Credly</a>
+                    </div>
+
+                    <div class="card tilt-card reveal-on-scroll">
+                        <span class="status-badge status-pending">En préparation</span>
+                        <img src="static/assets/img/certifs/logo_cisco.png" alt="Logo Pix" class="cert-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cisco_logo.svg/2048px-Cisco_logo.svg.png'">
+                        <h3>Cybersecurity Essentials</h3>
+                        <div class="cert-issuer">Cisco</div>
+                        <div class="cert-date">Objectif : Février 2026</div>
+                        <p style="font-size: 0.9em; color: #ccc; margin-bottom: 20px;">Approfondissement des mécanismes de défense, typologie des attaques, sécurisation des infrastructures et contrôles d'accès.</p>
+                        <button class="btn-verify"><i class="fa-solid fa-check"></i> Vérifier</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;" class="cyber-line reveal-on-scroll"></div>
+
+            <h2 id="network" class="reveal-on-scroll">📡 Réseaux & Cloud</h2>
+            
+            <div class="skills-container reveal-on-scroll">
+                <div class="cert-grid">
+                    
+                    <div class="card tilt-card reveal-on-scroll">
+                        <span class="status-badge status-pending">En préparation</span>
+                        <img src="static/assets/img/certifs/logo_ccna.png" alt="Logo Cisco" class="cert-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cisco_logo.svg/2048px-Cisco_logo.svg.png'">
+                        <h3>CCNAv7: ITN</h3>
+                        <div class="cert-issuer">Cisco</div>
+                        <div class="cert-date">Ojectif : Avril - Mai 2026</div>
+                        <p style="font-size: 0.9em; color: #ccc; margin-bottom: 20px;">Architecture, modèles, protocoles Internet et adressage IP.</p>
+                        <img src="static/assets/img/certifs/preuve_ccna1.jpg" class="project-img" alt="Badge CCNA 1" style="display:none;" onclick="openLightbox(this)">
+                        <button class="btn-verify" onclick="this.previousElementSibling.click()"><i class="fa-solid fa-eye"></i> Voir le badge</button>
+                    </div>
+
+                    <div class="card tilt-card reveal-on-scroll" style="border: 1px dashed rgba(255,255,255,0.3);">
+                        <span class="status-badge status-pending">En préparation</span>
+                        <div style="font-size: 3rem; color: #555; margin-bottom: 10px;"><i class="fa-brands fa-aws"></i></div>
+                        <h3>AWS Cloud Practitioner</h3>
+                        <div class="cert-issuer">Amazon Web Services</div>
+                        <div class="cert-date">Objectif : Fin 2026</div>
+                        <p style="font-size: 0.9em; color: #ccc; margin-bottom: 20px;">Fondamentaux du Cloud Computing et services AWS.</p>
+                        <span class="btn-verify" style="opacity: 0.5; cursor: not-allowed;"><i class="fa-solid fa-hourglass-half"></i> Bientôt</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;" class="cyber-line reveal-on-scroll"></div>
+
+            <h2 id="lang" class="reveal-on-scroll" style="margin-top: 60px; scroll-margin-top: 100px;">🌍 Langues et Numériques</h2>
+            
+            <div class="skills-container reveal-on-scroll">
+                <div class="cert-grid">
+                    <div class="card tilt-card reveal-on-scroll">
+                        <span class="status-badge status-valid">Validé</span>
+                        <img src="static/assets/img/certifs/logo_toeic.png" alt="Logo TOEIC" class="cert-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/ETS_brand.svg/1200px-ETS_brand.svg.png'">
+                        <h3>TOEIC Listening & Reading</h3>
+                        <div class="cert-issuer">ETS Global</div>
+                        <div class="cert-date">Obtenue : Janvier 2026</div>
+                        <p style="font-size: 0.9em; color: #ccc; margin-bottom: 20px;">Anglais professionnel et communication internationale.</p>
+                        <button class="btn-verify"><i class="fa-solid fa-file-pdf"></i> Résultats</button>
+                    </div>
+
+                    <div class="card tilt-card reveal-on-scroll">
+                        <span class="status-badge status-valid">Préparé</span>
+                        <img src="static/assets/img/certifs/logo_pix.png" alt="Logo Pix" class="cert-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/fr/6/60/Logo_Pix.svg'">
+                        <h3>Certification Numérique</h3>
+                        <div class="cert-issuer">Gouvernement Français</div>
+                        <div class="cert-date">Programmer : Février 2026</div>
+                        <p style="font-size: 0.9em; color: #ccc; margin-bottom: 20px;">Compétences numériques transversales (Information, Communication, Création de contenu).</p>
+                        <button class="btn-verify"><i class="fa-solid fa-check"></i> Vérifier</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="site-footer reveal-on-scroll">
+            <div class="cyber-line"></div>
+
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-identity">
+                        <span class="cmd-symbol">></span> Pierre_FAMCHON <span class="cursor-blink">_</span>
+                    </div>
+                    <p class="footer-role">Admin Sys & Réseaux</p>
+                </div>
+
+                <div class="footer-col social-col">
+                    <a href="https://www.linkedin.com/in/pierre-famchon-rt/" target="_blank" class="cyber-link" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/PierreFamchon" target="_blank" class="cyber-link" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="mailto:pierre_famchon1@ens.univ-artois.fr" class="cyber-link" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="static/assets/Rapport/CV_Pierre_Famchon.pdf" download class="cyber-link" aria-label="CV">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                </div>
+
+                <div class="footer-col right-col">
+                    <div class="system-status">
+                        <span class="status-dot"></span> ONLINE
+                    </div>
+                    <p class="copyright">&copy; 2025 All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <button id="backToTop" title="Retour en haut">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Image agrandie">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <script src="static/js/main.js"></script>
+
+    <div id="cyber-modal" class="modal-overlay">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="red-dot"></span>
+                <span class="yellow-dot"></span>
+                <span class="green-dot"></span>
+                <span class="terminal-title">ACCESS_CONTROL_V1.0</span>
+            </div>
+            <div class="terminal-body">
+                <div class="lock-icon"><i class="fa-solid fa-user-lock"></i></div>
+                <p class="status-text">> ZONE RESTREINTE DÉTECTÉE...</p>
+                <p class="status-text">> VEUILLEZ SAISIR LES IDENTIFIANTS :</p>
+            
+                <div class="input-container">
+                    <span class="prompt-char">$</span>
+                    <input type="password" id="cyber-pass" placeholder="_" autocomplete="off">
+                </div>
+
+                <div id="access-msg" class="message-log"></div>
+
+                <div class="terminal-footer">
+                    <button onclick="fermerModal()" class="cyber-btn cancel">ABORT</button>
+                    <button onclick="validerCode()" class="cyber-btn confirm">EXECUTE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

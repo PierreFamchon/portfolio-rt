@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Pierre Famchon - Compétence Surveiller : Monitoring et Supervision">
+    <title>Surveiller - Portfolio Pierre Famchon</title>
+    
+    <link rel="icon" sizes="700x700" href="static/assets/logo/favicon.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <canvas id="network-canvas"></canvas>
+    <div id="cursor-crosshair"></div>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    <aside class="sidebar">
+        <div class="logo-container-cyber">
+            <div class="hex-frame">
+                <a href="https://iut-bethune.univ-artois.fr/formation/but-reseaux-et-telecommunications/" target="_blank" rel="noopener noreferrer">
+                    <img src="static/assets/logo/logo_artois1.jpg" alt="Université d'Artois" class="sidebar-logo-cyber">
+                </a>
+            </div>
+            <div class="user-id">ID: PIERRE_FAMCHON</div>
+        </div>
+    
+        <nav class="nav-menu">
+            <div class="nav-label">NAVIGATION</div>
+
+            <a href="index.html" class="nav-item">
+                <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-house"></i></span> 
+                <span class="nav-text">ACCUEIL</span>
+            </a>
+
+            <div class="nav-dropdown">
+                <button class="nav-item dropdown-btn active" onclick="toggleDropdown()">
+                    <span class="nav-indicator"></span>
+                    <span class="nav-icon"><i class="fa-solid fa-folder-tree"></i></span> 
+                    <span class="nav-text">COMPÉTENCES </span> 
+                    <i class="fa fa-caret-down dropdown-arrow"></i>
+                </button>
+            
+                <div class="dropdown-container" id="compMenu" style="display: block;">
+                    <div class="tree-line"></div> 
+                    <a href="administrer.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Administrer
+                    </a>
+                    <a href="connecter.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Connecter
+                    </a>
+                    <a href="programmer.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Programmer
+                    </a>
+                    <a href="securiser.html" class="nav-item sub-item">
+                        <span class="sub-arrow">L</span> Sécuriser
+                    </a>
+                    <a href="surveiller.html" class="nav-item sub-item active"> <span class="sub-arrow">L</span> Surveiller
+                    </a>
+                </div>
+            </div>
+        
+            <a href="certification.html" class="nav-item">
+                <span class="nav-indicator"></span>
+                <span class="nav-icon"><i class="fa-solid fa-certificate"></i></span> 
+                <span class="nav-text">CERTIFICATIONS</span>
+            </a>
+
+            <div class="nav-label mt-4">SECURE_AREA</div>
+
+            <a href="#" class="nav-item locked-item" onclick="verifierAcces('labs.html')">
+                <span class="nav-icon"><i class="fa-solid fa-flask"></i></span> 
+                <span class="nav-text">LABS [LOCKED]</span>
+                <i class="fa-solid fa-lock lock-icon"></i>
+            </a>
+            <a href="#" class="nav-item locked-item" onclick="verifierAcces('projets.html')">
+                <span class="nav-icon"><i class="fa-solid fa-rocket"></i></span> 
+                <span class="nav-text">PROJETS [LOCKED]</span>
+                <i class="fa-solid fa-lock lock-icon"></i>
+            </a>
+        </nav>
+
+        <div class="sidebar-status">
+            <div class="status-row">
+                <span class="blink-dot"></span> SYSTEM READY
+            </div>
+            <div class="status-row small">
+                V.2.0.4
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-wrapper">
+        <main class="content">
+            
+            <header class="page-header">
+                <h1 id="typewriter-text" data-text="Surveiller">Surveiller</h1>
+                <p class="intro-text">Mesurer les performances, superviser les équipements actifs et maintenir une documentation technique fiable (Source of Truth).</p>
+            </header>
+
+            <nav class="page-nav reveal-on-scroll">
+                <a href="#competences" class="page-nav-link"><i class="fa-solid fa-screwdriver-wrench"></i> Compétences</a>
+                <a href="#projet" class="page-nav-link"><i class="fa-solid fa-rocket"></i> Projet Phare</a>
+                <a href="#rapport" class="page-nav-link"><i class="fa-solid fa-file-pdf"></i> Rapport</a>
+            </nav>
+
+            <h2 id="competences" class="reveal-on-scroll">Apprentissages Critiques - Niveau 2 : <br>➥ Mettre en œuvre la surveillance d'incidents de sécurité</h2>
+            
+            <div class="skills-container reveal-on-scroll">
+                <details>
+                    <summary><span class="numbert">AC35.01</span> | Surveiller l'activité du système d'information</summary>
+                    <div class="skill-detail">
+                        <h3>Modernisation d'Architecture : De Monolithique à Micro-services</h3>
+                        <p>Dans le cadre de la refonte des outils de supervision de la <strong>DSI</strong> (Direction des Systèmes d'Information) de l'<strong>UTC</strong> (Université de Compiègne), j'ai mené une étude comparative pour remplacer une installation obsolète. J'ai conçu et déployé une architecture conteneurisée sous <span class="service">Docker</span> :</p>
+                        
+                        <ul>
+                            <li><strong>Isolation des Services :</strong> Séparation stricte entre le <strong>frontend</strong> web (serveur <span class="service">Hypnotoad</span>), la base de données <span class="service">PostgreSQL</span> et le <strong>backend</strong> de collecte.</li>
+                            <li><strong>Persistance des Données :</strong> Configuration des volumes <span class="service">Docker</span> (<span class="code">./nd-site-local</span>, <span class="code">pgdata</span>) pour garantir la conservation des logs et de l'inventaire lors des redémarrages de conteneurs.</li>
+                        </ul>
+                        
+
+                        <h3>Déploiement Automatisé (Infrastructure as Code)</h3>
+                        <p>J'ai industrialisé le déploiement de la solution de supervision <span class="service">Netdisco</span> pour la rendre portable :</p>
+                        <ul>
+                            <li><strong>Docker Compose :</strong> Définition de l'infrastructure via un fichier <span class="code">docker-compose.yml</span> orchestrant les services <span class="code">netdisco-web</span> et <span class="code">netdisco-do</span> (backend).</li>
+                            <li><strong>Configuration par Environnement :</strong> Gestion des paramètres critiques (<span class="code">NETDISCO_DB_HOST</span>, <span class="code">NETDISCO_DOMAIN</span>) via injection de variables d'environnement.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC35.02</span> | Appliquer une méthodologie de tests de pénétration (Audit & Découverte)</summary>
+                    <div class="skill-detail">
+                        <h3>Configuration Avancée du Protocole <span class="protocol">SNMP</span></h3>
+                        <p>Pour assurer la visibilité sur un parc hétérogène, j'ai configuré finement le moteur de collecte <span class="protocol">SNMP</span> de <span class="service">Netdisco</span> :</p>
+                        
+                        <ul>
+                            <li><strong>Collecte Sécurisée :</strong> Implémentation de communautés <strong><span class="protocol">SNMPv2c</span></strong> et tests du protocole chiffré <strong><span class="protocol">SNMPv3</span></strong> (AuthPriv avec <span class="protocol">SHA</span>/<span class="protocol">AES</span>) pour les cœurs de réseau critiques.</li>
+                            <li><strong>Discovery Engine :</strong> Configuration du <strong>backend</strong> pour exécuter des <strong>SNMP Walk</strong> sur les <strong>MIBs</strong> standards afin de remonter automatiquement la topologie réseau (<span class="protocol">LLDP</span>/<span class="protocol">CDP</span>).</li>
+                        </ul>
+                        
+
+                        <h3>Optimisation des Processus de Polling</h3>
+                        <p>Afin de ne pas surcharger les <strong>CPU</strong> des équipements réseaux lors des scans, j'ai ajusté la fréquence des tâches planifiées dans le fichier <span class="code">deployment.yml</span>.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC35.03</span> | Réagir face à un incident de sécurité (Gestion des Actifs)</summary>
+                    <div class="skill-detail">
+                        <h3>Gestion Centralisée : Source of Truth (SoT)</h3>
+                        <p>J'ai structuré la gestion de l'inventaire autour de l'outil <span class="service">Netbox</span>, agissant comme référentiel unique <strong>SoT</strong> (Source de Vérité) pour l'infrastructure de l'UTC :</p>
+                        <ul>
+                            <li><strong>IPAM (IP Address Management) :</strong> Hiérarchisation stricte des sous-réseaux pour détecter rapidement l'épuisement des plages ou les allocations <strong>IP</strong> suspectes.</li>
+                            <li><strong>DCIM :</strong> Modélisation physique des baies serveurs pour faciliter les interventions en cas de incident matériel.</li>
+                        </ul>
+
+                        <h3>Réconciliation et Détection d'Anomalies</h3>
+                        <p>J'ai mis en place une méthodologie de comparaison pour identifier les écarts de sécurité (<strong>Shadow IT</strong>) entre l'inventaire documenté et la réalité découverte par les sondes.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary><span class="numbert">AC35.04</span> | Administrer les outils de surveillance du système d'information</summary>
+                    <div class="skill-detail">
+                        <h3>Administration et Sécurisation de la Stack</h3>
+                        <p>Au-delà du déploiement, j'ai assuré l'administration quotidienne et la sécurisation des outils de supervision :</p>
+                        <ul>
+                            <li><strong>Sécurisation Web :</strong> Exposition contrôlée des ports (<span class="numbert">8000</span>/<span class="numbert">5000</span>) et gestion des clés de session (<span class="code">session_cookie_key</span>) pour sécuriser l'accès aux interfaces d'administration.</li>
+                            <li><strong>Maintenance Base de Données :</strong> Gestion des utilisateurs <span class="service">PostgreSQL</span> et surveillance de l'intégrité des tables d'inventaire.</li>
+                        </ul>
+
+                        <h3>Documentation et Transfert de Compétences</h3>
+                        <p>Pour assurer la pérennité du projet, j'ai produit une documentation technique exhaustive incluant les procédures de mise à jour des images <span class="service">Docker</span> et l'explication des scripts d'automatisation <span class="service">Python</span>.</p>
+                    </div>
+                </details>
+            </div>
+
+            <div style="margin-top: 30px;" class="cyber-line reveal-on-scroll"></div>
+
+            <h2 id="projet" class="reveal-on-scroll">Projet de référence : SAE4.01 - Stages et entreprises</h2>
+
+            <div class="project-card reveal-on-scroll">
+                <div class="btn-container">
+                    <a href="https://drive.google.com/drive/folders/1xzSgi0NYxWhA3urEsz0pbP0oxDWp8CYx?usp=drive_link" target="_blank" class="custom-btn btn-drive"><i class="fab fa-google-drive"></i> Accéder aux fichiers</a>
+                    <a href="https://github.com/PierreFamchon/RT2-Projets/tree/main/BUT%20SEMESTRE%204%20_%20SAE%20/SAE4.01%20-%20Stages%20et%20entreprises" target="_blank" class="custom-btn btn-github"><i class="fab fa-github"></i> Voir le projet</a>
+                </div>
+
+                <h2>SAE <span class="numbert">4.01</span> - Stage : Déploiement d'une solution d'Inventory & Discovery (DSI UTC)</h2>
+                <p style="font-size: 1.15em;">Modernisation de la supervision réseau de l'UTC via une stack Open Source (<span class="service">Netdisco</span> & <span class="service">Netbox</span>) et développement de scripts d'automatisation <span class="service">Python</span>.</p>
+
+                <h3><span class="number">1.</span> Architecture Conteneurisée (<span class="service">Docker</span> & <span class="service">Docker Compose</span>)</h3>
+                <p>Face à l'obsolescence des outils existants, j'ai conçu une architecture modulaire basée sur <strong><span class="service">Docker</span></strong> pour garantir l'isolation et la portabilité des services. Le déploiement s'appuie sur une orchestration précise :</p>
+                <ul class="tech-list">
+                    <li><strong><span class="service">Netbox</span> (IPAM/DCIM) :</strong> Déploiement d'un cluster de conteneurs incluant l'application (<span class="service">Django</span>/<span class="service">Python</span>), une base <span class="service">PostgreSQL</span> dédiée, <span class="service">Redis</span> pour le cache et un Worker pour les tâches de fond. Utilisation de <span class="code">docker-compose.override.yml</span> pour mapper le port interne <span class="numbert">8080</span> vers le port hôte <strong><span class="numbert">8000</span></strong>.</li>
+                    <li><strong><span class="service">Netdisco</span> (Discovery) :</strong> Séparation en trois services distincts : <span class="code">netdisco-backend</span> (le moteur de scan), <span class="code">netdisco-web</span> (interface <span class="service">Hypnotoad</span> sur le port <span class="numbert">5000</span>) et sa propre base de données.</li>
+                    <li><strong>Persistance :</strong> Configuration de volumes <span class="service">Docker</span> nommés (ex: <span class="code">pgdata</span>) pour assurer la pérennité des données d'inventaire critique malgré les cycles de vie des conteneurs.</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/surve/surveiller_docker.jpg" class="project-img" alt="Schéma de l'architecture Docker et des conteneurs" onclick="openLightbox(this)">
+                    <figcaption>Architecture conteneurisée Docker : Isolation des services Frontend, Backend et Bases de données</figcaption>
+                </figure>
+
+                <h3><span class="number">2.</span> <span class="service">Netdisco</span> : Supervision Dynamique et <span class="protocol">SNMPv3</span></h3>
+                <p><span class="service">Netdisco</span> agit comme la sonde "Temps Réel". J'ai configuré le fichier <span class="code">deployment.yml</span> pour scanner l'infrastructure via le protocole <span class="protocol">SNMP</span>, en mettant l'accent sur la sécurité :</p>
+                <ul class="tech-list">
+                    <li><strong>Sécurité <span class="protocol">SNMPv3</span> :</strong> Configuration de l'authentification chiffrée (User: <span class="code">stagiaire</span>, Auth: <span class="protocol">SHA</span>, Priv: <span class="protocol">AES</span>) pour interroger les équipements sensibles sans faire circuler de mots de passe en clair.</li>
+                    <li><strong>Tracking :</strong> Capacité de retrouver physiquement une machine (PC, Borne Wi-Fi) via son adresse MAC ou IP grâce aux tables <span class="protocol">ARP</span>/MAC collectées (fonctionnalités <em>Arpnip</em> et <em>Macsuck</em>).</li>
+                </ul>
+                
+                <figure>
+                    <img src="static/assets/img/surve/surveiller_netdisco1.jpg" class="project-img" alt="Interface web de Netdisco" onclick="openLightbox(this)">
+                    <figcaption>Interface de gestion Netdisco : Inventaire matériel et tracking des équipements</figcaption>
+                </figure>
+
+                <ul class="tech-list">
+                    <li><strong>Topologie Automatique :</strong> Exploitation des protocoles de voisinage <strong><span class="protocol">CDP</span></strong> et <strong><span class="protocol">LLDP</span></strong> pour cartographier dynamiquement les liens entre switchs et routeurs.</li>
+                </ul>
+                
+                <figure>
+                    <img src="static/assets/img/surve/surveiller_netdisco2.jpg" class="project-img" alt="Carte topologique du réseau générée par Netdisco" onclick="openLightbox(this)">
+                    <figcaption>Topologie réseau dynamique générée automatiquement via les protocoles de voisinage (LLDP/CDP)</figcaption>
+                </figure>
+
+                <h3><span class="number">3.</span> <span class="service">Netbox</span> (L'intégration)</h3>
+                <p>En complément, <span class="service">Netbox</span> sert de référentiel d'autorité (Source of Truth) où l'on documente l'architecture cible :</p>
+                <ul class="tech-list">
+                    <li><strong>IPAM Structuré :</strong> Organisation des préfixes IPv4 pour faire du "Capacity Planning" et visualiser l'occupation des sous-réseaux.</li>
+                </ul>
+                
+                <figure>
+                    <img src="static/assets/img/surve/surveiller_netbox1.jpg" class="project-img" alt="Tableau de bord IPAM de Netbox" onclick="openLightbox(this)">
+                    <figcaption>Module IPAM de Netbox : Gestion du plan d'adressage et Capacity Planning</figcaption>
+                </figure>
+
+                <ul class="tech-list">
+                    <li><strong>Modélisation Physique :</strong> Chaque équipement est documenté avec son emplacement exact dans la baie (Rack Unit) et ses connexions montantes (Uplinks).</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/surve/surveiller_netbox2.png" class="project-img" alt="Visualisation d'une baie serveur dans Netbox" onclick="openLightbox(this)">
+                    <figcaption>Module DCIM : Modélisation physique des baies et gestion du câblage</figcaption>
+                </figure>
+
+                <h3><span class="number">4.</span> Automatisation <span class="service">Python</span> (L'intégration)</h3>
+                <p><span class="service">Netbox</span> a été établi comme la "Source de Vérité" (SoT). Pour éviter la saisie manuelle et garantir la cohérence des données, j'ai développé une <strong>chaine d'automatisation complète</strong> :</p>
+                <ul class="tech-list">
+                    <li><strong>Extraction de Données :</strong> Utilisation de requêtes <span class="service">SQL</span> complexes (<span class="code">\copy (SELECT...)</span>) directement dans le conteneur <span class="service">PostgreSQL</span> de <span class="service">Netdisco</span> pour exporter les équipements et IPs découverts vers des fichiers CSV structurés.</li>
+                    <li><strong>Scripts d'API <span class="service">Python</span> :</strong> Développement de scripts personnalisés (<span class="code">device_manager.py</span>, <span class="code">netbox_api.py</span>) utilisant la librairie <span class="code">requests</span>.</li>
+                    <li><strong>Algorithme d'Import :</strong> Le script <span class="code">main.py</span> lit les données, vérifie l'existence de l'équipement via <span class="code">device_exists()</span>, et effectue soit un <strong>POST</strong> (création) soit un <strong>PATCH</strong> (mise à jour) via l'<span class="protocol">API RESTful</span> de <span class="service">Netbox</span>, gérant automatiquement les interfaces, les adresses MAC et les rôles.</li>
+                </ul>
+
+                <figure>
+                    <img src="static/assets/img/surve/surveiller_arbo.png" class="project-img" alt="Arborescence des scripts Python d'automatisation" onclick="openLightbox(this)">
+                    <figcaption>Structure du projet d'automatisation : Scripts de synchronisation SQL vers API REST</figcaption>
+                </figure>        
+            </div> 
+
+            <div style="margin-top: 30px;" class="cyber-line reveal-on-scroll"></div>
+
+            <h2 id="rapport" class="reveal-on-scroll">Rapport Détaillé du projet</h2>
+
+            <div class="project-card reveal-on-scroll" id="rapport-card">
+                <h2>Rapport de Stage : Déploiement d'une solution d'Inventory & Discovery (DSI UTC)</h2>
+                <div class="btn-container">
+                    <a href="static/assets/Rapport/Rapport de Stage(surveiller).pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-alt"></i> Consulter l'Audit et le Rapport Technique (PDF)</a>  
+                    <iframe src="static/assets/Rapport/Rapport de Stage(surveiller).pdf" class="pdf-frame" title="Rapport de Stage - Supervision" style="height: 800px;"></iframe>
+                </div>
+            </div>
+        </main> 
+
+        <footer class="site-footer reveal-on-scroll">
+            <div class="cyber-line"></div>
+
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-identity">
+                        <span class="cmd-symbol">></span> Pierre_FAMCHON <span class="cursor-blink">_</span>
+                    </div>
+                    <p class="footer-role">Admin Sys & Réseaux</p>
+                </div>
+
+                <div class="footer-col social-col">
+                    <a href="https://www.linkedin.com/in/pierre-famchon-rt/" target="_blank" class="cyber-link" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/PierreFamchon" target="_blank" class="cyber-link" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="mailto:pierre_famchon1@ens.univ-artois.fr" class="cyber-link" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="static/assets/Rapport/CV_Pierre_Famchon.pdf" download class="cyber-link" aria-label="CV">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                </div>
+
+                <div class="footer-col right-col">
+                    <div class="system-status">
+                        <span class="status-dot"></span> ONLINE
+                    </div>
+                    <p class="copyright">&copy; 2025 All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <button id="backToTop" title="Retour en haut">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Image agrandie">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <script src="static/js/main.js"></script>
+
+    <div id="cyber-modal" class="modal-overlay">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="red-dot"></span>
+                <span class="yellow-dot"></span>
+                <span class="green-dot"></span>
+                <span class="terminal-title">ACCESS_CONTROL_V1.0</span>
+            </div>
+            <div class="terminal-body">
+                <div class="lock-icon"><i class="fa-solid fa-user-lock"></i></div>
+                <p class="status-text">> ZONE RESTREINTE DÉTECTÉE...</p>
+                <p class="status-text">> VEUILLEZ SAISIR LES IDENTIFIANTS :</p>
+            
+                <div class="input-container">
+                    <span class="prompt-char">$</span>
+                    <input type="password" id="cyber-pass" placeholder="_" autocomplete="off">
+                </div>
+
+                <div id="access-msg" class="message-log"></div>
+
+                <div class="terminal-footer">
+                    <button onclick="fermerModal()" class="cyber-btn cancel">ABORT</button>
+                    <button onclick="validerCode()" class="cyber-btn confirm">EXECUTE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
