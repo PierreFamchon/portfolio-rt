@@ -172,38 +172,71 @@ function closeLightbox() {
 /* ==========================================================================
    6. SCROLL SPY & BACK TO TOP
    ========================================================================== */
-const backToTopButton = document.getElementById("backToTop");
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // 1. SÉLECTION DES ÉLÉMENTS
+    const backToTopButton = document.getElementById("backToTop");
+    const footer = document.querySelector(".site-footer"); // Nécessaire pour le calcul
 
-if (backToTopButton) {
-    backToTopButton.addEventListener("click", function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
-
-window.addEventListener("scroll", function() {
+    // 2. GESTION DU CLIC (Ton code d'origine)
     if (backToTopButton) {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            backToTopButton.style.display = "flex";
-        } else {
-            backToTopButton.style.display = "none";
-        }
+        backToTopButton.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     }
 
-    let current = '';
-    const sections = document.querySelectorAll('#competences, #projet, #rapport, #acceuil, #cv, #rt1, #rt2, #rt3, #archives'); 
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= (sectionTop - 230)) {
-            current = section.getAttribute('id');
-        }
-    });
+    // 3. GESTION DU SCROLL (Fusion : Affichage + Collision + Liens Actifs)
+    window.addEventListener("scroll", function() {
+        
+        // --- PARTIE A : GESTION DU BOUTON RETOUR HAUT ---
+        if (backToTopButton) {
+            const scrollPos = window.scrollY || document.documentElement.scrollTop; // Compatible tous navigateurs
 
-    document.querySelectorAll('.page-nav-link').forEach(a => {
-        a.classList.remove('active-link');
-        if (current !== "" && a.getAttribute('href').includes(current)) {
-            a.classList.add('active-link');
+            // A1. Afficher / Masquer (Ton code amélioré pour gérer la classe CSS d'animation)
+            if (scrollPos > 300) {
+                backToTopButton.style.display = "flex"; // Force le flex pour centrer l'icône
+                backToTopButton.classList.add("show"); // Active l'animation CSS
+            } else {
+                backToTopButton.style.display = "none";
+                backToTopButton.classList.remove("show");
+            }
+
+            // A2. ANTI-COLLISION FOOTER (Le nouveau calcul)
+            if (footer) {
+                const footerRect = footer.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                // Si le haut du footer est visible à l'écran
+                if (footerRect.top < windowHeight) {
+                    // On calcule la nouvelle position : Hauteur fenêtre - Position Footer + 20px de marge
+                    const newBottom = (windowHeight - footerRect.top) + 20;
+                    backToTopButton.style.bottom = `${newBottom}px`;
+                } else {
+                    // Sinon, on le remet à sa place d'origine (30px du bas)
+                    backToTopButton.style.bottom = "30px";
+                }
+            }
         }
+
+        // --- PARTIE B : SCROLL SPY (Ton code d'origine pour le menu) ---
+        let current = '';
+        const sections = document.querySelectorAll('#competences, #projet, #rapport, #acceuil, #cv, #rt1, #rt2, #rt3, #archives'); 
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            // J'utilise window.scrollY qui est l'équivalent moderne de pageYOffset
+            if (window.scrollY >= (sectionTop - 230)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        document.querySelectorAll('.page-nav-link').forEach(a => {
+            a.classList.remove('active-link');
+            // Petite sécurité ajoutée : on vérifie que le lien a bien un href avant de tester
+            if (current !== "" && a.getAttribute('href') && a.getAttribute('href').includes(current)) {
+                a.classList.add('active-link');
+            }
+        });
     });
 });
 
