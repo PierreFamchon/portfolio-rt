@@ -241,42 +241,42 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 /* ==========================================================================
-   7. ANIMATION EN CASCADE (STAGGERED REVEAL)
+   7. ANIMATION EN CASCADE (CORRIGÉ POUR GRANDS ÉLÉMENTS)
    ========================================================================== */
 const observerOptions = {
     root: null,
-    threshold: 0.1, // Déclenche dès que 10% de l'objet est visible
-    rootMargin: "0px 0px -50px 0px" // Marge de sécurité en bas
+    
+    // CHANGEMENT 1 : On met 0. Cela signifie "Dès qu'un pixel entre dans la zone".
+    // On ne dépend plus de la taille de l'objet (10% vs 1 pixel).
+    threshold: 0, 
+
+    // CHANGEMENT 2 : On définit la "ligne de déclenchement".
+    // "0px 0px -150px 0px" signifie que la zone de détection s'arrête 150px AVANT le bas de l'écran.
+    // L'animation se lancera donc quand le HAUT de l'élément dépasse cette ligne invisible.
+    rootMargin: "0px 0px -150px 0px" 
 };
 
 const observer = new IntersectionObserver((entries) => {
-    let delayCounter = 0; // Compteur pour gérer la file d'attente
+    let delayCounter = 0; 
 
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            // Si on scrolle vite, plusieurs éléments arrivent ici en même temps.
-            // On multiplie le délai par le nombre d'éléments dans la file.
             
-            // 150ms de délai entre chaque élément (ajuste ce chiffre pour la vitesse de la cascade)
-            const delay = delayCounter * 150; 
+            // Calcul du délai pour l'effet cascade
+            const delay = delayCounter * 100; // J'ai réduit un peu à 100ms pour plus de fluidité
             
-            // On applique le délai directement sur l'élément HTML
             entry.target.style.transitionDelay = `${delay}ms`;
-            
-            // On lance l'animation
             entry.target.classList.add('visible');
             
-            // On arrête d'observer cet élément (pour ne pas le rejouer)
+            // Stop l'observation
             observer.unobserve(entry.target);
             
-            // On incrémente le compteur pour le prochain élément du "lot"
             delayCounter++;
         }
     });
 }, observerOptions);
 
 document.addEventListener("DOMContentLoaded", () => {
-    // On cible tous les éléments à animer
     const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
     elementsToReveal.forEach(el => observer.observe(el));
 });
@@ -490,51 +490,56 @@ if (canvas) {
 }
 
 /* ==========================================================================
-   11. CUSTOM CURSOR (AVEC CIBLAGE PRÉCIS FORMULAIRE)
+   11. CUSTOM CURSOR (AVEC FIX IFRAME & BLANC)
    ========================================================================== */
 document.addEventListener("DOMContentLoaded", function() {
     const cursor = document.getElementById("cursor-crosshair");
     
     if (cursor) {
-        // 1. Mouvement du curseur (Suivi de la souris sans latence)
+        // 1. Mouvement du curseur
         window.addEventListener("mousemove", (e) => {
             cursor.style.left = e.clientX + "px";
             cursor.style.top = e.clientY + "px";
+            // On s'assure qu'il est visible quand on bouge
+            cursor.style.opacity = "1"; 
         });
 
-        // 2. CIBLAGE DES ÉLÉMENTS INTERACTIFS
-        // J'ai ajouté les classes spécifiques de ton HTML (.cyber-btn, #cyber-pass)
+        // --- FIX IFRAME / PDF ---
+        // Quand la souris quitte la fenêtre (ex: entre dans l'iframe PDF), on cache le curseur
+        document.addEventListener("mouseout", (e) => {
+            if (!e.relatedTarget && !e.toElement) {
+                cursor.style.opacity = "0";
+            }
+        });
+        
+        // Alternative plus robuste pour les iframes spécifiquement
+        const iframes = document.querySelectorAll('iframe, object, embed');
+        iframes.forEach(iframe => {
+            iframe.addEventListener('mouseenter', () => {
+                cursor.style.opacity = "0"; // Cache le curseur perso
+            });
+            iframe.addEventListener('mouseleave', () => {
+                cursor.style.opacity = "1"; // Réaffiche le curseur perso
+            });
+        });
+        // ------------------------
+
+        // 2. CIBLAGE DES ÉLÉMENTS INTERACTIFS (Ton code existant)
         const selectors = [
-            "a", 
-            "button", 
-            "input", 
-            "textarea", 
-            ".card", 
-            ".nav-item", 
-            ".menu-toggle",
-            ".cyber-btn",  // <--- Cible tes boutons ABORT et EXECUTE
-            "#cyber-pass", // <--- Cible ton champ mot de passe
-            ".lock-icon"   // <--- Cible l'icône cadenas
+            "a", "button", "input", "textarea", 
+            ".card", ".nav-item", ".menu-toggle",
+            ".cyber-btn", "#cyber-pass", ".lock-icon",
+            "summary" // Ajout utile pour tes détails/skills
         ];
 
-        // On transforme le tableau en une seule chaîne de caractères pour le querySelector
         const selectorString = selectors.join(", ");
         const interactiveElements = document.querySelectorAll(selectorString);
 
-        // 3. Application des écouteurs d'événements
         interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                document.body.classList.add('hovering');
-            });
-            
-            el.addEventListener('mouseleave', () => {
-                document.body.classList.remove('hovering');
-            });
-            
-            // Sécurité supplémentaire : on force le retrait au clic
+            el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
             el.addEventListener('click', () => {
-                document.body.classList.remove('hovering'); // Reset après clic
-                // Petite astuce : on le remet tout de suite après si la souris est encore dessus
+                document.body.classList.remove('hovering');
                 setTimeout(() => {
                     if(el.matches(':hover')) document.body.classList.add('hovering');
                 }, 100);
