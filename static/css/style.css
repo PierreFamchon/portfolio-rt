@@ -1954,181 +1954,123 @@ figcaption {
 }
 
 /* ==========================================================================
-   18. RESPONSIVE / MOBILE (OPTIMISÉ)
+   18. RESPONSIVE / MOBILE (METHODE DOUBLE MENU)
    ========================================================================== */
-/* Par défaut sur PC : Burger caché */
+
+/* 1. PAR DÉFAUT (PC) : ON CACHE LE MENU MOBILE */
+.nav-tel {
+    display: none !important;
+}
+
+/* On s'assure que le menu PC est visible */
+.nav-pc {
+    display: flex !important;
+}
+
+/* Bouton Menu Burger (Caché sur PC) */
 .menu-toggle { display: none; }
+
 
 /* --- TABLETTES & PETITS PC (max 1024px) --- */
 @media (max-width: 1024px) {
-    
-    /* 1. Bouton Burger Apparent */
+    /* (Ton code Burger / Sidebar existant reste ici...) */
     .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        z-index: 2000; /* Toujours au-dessus de tout */
-        background-color: rgba(5, 10, 16, 0.95); /* Fond presque opaque */
+        display: flex; align-items: center; justify-content: center;
+        position: fixed; top: 15px; left: 15px; z-index: 1001;
+        background-color: rgba(26, 26, 26, 0.9);
         color: var(--accent-color);
-        border: 1px solid var(--accent-color);
-        border-radius: 8px;
-        width: 45px;
-        height: 45px;
-        cursor: pointer;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        border: 1px solid var(--accent-color); border-radius: 5px;
+        width: 45px; height: 45px; cursor: pointer;
         backdrop-filter: blur(5px);
-        transition: all 0.3s ease;
     }
-    
-    .menu-toggle:active { transform: scale(0.95); }
-    .menu-toggle i { font-size: 1.4rem; }
+    .menu-toggle i { font-size: 1.2rem; }
 
-    /* 2. Sidebar Mobile (Cachée par défaut) */
     .sidebar {
-        width: 280px;
-        height: 100vh;
-        position: fixed;
-        top: 0; left: 0;
-        transform: translateX(-100%); /* Hors écran gauche */
-        background-color: #050a10 !important; /* Fond opaque obligatoire */
-        padding-top: 80px; /* Place pour ne pas cacher le logo sous le burger */
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 10px 0 20px rgba(0,0,0,0.5);
-        z-index: 1999; /* Juste sous le bouton burger */
+        width: 260px;
+        transform: translateX(-100%);
+        background-color: #050a10 !important;
+        padding-top: 20px;
     }
+    .sidebar.active { transform: translateX(0); }
 
-    /* Quand la classe .active est ajoutée via JS */
-    .sidebar.active {
-        transform: translateX(0);
-    }
-
-    /* Ajustement logo dans le menu mobile */
-    .logo-container-cyber {
-        padding: 0 0 20px 0;
-    }
-
-    /* 3. Wrapper Principal */
-    .main-wrapper {
-        margin-left: 0; /* Plus de marge à gauche */
-        width: 100%;
-        padding-top: 80px; /* Marge en haut pour laisser la place au Burger */
-    }
-
-    /* 4. Grilles : Passage en 1 colonne ou 2 max (Tablette) */
-    .featured-grid, 
-    .cards-container, 
-    .cert-grid, 
-    .semester-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-    }
+    .main-wrapper { margin-left: 0; width: 100%; padding-top: 80px; }
+    .content { padding: 20px; }
     
-    /* Footer Stack */
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
+    .featured-grid, .cards-container, .cert-grid, .semester-grid {
+        grid-template-columns: 1fr;
     }
-    .footer-links {
-        justify-content: center;
-        margin-top: 20px;
-    }
+    .footer-content { flex-direction: column; text-align: center; }
 }
+
 
 /* --- SMARTPHONES (max 768px) --- */
 @media (max-width: 768px) {
+
+    /* A. BASCULE DES MENUS (SWAP) */
     
-    /* 1. Navigation Capsule : Mode Scroll Horizontal (Style App Native) */
-    .page-nav {
-        width: 95%; /* Prend presque toute la largeur */
-        top: 15px;
-        padding: 5px;
-        border-radius: 12px;
-        gap: 8px;
-        background: rgba(20, 20, 25, 0.85); /* Plus opaque sur mobile */
+    /* On CACHE le menu PC (celui avec le texte) */
+    .nav-pc {
+        display: none !important;
+    }
+
+    /* On AFFICHE le menu Mobile (celui sans texte) */
+    .nav-tel {
+        display: flex !important;
         
-        /* Permet le scroll horizontal si trop de liens */
-        overflow-x: auto;
-        justify-content: flex-start; /* Aligne au début pour le scroll */
-        flex-wrap: nowrap; /* Empêche de casser les lignes */
-        
-        /* Cache la barre de scroll disgracieuse */
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-    }
-    .page-nav::-webkit-scrollbar { display: none; } /* Chrome/Safari */
-
-    .page-nav-link {
-        font-size: 0.8rem;
-        padding: 8px 15px;
-        white-space: nowrap; /* Empêche le texte de se couper */
-        flex-shrink: 0; /* Empêche les boutons de s'écraser */
-        background: rgba(255,255,255,0.05); /* Fond léger pour délimiter les boutons */
-    }
-
-    /* 2. Titres & Textes */
-    .content { padding: 20px; }
-    
-    .page-header {
-        padding: 25px 20px;
-        border-left-width: 4px;
-        margin-bottom: 30px;
-    }
-    .page-header h1 {
-        font-size: 1.8em; /* Plus petit pour éviter les retours à la ligne */
-        letter-spacing: 1px;
-    }
-    .page-header .intro-text { font-size: 0.95em; }
-
-    h2 {
-        font-size: 1.4em;
-        margin-top: 50px;
-        padding-left: 15px;
-    }
-
-    /* 3. Grilles : Force 1 seule colonne sur mobile (Indispensable) */
-    .featured-grid, 
-    .cards-container, 
-    .cert-grid, 
-    .semester-grid {
-        grid-template-columns: 1fr !important; /* Force brute */
-    }
-
-    /* 4. Images Projets */
-    .project-img {
-        width: 100% !important;
-        margin: 20px 0;
-    }
-    
-    /* 5. Terminal / Modale */
-    .terminal-window {
+        /* Style du conteneur mobile */
         width: 95%;
-        margin: 0 auto;
+        max-width: 400px;
+        margin: 10px auto 20px auto;
+        padding: 5px 10px;
+        gap: 15px; /* Espace entre les bulles */
+        
+        justify-content: center;
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Scroll si besoin */
+        background: rgba(5, 10, 16, 0.95);
+        border-radius: 50px;
+        
+        /* Cache la scrollbar */
+        scrollbar-width: none; 
+    }
+    .nav-tel::-webkit-scrollbar { display: none; }
+
+    /* B. STYLE DES BOUTONS MOBILES (BULLES RONDES) */
+    .nav-tel .page-nav-link {
+        width: 45px !important;
+        height: 45px !important;
+        border-radius: 50% !important; /* Cercle parfait */
+        padding: 0 !important;
+        
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        
+        border: 1px solid rgba(100, 255, 218, 0.3);
+        background: transparent;
     }
     
-    /* 6. Boutons */
-    .btn-container {
-        justify-content: center;
-        flex-direction: column; /* Boutons l'un sous l'autre */
-        width: 100%;
-        gap: 10px;
+    /* C. STYLE DE L'ICÔNE MOBILE */
+    .nav-tel .page-nav-link i {
+        font-size: 1.3rem !important;
+        color: #64ffda !important;
+        margin: 0 !important;
     }
-    .custom-btn {
-        width: 100%; /* Bouton pleine largeur */
-        justify-content: center;
+    
+    /* Active State Mobile */
+    .nav-tel .page-nav-link.active-link {
+        background: rgba(100, 255, 218, 0.2);
+        box-shadow: 0 0 10px rgba(100, 255, 218, 0.4);
+    }
+    .nav-tel .page-nav-link.active-link i {
+        color: #fff !important;
     }
 
-    /* 7. Cartes */
-    .featured-card, .card, .project-card, .cert-card {
-        padding: 20px; /* Moins de padding interne */
-    }
-
-    /* 8. Footer */
-    .site-footer {
-        margin-top: 40px;
-        padding-bottom: 80px; /* Place pour le bouton retour haut */
-    }
+    /* D. RESTE DU MOBILE (Curseur, etc.) */
+    #cursor-crosshair { display: none !important; }
+    * { cursor: auto !important; }
+    
+    .page-header h1 { font-size: 1.8em; }
+    .project-img { width: 100% !important; }
+    .terminal-window { width: 95%; }
 }
-
