@@ -2074,3 +2074,94 @@ figcaption {
     .project-img { width: 100% !important; }
     .terminal-window { width: 95%; }
 }
+
+/* ==========================================================================
+   GESTION RESPONSIVE DES PDF
+   ========================================================================== */
+
+/* --- PAR DÉFAUT (PC) --- */
+.pdf-container-pc {
+    display: block;
+    width: 100%;
+}
+
+.pdf-container-mobile {
+    display: none; /* Caché sur PC */
+}
+
+/* Style de la frame PC (déjà présent normalement, mais je redonne pour être sûr) */
+.pdf-frame {
+    width: 100%;
+    height: 80vh;
+    min-height: 500px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background: #fff;
+}
+
+
+/* --- VERSION MOBILE (max 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. On cache la visionneuse qui bug */
+    .pdf-container-pc {
+        display: none !important;
+    }
+
+    /* 2. On affiche la carte Mobile */
+    .pdf-container-mobile {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Style de la Carte Mobile */
+    .mobile-pdf-card {
+        background: rgba(5, 10, 16, 0.9);
+        border: 1px solid var(--accent-color);
+        border-radius: 12px;
+        padding: 30px 20px;
+        text-align: center;
+        width: 100%;
+        box-shadow: 0 0 15px rgba(100, 255, 218, 0.1);
+    }
+
+    .pdf-icon-mobile {
+        font-size: 3rem;
+        color: var(--accent-color);
+        margin-bottom: 15px;
+    }
+
+    .mobile-pdf-card h3 {
+        color: #fff;
+        margin-bottom: 10px;
+        font-family: 'Courier New', monospace;
+    }
+
+    .mobile-pdf-card p {
+        color: #8892b0;
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+    }
+
+    /* Bouton Mobile Cyber */
+    .cyber-btn-mobile {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 25px;
+        background: var(--accent-color); /* Fond plein pour visibilité */
+        color: #050a10; /* Texte sombre */
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 50px;
+        box-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
+        transition: transform 0.2s;
+    }
+
+    .cyber-btn-mobile:active {
+        transform: scale(0.95);
+    }
+}
