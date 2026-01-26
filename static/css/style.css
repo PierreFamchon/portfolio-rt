@@ -1809,6 +1809,7 @@ figcaption {
 /* Bouton Menu Mobile (Caché par défaut sur PC) */
 .menu-toggle { display: none; }
 
+/* --- TABLETTES & PETITS LAPTOPS (max 1024px) --- */
 @media (max-width: 1024px) {
     /* --- BOUTON BURGER --- */
     .menu-toggle {
@@ -1849,25 +1850,79 @@ figcaption {
     .footer-links { justify-content: center; }
 }
 
+/* --- SMARTPHONES (max 768px) --- */
 @media (max-width: 768px) {
-    /* Ajustement Nav Capsule */
-    .page-nav { width: 95%; top: 15px; padding: 5px; gap: 2px; }
-    .page-nav-link { font-size: 0.75rem; padding: 8px 10px; flex: 1; justify-content: center; }
+
+    /* 1. BARRE DE NAVIGATION (CONTENEUR) */
+    .page-nav { 
+        width: 95%; 
+        max-width: 400px;
+        margin: 10px auto 20px auto; /* Centré */
+        padding: 5px; 
+        gap: 12px; /* Espacement entre les bulles */
+        
+        display: flex;
+        justify-content: center; /* Centre les icônes */
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Scroll horizontal si ça déborde */
+        
+        /* Esthétique */
+        background: rgba(5, 10, 16, 0.95);
+        border-radius: 50px;
+    }
+    .page-nav::-webkit-scrollbar { display: none; }
+
+    /* 2. BOUTONS (BULLES RONDES) */
+    .page-nav-link { 
+        /* FORCE LA FORME RONDE */
+        width: 45px !important; height: 45px !important;
+        min-width: 45px !important; /* Empêche l'écrasement */
+        border-radius: 50% !important;
+        padding: 0 !important;
+        
+        /* CACHE LE TEXTE "COMPÉTENCES" ETC */
+        font-size: 0 !important; 
+        color: transparent !important;
+        overflow: hidden !important; /* Coupe tout ce qui dépasse */
+        
+        /* ALIGNEMENT ICÔNE */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        
+        flex: 0 0 auto; /* Ne s'étire pas */
+        border: 1px solid rgba(100, 255, 218, 0.3);
+    }
     
+    /* 3. ICÔNES (VISIBLES) */
+    .page-nav-link i {
+        font-size: 1.3rem !important; /* Taille icône */
+        color: #64ffda !important;
+        margin: 0 !important;
+        display: block !important;
+    }
+
+    /* Active State Mobile */
+    .page-nav-link.active-link {
+        background: rgba(100, 255, 218, 0.2);
+        border-color: #64ffda;
+        box-shadow: 0 0 8px rgba(100, 255, 218, 0.4);
+    }
+    .page-nav-link.active-link i { color: #fff !important; }
+
+    /* 4. RESTE DU LAYOUT MOBILE */
     .page-header h1 { font-size: 1.8em; }
     .project-img { width: 100% !important; }
-    
     .btn-container { justify-content: center; }
-    
-    /* Terminal Mobile */
     .terminal-window { width: 95%; }
 
-    /* Footer Cyber Responsive */
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
+    /* Footer */
+    .footer-container { flex-direction: column; text-align: center; }
     .right-col { text-align: center; }
+
+    /* 5. DÉSACTIVATION CURSEUR PERSO */
+    #cursor-crosshair { display: none !important; opacity: 0 !important; }
+    * { cursor: auto !important; }
 }
 
 /* ==========================================================================
