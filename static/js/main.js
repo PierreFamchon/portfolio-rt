@@ -490,46 +490,39 @@ if (canvas) {
 }
 
 /* ==========================================================================
-   11. CUSTOM CURSOR (AVEC FIX IFRAME & BLANC)
+   11. CUSTOM CURSOR (AVEC DÉTECTION MOBILE & FIX IFRAME)
    ========================================================================== */
 document.addEventListener("DOMContentLoaded", function() {
-    const cursor = document.getElementById("cursor-crosshair");
     
-    if (cursor) {
+    // VERIFICATION : On n'active le script QUE si l'appareil a une souris précise (PC)
+    // Cela désactive le script sur mobile/tablette tactile pour économiser la batterie
+    const isDesktop = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+    const cursor = document.getElementById("cursor-crosshair");
+
+    if (cursor && isDesktop) {
+        
         // 1. Mouvement du curseur
         window.addEventListener("mousemove", (e) => {
             cursor.style.left = e.clientX + "px";
             cursor.style.top = e.clientY + "px";
-            // On s'assure qu'il est visible quand on bouge
             cursor.style.opacity = "1"; 
         });
 
-        // --- FIX IFRAME / PDF ---
-        // Quand la souris quitte la fenêtre (ex: entre dans l'iframe PDF), on cache le curseur
+        // --- FIX IFRAME (PDF) ---
+        // Cache le curseur si on sort de la fenêtre (ex: sur une iframe)
         document.addEventListener("mouseout", (e) => {
             if (!e.relatedTarget && !e.toElement) {
                 cursor.style.opacity = "0";
             }
         });
-        
-        // Alternative plus robuste pour les iframes spécifiquement
-        const iframes = document.querySelectorAll('iframe, object, embed');
-        iframes.forEach(iframe => {
-            iframe.addEventListener('mouseenter', () => {
-                cursor.style.opacity = "0"; // Cache le curseur perso
-            });
-            iframe.addEventListener('mouseleave', () => {
-                cursor.style.opacity = "1"; // Réaffiche le curseur perso
-            });
-        });
-        // ------------------------
 
-        // 2. CIBLAGE DES ÉLÉMENTS INTERACTIFS (Ton code existant)
+        // 2. CIBLAGE DES ÉLÉMENTS INTERACTIFS
         const selectors = [
             "a", "button", "input", "textarea", 
             ".card", ".nav-item", ".menu-toggle",
             ".cyber-btn", "#cyber-pass", ".lock-icon",
-            "summary" // Ajout utile pour tes détails/skills
+            ".page-nav-link", "summary"
         ];
 
         const selectorString = selectors.join(", ");
@@ -538,6 +531,8 @@ document.addEventListener("DOMContentLoaded", function() {
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
             el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+            
+            // Reset au clic
             el.addEventListener('click', () => {
                 document.body.classList.remove('hovering');
                 setTimeout(() => {
@@ -545,5 +540,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 }, 100);
             });
         });
+    } else if (cursor) {
+        // Sécurité : Si on est sur mobile, on cache le curseur via JS aussi
+        cursor.style.display = "none";
     }
 });

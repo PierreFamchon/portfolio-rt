@@ -438,15 +438,46 @@ button.nav-item {
     animation: blink 2s infinite;
 }
 
-/* Responsive Mobile (Sidebar) */
-@media (max-width: 992px) {
-    .sidebar { transform: translateX(-100%); }
-    .sidebar.active { transform: translateX(0); }
-}
+/* --- SMARTPHONES (max 768px) --- */
+@media (max-width: 768px) {
 
-/* --- Correctif taille Cadenas du Menu uniquement --- */
-.nav-item .lock-icon {
-    font-size: 1.2rem;  /* Modifie ici (ex: 10px, 0.7rem, etc.) */
+    /* A. NAVIGATION CAPSULE : MODE ICÔNES UNIQUEMENT */
+    .page-nav {
+        gap: 10px; /* Espace entre les bulles */
+        padding: 5px 10px;
+        justify-content: center; /* Centre les icônes */
+        width: auto; /* Laisse la largeur s'adapter au contenu */
+        max-width: 95%;
+    }
+
+    .page-nav-link {
+        /* ASTUCE : On met la taille de police à 0 pour cacher le TEXTE */
+        font-size: 0; 
+        
+        /* On ajuste le padding pour faire des boutons carrés/ronds */
+        padding: 10px; 
+        border-radius: 50%; /* Optionnel : rend les boutons ronds */
+        width: 40px;        /* Force une taille fixe */
+        height: 40px;
+        justify-content: center;
+        gap: 0; /* Plus besoin d'espace entre icône et texte */
+    }
+
+    /* On rétablit la taille de l'icône (sinon elle disparaît avec font-size: 0) */
+    .page-nav-link i {
+        font-size: 1.2rem; /* Taille visible de l'icône */
+        margin: 0;
+    }
+
+    /* B. DÉSACTIVATION DU CURSEUR CUSTOM */
+    #cursor-crosshair {
+        display: none !important; /* Cache visuellement la croix */
+    }
+
+    /* On rétablit le comportement tactile natif */
+    *, html, body, a, button, input, textarea, select, .card, .nav-item, .menu-toggle {
+        cursor: auto !important; /* Le navigateur gère le touch */
+    }
 }
 
 /* ==========================================================================
