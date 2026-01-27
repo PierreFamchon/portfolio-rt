@@ -9,7 +9,6 @@
 Ce dépôt contient le code source de mon portfolio personnel. Conçu avec une esthétique **Cyberpunk / HUD Tactique**, ce site vitrine met en avant mes compétences en Administration Système, Réseaux et Cybersécurité.
 
 ![Capture d'écran du Portfolio](static/assets/img/preview-portfolio.jpg)
-*(Note : Pensez à ajouter une capture d'écran de votre page d'accueil ici)*
 
 ## ⚡ Fonctionnalités Clés
 
