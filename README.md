@@ -10,6 +10,8 @@
 
 Ce dépôt contient le code source de mon portfolio personnel. Conçu avec une esthétique **Cyberpunk / HUD Tactique**, ce site vitrine met en avant mes compétences en Administration Système, Réseaux et Cybersécurité.
 
+<br>
+
 ![Capture d'écran du Portfolio](static/assets/img/preview-portfolio.jpg)
 
 <br>
@@ -24,6 +26,8 @@ Mon portfolio s'articule autour des 5 compétences clés du Bachelor Universitai
 * **🛡️ Cybersécurité :** Cybersécurité défensive (Hardening, Firewalling) et offensive (Pentesting, Analyse de risques).
 * **📊 Monitoring & Supervision :** Supervision d'infrastructures, Métrologie, Gestion de parc et Analyse de trafic (SNMP, Netflow).
 
+<br>
+
 ![Capture d'écran du Portfolio](static/assets/img/skill-portfolio.jpg)
 
 <br>
@@ -34,12 +38,20 @@ En plus des compétences académiques, le portfolio intègre des sections dédi�
 
 * **🧪 Labs & Expérimentations (Zone Restreinte) :** Une section "Sandbox" regroupant des travaux pratiques isolés, des défis CTF et des tests de scripts.
     * *Note :* L'accès à certaines ressources est gamifié via une simulation de terminal Linux (nécessite un code d'accès).
-    * 
+
+<br>
+
  ![Capture d'écran du Portfolio](static/assets/img/labs.jpg)
-   
+
+<br>
+
 * **📂 Projets (SAE) :** Présentation détaillée des projets majeurs (Situations d'Apprentissage et d'Évaluation). Chaque projet est documenté avec son contexte, son architecture technique, le code source associé et les rapports en PDF.
 
+<br>
+
 ![Capture d'écran du Portfolio](static/assets/img/project.jpg)
+
+<br>
 
 * **🎓 Certifications :** Un tableau de bord regroupant les certifications officielles obtenues (Cisco CCNA, SecNumAcadémie, Pix, etc.) avec des liens de vérification actifs pour attester de la validité des compétences.
 
