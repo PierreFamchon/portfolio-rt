@@ -12,6 +12,8 @@ Ce dépôt contient le code source de mon portfolio personnel. Conçu avec une e
 
 ![Capture d'écran du Portfolio](static/assets/img/preview-portfolio.jpg)
 
+<br>
+
 ### 📂 Détail des Compétences
 
 Mon portfolio s'articule autour des 5 compétences clés du Bachelor Universitaire de Technologie (R&T), chacune documentée avec des preuves techniques concrètes :
@@ -24,17 +26,24 @@ Mon portfolio s'articule autour des 5 compétences clés du Bachelor Universitai
 
 ![Capture d'écran du Portfolio](static/assets/img/skill-portfolio.jpg)
 
+<br>
+
 ### 🚀 Autres Sections Clés
 
 En plus des compétences académiques, le portfolio intègre des sections dédiées à la pratique et à la validation des acquis :
 
 * **🧪 Labs & Expérimentations (Zone Restreinte) :** Une section "Sandbox" regroupant des travaux pratiques isolés, des défis CTF et des tests de scripts.
     * *Note :* L'accès à certaines ressources est gamifié via une simulation de terminal Linux (nécessite un code d'accès).
+    * 
+ ![Capture d'écran du Portfolio](static/assets/img/labs.jpg)
+   
 * **📂 Projets (SAE) :** Présentation détaillée des projets majeurs (Situations d'Apprentissage et d'Évaluation). Chaque projet est documenté avec son contexte, son architecture technique, le code source associé et les rapports en PDF.
-* **🎓 Certifications :** Un tableau de bord regroupant les certifications officielles obtenues (Cisco CCNA, SecNumAcadémie, Pix, etc.) avec des liens de vérification actifs pour attester de la validité des compétences.
 
 ![Capture d'écran du Portfolio](static/assets/img/project.jpg)
-![Capture d'écran du Portfolio](static/assets/img/labs.jpg)
+
+* **🎓 Certifications :** Un tableau de bord regroupant les certifications officielles obtenues (Cisco CCNA, SecNumAcadémie, Pix, etc.) avec des liens de vérification actifs pour attester de la validité des compétences.
+
+<br>
 
 ## ⚡ Fonctionnalités Clés
 
@@ -48,6 +57,8 @@ En plus des compétences académiques, le portfolio intègre des sections dédi�
 * **Système de Sécurité Simulé :** Modale "Accès Restreint" avec simulation de terminal pour les sections verrouillées.
 * **Responsive Design :** Interface adaptative (Mobile, Tablette, Desktop) avec menu burger personnalisé.
 
+<br>
+
 ## 🛠️ Stack Technique
 
 Ce projet est réalisé en **Pure Vanilla**, sans framework lourd, pour garantir performance et maîtrise du code.
@@ -58,6 +69,8 @@ Ce projet est réalisé en **Pure Vanilla**, sans framework lourd, pour garantir
 | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) | Design système, Variables CSS (:root), Flexbox/Grid, Animations Keyframes. |
 | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) | Logique DOM, Modal, Typewriter, Canvas, Gestion des événements. |
 | ![FontAwesome](https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white) | Icônes vectorielles. |
+
+<br>
 
 ## 📂 Structure du Projet
 
@@ -78,6 +91,7 @@ Ce projet est réalisé en **Pure Vanilla**, sans framework lourd, pour garantir
 │       └── Rapport/    # Fichiers PDF (CV, Rapports)
 └── README.md
 ```
+<br>
 
 ## 🚀 Installation & Utilisation
 
