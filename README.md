@@ -56,6 +56,7 @@ Ce projet est réalisé en **Pure Vanilla**, sans framework lourd, pour garantir
 │       ├── logo/       # Favicons et Logos
 │       └── Rapport/    # Fichiers PDF (CV, Rapports)
 └── README.md
+```
 
 ### 📂 Détail des Compétences
 
