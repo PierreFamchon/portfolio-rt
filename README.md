@@ -24,6 +24,18 @@ Mon portfolio s'articule autour des 5 compétences clés du Bachelor Universitai
 
 ![Capture d'écran du Portfolio](static/assets/img/skill-portfolio.jpg)
 
+### 🚀 Autres Sections Clés
+
+En plus des compétences académiques, le portfolio intègre des sections dédiées à la pratique et à la validation des acquis :
+
+* **🧪 Labs & Expérimentations (Zone Restreinte) :** Une section "Sandbox" regroupant des travaux pratiques isolés, des défis CTF et des tests de scripts.
+    * *Note :* L'accès à certaines ressources est gamifié via une simulation de terminal Linux (nécessite un code d'accès).
+* **📂 Projets (SAE) :** Présentation détaillée des projets majeurs (Situations d'Apprentissage et d'Évaluation). Chaque projet est documenté avec son contexte, son architecture technique, le code source associé et les rapports en PDF.
+* **🎓 Certifications :** Un tableau de bord regroupant les certifications officielles obtenues (Cisco CCNA, SecNumAcadémie, Pix, etc.) avec des liens de vérification actifs pour attester de la validité des compétences.
+
+![Capture d'écran du Portfolio](static/assets/img/project.jpg)
+![Capture d'écran du Portfolio](static/assets/img/labs.jpg)
+
 ## ⚡ Fonctionnalités Clés
 
 * **Design Immersif :** Thème sombre, effets néon (Glow), typographies "Monospace" et animations CSS inspirées des interfaces de terminaux.
