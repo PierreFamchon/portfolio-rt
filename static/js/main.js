@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // --- PARTIE B : SCROLL SPY (Ton code d'origine pour le menu) ---
         let current = '';
-        const sections = document.querySelectorAll('#competences, #projet, #rapport, #acceuil, #cv, #rt1, #rt2, #rt3, #archives'); 
+        const sections = document.querySelectorAll('#competences, #projet, #rapport, #acceuil, #cv, #rt1, #rt2, #rt3, #archives, #cyber, #network, #lang'); 
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
