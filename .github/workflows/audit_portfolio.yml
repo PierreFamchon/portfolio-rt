@@ -1,0 +1,43 @@
+name: Audit Qualité & Sécurité (Web)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  analyse_code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Récupération du code
+        uses: actions/checkout@v4
+
+      - name: 📦 Installation Node.js (nécessaire pour les outils d'analyse)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      # 1. Vérification du HTML (Balises mal fermées, erreurs de syntaxe)
+      - name: 🔍 Audit HTML (HTMLHint)
+        run: npx htmlhint "**/*.html" || true
+        # "|| true" permet de ne pas bloquer le build si tu as juste une petite erreur
+
+      # 2. Vérification du JavaScript (Erreurs de logique)
+      - name: 🧠 Audit JavaScript (ESLint)
+        run: npx eslint "**/*.js" --no-error-on-unmatched-pattern || true
+
+  scan_securite:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Récupération du code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 3. Vérifie si tu as laissé des mots de passe/clés secrets dans le code
+      - name: 🕵️‍♂️ Scan de secrets (Gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Gitleaks va scanner tout ton historique pour voir si tu n'as pas commité un secret par erreur.
