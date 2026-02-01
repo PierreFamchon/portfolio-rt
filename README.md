@@ -87,21 +87,26 @@ Ce projet est réalisé en **Pure Vanilla**, sans framework lourd, pour garantir
 ## 📂 Structure du Projet
 
 ```bash
-.
-├── index.html          # Page d'accueil
-├── administrer.html    # Page Compétence : Administrer
-├── connecter.html      # Page Compétence : Connecter
-├── ...                 # Autres pages HTML
-├── static/
-│   ├── css/
-│   │   └── style.css   # Feuille de style principale
-│   ├── js/
-│   │   └── main.js     # Scripts JS (Typewriter, Modal, Scroll)
-│   └── assets/
-│       ├── img/        # Images des projets
-│       ├── logo/       # Favicons et Logos
-│       └── Rapport/    # Fichiers PDF (CV, Rapports)
-└── README.md
+📂
+├── 📄 index.html           # Page d'accueil
+├── 📄 administrer.html     # Page Compétence : Administrer
+├── 📄 connecter.html       # Page Compétence : Connecter
+├── 📄 programmer.html      # Page Compétence : Programmer 
+├── 📄 securiser.html       # Page Compétence : Securiser 
+├── 📄 surveiller.html      # Page Compétence : Surveiller 
+├── 📄 labs.html            # Page Compétence : Labs/TP
+├── 📄 projets.html         # Page Compétence : Projets/SAE
+├── 📄 certification.html   # Page Compétence : Certification
+├── 📂 static/
+│   ├── 📂 css/
+│   │   └── 📄 style.css   # Feuille de style principale
+│   ├── 📂 js/
+│   │   └── 📄 main.js     # Scripts JS (Typewriter, Modal, Scroll)
+│   └── 📂 assets/
+│       ├── 📂 img/        # Images des projets
+│       ├── 📂 logo/       # Favicons et Logos
+│       └── 📂 Rapport/    # Fichiers PDF (CV, Rapports)
+└── 📄 README.md
 ```
 <br>
 

@@ -1,0 +1,40 @@
+name: Audit Sécurité & Qualité
+
+# Quand est-ce que ça se lance ? (À chaque "push" sur le code)
+on: [push]
+
+jobs:
+  mon_job_audit:
+    runs-on: ubuntu-latest  # Le robot utilise un Linux Ubuntu
+
+    steps:
+      # 1. Le robot récupère ton code
+      - name: 📥 Récupération du code
+        uses: actions/checkout@v4
+
+      # 2. Le robot installe Python
+      - name: 🐍 Installation Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      # 3. Le robot installe les outils de vérification
+      - name: 📦 Installation des outils
+        run: pip install pylint bandit
+
+      # 4. LINTING : Vérifie si le code est propre (Pylint)
+      - name: 🔍 Vérification qualité (Lint)
+        run: pylint **/*.py || true
+        # "|| true" permet de continuer même s'il y a des petites fautes de style
+
+      # 5. SÉCURITÉ : Vérifie les failles (Bandit)
+      - name: 🛡️ Scan de sécurité
+        run: bandit -r . -ll
+        # -r : scan tout le dossier, -ll : signale les problèmes moyens et graves
+
+      # 6. EXÉCUTION : Lance ton script en lui donnant la clé du coffre
+      - name: 🚀 Lancement du script
+        env:
+          # C'est ici qu'on connecte le secret GitHub à la variable Python
+          TARGET_IP: ${{ secrets.TARGET_IP }}
+        run: python main.py
