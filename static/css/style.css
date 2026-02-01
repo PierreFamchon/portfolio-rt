@@ -140,7 +140,7 @@ h1, h2, h3, h4 {
 }
 
 /* Scroll Margin */
-#competences, #projet, #archives, #rt3, #rt2, #rt1, #cyber, #network, #cv, #acceuil, #rapport, section {
+#competences, #projet, #archives, #rt3, #rt2, #rt1, #cyber, #network, , #acceuil, #rapport, section {
     scroll-margin-top: 120px; 
 }
 
@@ -274,19 +274,46 @@ code {
     animation: shadow-breath 4s ease-in-out infinite;
 }
 
-.sidebar-logo-cyber {
-    width: 150px;
-    height: 150px; /* Force la hauteur pour créer un carré */
+/* --- LE CADRE (Le rond néon fixe) --- */
+.profile-circle-frame {
+    /* Taille du cercle global (agrandi pour englober les épaules) */
+    width: 190px;
+    height: 190px;
+    
+    /* Le style Néon */
     border-radius: 50%;
-    border: 2px solid #64ffda; /* Cercle néon */
-    padding: 3px;
+    border: 2px solid #64ffda;
     box-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
-    object-fit: cover; /* Permet à l'image de remplir le cercle sans être déformée */
-    display: block; /* S'assure que l'image se comporte comme un bloc */
-    margin: 0 auto; /* Centre l'image horizontalement */
+    padding: 3px;
+    background-color: #111; /* Fond sombre derrière la photo si elle ne remplit pas tout */
+
+    /* Indispensable pour couper ce qui dépasse */
+    overflow: hidden;
+    
+    /* Centrage du cadre lui-même */
+    margin: 0 auto 15px auto; /* 15px en bas pour espacer du texte ID */
     position: relative;
     z-index: 1;
-    animation: float-logo 4s ease-in-out infinite;
+}
+
+/* --- L'IMAGE (La photo à l'intérieur) --- */
+.sidebar-logo-cyber {
+    /* C'EST ICI QU'ON DÉZOOME */
+    /* 100% = zoom max (remplit le cercle). */
+    /* 85% = un peu d'espace autour (on voit mieux les épaules). */
+    width: 110%; 
+    height: auto; /* Garde les proportions de la photo */
+
+    /* Centrage parfait de l'image dans le cercle */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* On retire les bordures de l'image car c'est le cadre qui les a */
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
 }
 
 .user-id {
